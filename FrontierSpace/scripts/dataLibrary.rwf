@@ -1,0 +1,33 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <Scripts>
+    <ScriptName>dataLibrary</ScriptName>
+    <FolderID>10</FolderID>
+    <Script>
+function onInit()
+
+LibraryData.aRecords["skills"] = {
+		bExport = true,
+		aDataMap = { "skills", "reference.skills" }, 
+		sRecordDisplayClass = "skills", 
+		sSidebarCategory = "create", 
+		}
+
+LibraryData.aRecords["gizmo"] = {
+		bExport = true,
+		aDataMap = { "gizmo", "reference.gizmo" }, 
+		sRecordDisplayClass = "gizmo", 
+		sSidebarCategory = "campaign", 
+		}
+
+
+	DesktopManager.setSidebarDockCategoryIconColor("dedede");
+	DesktopManager.setSidebarDockCategoryTextColor("dedede");
+	DesktopManager.setSidebarDockIconColor("000000");
+	DesktopManager.setSidebarDockTextColor("000000");
+end
+
+</Script>
+    <RegisterScript>true</RegisterScript>
+    <Encoding />
+  </Scripts>
+</DocumentElement>

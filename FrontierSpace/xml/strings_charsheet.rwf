@@ -1,0 +1,19 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>strings_charsheet</XmlName>
+    <FolderID>11</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+
+&lt;!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+--&gt;
+
+&lt;root&gt;
+
+	&lt;string name="encumbrance_label"&gt;Encumbrance Total&lt;/string&gt;
+	&lt;string name="encumbrance_label_max"&gt;Encumbrance Max&lt;/string&gt;
+
+&lt;/root&gt;</XML>
+  </XMLFiles>
+</DocumentElement>

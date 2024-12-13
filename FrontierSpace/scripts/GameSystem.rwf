@@ -1,0 +1,71 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <Scripts>
+    <ScriptName>GameSystem</ScriptName>
+    <FolderID>10</FolderID>
+    <Script>-- Ruleset action types
+actions = {
+	["dice"] = { bUseModStack = "true" },
+	["table"] = { },
+	["effect"] = { sIcon = "action_effect", sTargeting = "all" },
+};
+
+targetactions = {
+	"effect",
+};
+
+--languages = { };
+
+currencies = { };
+currencyDefault = nil;
+
+function getCharSelectDetailHost(nodeChar)
+	return "";
+end
+
+function requestCharSelectDetailClient()
+	return "name";
+end
+
+function receiveCharSelectDetailClient(vDetails)
+	return vDetails, "";
+end
+
+function getCharSelectDetailLocal(nodeLocal)
+	return DB.getValue(nodeLocal, "name", ""), "";
+end
+
+function getDistanceUnitsPerGrid()
+	return 1;
+end
+
+
+function onInit()    
+    languages = {
+        -- Standard languages
+        [Interface.getString("language_value_common")] = "",
+        [Interface.getString("language_value_kiarian")] = "Sequoyah",
+        [Interface.getString("language_value_terran")] = "GalacticoCommon",
+        [Interface.getString("language_value_novarian")] = "Aqua",
+        [Interface.getString("language_value_yarian")] = "TengwarAnnatar",
+    }
+    languagefonts = {
+        [Interface.getString("language_value_kiarian")] = "Sequoyah",
+        [Interface.getString("language_value_terran")] = "GalacticoCommon",
+        [Interface.getString("language_value_novarian")] = "Aqua",
+        [Interface.getString("language_value_yarian")] = "TengwarAnnatar",
+    }
+end
+
+--Font sources
+--Aqua   https://www.fontspace.com/dan-smiths-fantasy-fonts
+--TengwarAnnatar   https://www.fontspace.com/tengwar-annatar-font-f2244
+--Sequoyah    https://www.fontspace.com/sequoyah-font-f2348
+--GalacticoBasic (TTF converted from OTF) https://www.fontspace.com/galactico-basic-font-f31460
+
+function getDistanceUnitsPerGrid()
+	return 2;
+end</Script>
+    <RegisterScript>true</RegisterScript>
+    <Encoding />
+  </Scripts>
+</DocumentElement>

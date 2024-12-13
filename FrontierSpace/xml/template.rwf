@@ -1,0 +1,26 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>template</XmlName>
+    <FolderID>12</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;root&gt;
+
+	&lt;template name="scrollbar"&gt;
+		&lt;scrollbarcontrol&gt;
+			&lt;anchored position="right" offset="-5,-5" width="6" /&gt;
+			&lt;frame name="scrollbar_base" offset="0,10,0,10" /&gt;
+			&lt;normal name="scrollbutton_normal"&gt;
+				&lt;minimum height="40" /&gt;
+			&lt;/normal&gt;
+		&lt;/scrollbarcontrol&gt;
+	&lt;/template&gt;
+
+	&lt;portraitset name="charlist"&gt;
+		&lt;base&gt;charlist_base&lt;/base&gt;
+		&lt;mask&gt;charlist_mask&lt;/mask&gt;
+	&lt;/portraitset&gt;
+	
+&lt;/root&gt;      
+    </XML>
+  </XMLFiles>
+</DocumentElement>

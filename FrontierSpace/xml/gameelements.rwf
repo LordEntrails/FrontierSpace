@@ -1,0 +1,29 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>gameelements</XmlName>
+    <FolderID>0</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;root&gt;
+	&lt;dicesettings&gt;
+		&lt;panel name="dicepanel" offset="20,5,5,5" padding="15" /&gt;
+	&lt;/dicesettings&gt;
+	&lt;!-- Desktop Dice --&gt;
+    &lt;die name="d10"&gt;
+		&lt;icon&gt;d10icon&lt;/icon&gt;
+		&lt;default /&gt;
+	&lt;/die&gt;
+	&lt;die name="d100"&gt;
+		&lt;icon&gt;d10icon&lt;/icon&gt;
+		&lt;menuicon&gt;percent&lt;/menuicon&gt;
+		&lt;default /&gt;
+	&lt;/die&gt;
+	  &lt;die name="dF" merge="delete"/&gt;
+	  &lt;die name="d4" merge="delete"/&gt;
+	  &lt;die name="d6" merge="delete"/&gt;
+	  &lt;die name="d8" merge="delete"/&gt;
+	  &lt;die name="d12" merge="delete"/&gt;
+	  &lt;die name="d20" merge="delete"/&gt;  
+&lt;/root&gt;      
+    </XML>
+  </XMLFiles>
+</DocumentElement>
