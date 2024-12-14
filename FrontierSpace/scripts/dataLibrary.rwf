@@ -20,10 +20,10 @@ LibraryData.aRecords["gizmo"] = {
 		}
 
 
-	DesktopManager.setSidebarDockCategoryIconColor("dedede");
-	DesktopManager.setSidebarDockCategoryTextColor("dedede");
-	DesktopManager.setSidebarDockIconColor("000000");
-	DesktopManager.setSidebarDockTextColor("000000");
+	ColorManager.setSidebarCategoryIconColor("dedede");
+	ColorManager.setSidebarCategoryTextColor("dedede");
+	ColorManager.setSidebarRecordIconColor("000000");
+	ColorManager.setSidebarRecordTextColor("000000");
 end
 
 </Script>
