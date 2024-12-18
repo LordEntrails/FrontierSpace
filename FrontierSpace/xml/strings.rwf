@@ -9,7 +9,7 @@
 
  	&lt;!-- Sidebar --&gt;
    &lt;string name="library_recordtype_label_skills"&gt;Skills&lt;/string&gt;
-   &lt;string name="library_recordtype_label_gizmo"&gt;Gizmos&lt;/string&gt;
+   &lt;string name="library_recordtype_label_benefits"&gt;Benefits&lt;/string&gt;
 
 	&lt;!-- Languages --&gt;
 	&lt;string name="language_value_common"&gt;GalacticCommon&lt;/string&gt;

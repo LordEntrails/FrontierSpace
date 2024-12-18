@@ -1,13 +1,84 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <WindowControls>
-    <WindowName>gizmo</WindowName>
+    <WindowName>benefits</WindowName>
+    <ControlName>benefits</ControlName>
+    <ZIndex>0</ZIndex>
+    <ControlClass>FGWindow</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AllowResize","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"Comments"},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"benefits"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DataSource"},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"387"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"350"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"Dynamic"},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"storybox"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HostControl"},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"Invisible"},
+      {"Name":"Locked"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"MergeWindow"},
+      {"Name":"MinimizedIcon"},
+      {"Name":"MinimumHeight","Value":{"@xsi:type":"xsd:int","#text":"387"}},
+      {"Name":"MinimumWidth","Value":{"@xsi:type":"xsd:int","#text":"350"}},
+      {"Name":"NoClose"},
+      {"Name":"NoDelete"},
+      {"Name":"NoMove"},
+      {"Name":"Panel"},
+      {"Name":"PanelModeClient"},
+      {"Name":"PanelModeHost"},
+      {"Name":"PanelModeLocal"},
+      {"Name":"PlayerControl"},
+      {"Name":"Resize","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"RightMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"ScriptFile","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"Sharable"},
+      {"Name":"ShareAs"},
+      {"Name":"SoftClose"},
+      {"Name":"Tooltip"},
+      {"Name":"TooltipField"},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"WindowClassCopy"},
+      {"Name":"WindowMargins","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"WindowTitle"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
+]}}</Definition>
+    <LUACode>function onLockChanged()
+
+	if sub_main_content and sub_main_content.subwindow then
+		sub_main_content.subwindow.update();
+	end
+	if sub_description and sub_description.subwindow then
+		sub_description.subwindow.update();
+	end
+
+	local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
+	name.setReadOnly(bReadOnly);
+			
+end
+
+</LUACode>
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>benefits</WindowName>
     <ControlName>button_record_locked</ControlName>
     <ZIndex>4</ZIndex>
     <ControlClass>FGCustomControl</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"CanGrowVert"},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"button_record_locked"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
       {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"button_record_locked"}},
@@ -15,9 +86,12 @@
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
       {"Name":"FrameName"},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
@@ -52,7 +126,7 @@
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>gizmo</WindowName>
+    <WindowName>benefits</WindowName>
     <ControlName>close</ControlName>
     <ZIndex>3</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -71,10 +145,12 @@
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DevelopmentComments"},
       {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
+      {"Name":"FrameHideReadonly"},
       {"Name":"FrameName","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
@@ -93,6 +169,7 @@
       {"Name":"NextTabTarget"},
       {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string","#text":"button_close"}},
       {"Name":"PressedIconName","Value":{"@xsi:type":"xsd:string","#text":"button_close_down"}},
+      {"Name":"PressedOffset"},
       {"Name":"PrevTabTarget"},
       {"Name":"ReadOnly"},
       {"Name":"RelativeMargin"},
@@ -112,77 +189,7 @@
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>gizmo</WindowName>
-    <ControlName>gizmo</ControlName>
-    <ZIndex>0</ZIndex>
-    <ControlClass>FGWindow</ControlClass>
-    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AllowResize","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"Comments"},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"gizmo"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DataSource"},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"387"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"350"}},
-      {"Name":"Disabled"},
-      {"Name":"Dynamic"},
-      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"storybox"}},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"HostControl"},
-      {"Name":"HoverCursor"},
-      {"Name":"InheritSizePosition"},
-      {"Name":"Invisible"},
-      {"Name":"Locked"},
-      {"Name":"MaximumHeight"},
-      {"Name":"MaximumWidth"},
-      {"Name":"MergeWindow"},
-      {"Name":"MinimizedIcon"},
-      {"Name":"MinimumHeight","Value":{"@xsi:type":"xsd:int","#text":"387"}},
-      {"Name":"MinimumWidth","Value":{"@xsi:type":"xsd:int","#text":"350"}},
-      {"Name":"NoClose"},
-      {"Name":"NoDelete"},
-      {"Name":"NoMove"},
-      {"Name":"Panel"},
-      {"Name":"PanelModeClient"},
-      {"Name":"PanelModeHost"},
-      {"Name":"PanelModeLocal"},
-      {"Name":"PlayerControl"},
-      {"Name":"Resize","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"RightMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"ScriptFile","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"Sharable"},
-      {"Name":"ShareAs"},
-      {"Name":"SoftClose"},
-      {"Name":"Tooltip"},
-      {"Name":"TooltipField"},
-      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"WindowMargins","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"WindowTitle"},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
-]}}</Definition>
-    <LUACode>function onLockChanged()
-
-	if sub_main_content and sub_main_content.subwindow then
-		sub_main_content.subwindow.update();
-	end
-	if sub_description and sub_description.subwindow then
-		sub_description.subwindow.update();
-	end
-
-	local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
-	name.setReadOnly(bReadOnly);
-			
-end
-
-</LUACode>
-    <GroupIndex>0</GroupIndex>
-    <Template />
-  </WindowControls>
-  <WindowControls>
-    <WindowName>gizmo</WindowName>
+    <WindowName>benefits</WindowName>
     <ControlName>link</ControlName>
     <ZIndex>1</ZIndex>
     <ControlClass>FGLinkField</ControlClass>
@@ -196,7 +203,9 @@ end
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
+      {"Name":"FrameHideReadonly"},
       {"Name":"FrameName"},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
@@ -237,7 +246,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>gizmo</WindowName>
+    <WindowName>benefits</WindowName>
     <ControlName>name</ControlName>
     <ZIndex>2</ZIndex>
     <ControlClass>FGStringField</ControlClass>
@@ -245,7 +254,6 @@ end
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
       {"Name":"AdvancedTemplate"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"CanGrowVert"},
       {"Name":"Center"},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"name"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
@@ -255,11 +263,14 @@ end
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"24"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"248"}},
+      {"Name":"DevelopmentComments"},
       {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
       {"Name":"EmptyText"},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"reference-h"}},
+      {"Name":"FrameHideReadonly"},
       {"Name":"FrameName"},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
@@ -299,7 +310,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>gizmo</WindowName>
+    <WindowName>benefits</WindowName>
     <ControlName>skills_scroll</ControlName>
     <ZIndex>7</ZIndex>
     <ControlClass>FGScrollBar</ControlClass>
@@ -313,8 +324,10 @@ end
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"303"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"6"}},
+      {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FrameHideReadonly"},
       {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"scrollbar_base"}},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string","#text":"0,12,0,12"}},
       {"Name":"GMEditOnly"},
@@ -351,61 +364,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>gizmo</WindowName>
-    <ControlName>sub_description</ControlName>
-    <ZIndex>6</ZIndex>
-    <ControlClass>FGSubWindow</ControlClass>
-    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"Activate"},
-      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate"},
-      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"CanGrowVert","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_description"}},
-      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"318"}},
-      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"316"}},
-      {"Name":"Disabled"},
-      {"Name":"FastInit","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"FrameName"},
-      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"GMEditOnly"},
-      {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
-      {"Name":"HoverCursor"},
-      {"Name":"InheritSizePosition"},
-      {"Name":"InsertBefore"},
-      {"Name":"Invisible"},
-      {"Name":"MaximumHeight"},
-      {"Name":"MaximumWidth"},
-      {"Name":"Merge"},
-      {"Name":"MinimumHeight"},
-      {"Name":"MinimumWidth"},
-      {"Name":"NextTabTarget"},
-      {"Name":"NoScroll"},
-      {"Name":"PrevTabTarget"},
-      {"Name":"ReadOnly"},
-      {"Name":"RelativeMargin"},
-      {"Name":"RelativeStacking"},
-      {"Name":"ScriptFile"},
-      {"Name":"Source","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"StackVertWith"},
-      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
-      {"Name":"SubWindowClassName","Value":{"@xsi:type":"xsd:string","#text":"gizmo_description"}},
-      {"Name":"Tooltip"},
-      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"11"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"43"}}
-]}}</Definition>
-    <LUACode />
-    <GroupIndex>0</GroupIndex>
-    <Template />
-  </WindowControls>
-  <WindowControls>
-    <WindowName>gizmo</WindowName>
+    <WindowName>benefits</WindowName>
     <ControlName>sub_main_content</ControlName>
     <ZIndex>5</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
@@ -414,15 +373,17 @@ end
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
       {"Name":"AdvancedTemplate"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"CanGrowVert","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_main_content"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"318"}},
-      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"316"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"315"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"312"}},
+      {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
+      {"Name":"DynamicSize","Value":{"@xsi:type":"xsd:string","#text":"Dynamic Height"}},
       {"Name":"FastInit"},
+      {"Name":"FrameHideReadonly"},
       {"Name":"FrameName"},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
@@ -447,11 +408,11 @@ end
       {"Name":"Source","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"StackVertWith"},
       {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
-      {"Name":"SubWindowClassName","Value":{"@xsi:type":"xsd:string","#text":"gizmo_content"}},
+      {"Name":"SubWindowClassName","Value":{"@xsi:type":"xsd:string","#text":"benefits_content"}},
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"11"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"14"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"43"}}
 ]}}</Definition>
     <LUACode />
@@ -459,7 +420,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>gizmo</WindowName>
+    <WindowName>benefits</WindowName>
     <ControlName>tabs</ControlName>
     <ZIndex>8</ZIndex>
     <ControlClass>FGVerticalTab</ControlClass>
@@ -473,9 +434,11 @@ end
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"150"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"18"}},
+      {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
       {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"tabs"}},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
@@ -498,10 +461,16 @@ end
       {"Name":"ScriptFile"},
       {"Name":"StackVertWith"},
       {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"TabMargins"},
+      {"Name":"TabSize"},
+      {"Name":"TabVerticalHelperIconOffsetX"},
+      {"Name":"TabVerticalHelperIconOffsetY"},
+      {"Name":"TabVerticalOffsetX"},
+      {"Name":"TabVerticalOffsetY"},
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"VerticalTabItems","Value":{"@xsi:type":"ArrayOfVerticalTabDefinition","VerticalTabDefinition":[{"Icon":"tab_main","SubWindowName":"sub_main_content"},{"Icon":"tab_notes","SubWindowName":"sub_description"}]}},
+      {"Name":"VerticalTabItems","Value":{"@xsi:type":"ArrayOfVerticalTabDefinition","VerticalTabDefinition":[{"Label":null,"Icon":"tab_main","SubWindowName":"sub_main_content"},{"Label":null,"Icon":"tab_notes","SubWindowName":"sub_description"}]}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"332"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"46"}}
 ]}}</Definition>

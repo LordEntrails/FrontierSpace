@@ -34,9 +34,9 @@ function getCharSelectDetailLocal(nodeLocal)
 	return DB.getValue(nodeLocal, "name", ""), "";
 end
 
-function getDistanceUnitsPerGrid()
-	return 1;
-end
+--function getDistanceUnitsPerGrid()
+--	return 1;
+--end
 
 
 function onInit()    

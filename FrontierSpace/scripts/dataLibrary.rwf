@@ -12,11 +12,11 @@ LibraryData.aRecords["skills"] = {
 		sSidebarCategory = "create", 
 		}
 
-LibraryData.aRecords["gizmo"] = {
+LibraryData.aRecords["benefits"] = {
 		bExport = true,
-		aDataMap = { "gizmo", "reference.gizmo" }, 
-		sRecordDisplayClass = "gizmo", 
-		sSidebarCategory = "campaign", 
+		aDataMap = { "benefits", "reference.benefits" }, 
+		sRecordDisplayClass = "benefits", 
+		sSidebarCategory = "create", 
 		}
 
 
