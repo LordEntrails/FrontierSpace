@@ -51,7 +51,7 @@
 	local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
 	local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
 
-	if nAdvStrength or nAdvAgility or nAdvCoordination or nAdvPerception or nAdvIntelligence or nAdvWillpower == '1' then 
+	if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
 		rMessage.text = rMessage.text .. " Advantage";
 		local sResult = tostring(nResult);
 
@@ -70,7 +70,7 @@
 		end
 		nResult = tonumber(sResult);
 				
-	elseif nAdvStrength or nAdvAgility or nAdvCoordination or nAdvPerception or nAdvIntelligence or nAdvWillpower == '-1' then 
+	elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
 		rMessage.text = rMessage.text .. " Disadvantage";
 		
 		local sResult = tostring(nResult);
