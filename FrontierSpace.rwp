@@ -1324,8 +1324,8 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"177"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"15"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"238"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"51"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -1346,7 +1346,7 @@ end</LUACode>
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"125"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"62"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"FieldCurrent","Value":{"@xsi:type":"xsd:string","#text":"destiny_used"}},
@@ -1382,8 +1382,8 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"239"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"21"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"300"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"57"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -1611,8 +1611,8 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"182"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"41"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"248"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"76"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -1911,7 +1911,7 @@ end</LUACode>
       {"Name":"DelayKeyUpdate","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"150"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"325"}},
       {"Name":"DevelopmentComments"},
       {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
@@ -27753,40 +27753,6 @@ end
     <InsideOffset />
   </Frames>
   <Frames>
-    <FrameName>dicetower_drop</FrameName>
-    <FolderID>7</FolderID>
-    <ImageFile>dicetower_drop.png</ImageFile>
-    <Definition>0,0,90,90</Definition>
-    <TopLeft />
-    <Top />
-    <TopRight />
-    <Left />
-    <Middle />
-    <Right />
-    <BottomLeft />
-    <Bottom />
-    <BottomRight />
-    <Decal />
-    <InsideOffset />
-  </Frames>
-  <Frames>
-    <FrameName>dicetower_normal</FrameName>
-    <FolderID>7</FolderID>
-    <ImageFile>dicetower_normal.png</ImageFile>
-    <Definition>0,0,90,90</Definition>
-    <TopLeft />
-    <Top />
-    <TopRight />
-    <Left />
-    <Middle />
-    <Right />
-    <BottomLeft />
-    <Bottom />
-    <BottomRight />
-    <Decal />
-    <InsideOffset />
-  </Frames>
-  <Frames>
     <FrameName>fielddark</FrameName>
     <FolderID>7</FolderID>
     <ImageFile>fielddark.png</ImageFile>
@@ -28191,9 +28157,19 @@ end
     <IconFile>charlist_base.png</IconFile>
   </Icons>
   <Icons>
+    <IconName>dicetower_drop</IconName>
+    <FolderID>8</FolderID>
+    <IconFile>dicetower_drop.png</IconFile>
+  </Icons>
+  <Icons>
     <IconName>dicetower_icon</IconName>
     <FolderID>8</FolderID>
     <IconFile>dicetower_icon.png</IconFile>
+  </Icons>
+  <Icons>
+    <IconName>dicetower_normal</IconName>
+    <FolderID>8</FolderID>
+    <IconFile>dicetower_normal.png</IconFile>
   </Icons>
   <Icons>
     <IconName>portrait_mask</IconName>
