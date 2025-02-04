@@ -1392,7 +1392,7 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"VerticalTabItems","Value":{"@xsi:type":"ArrayOfVerticalTabDefinition","VerticalTabDefinition":[{"Label":null,"Icon":"tab_main","SubWindowName":"main"},{"Label":null,"Icon":"tab_abilities","SubWindowName":"abilities"},{"Label":null,"Icon":"tab_inventory","SubWindowName":"inventory"},{"Label":null,"Icon":"tab_combat","SubWindowName":"combat"},{"Label":null,"Icon":"tab_notes","SubWindowName":"notes"}]}},
+      {"Name":"VerticalTabItems","Value":{"@xsi:type":"ArrayOfVerticalTabDefinition","VerticalTabDefinition":[{"Label":null,"Icon":"tab_main","SubWindowName":"main"},{"Label":null,"Icon":"tab_combat","SubWindowName":"combat"},{"Label":null,"Icon":"tab_abilities","SubWindowName":"abilities"},{"Label":null,"Icon":"tab_inventory","SubWindowName":"inventory"},{"Label":null,"Icon":"tab_notes","SubWindowName":"notes"}]}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"538"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"50"}}
 ]}}</Definition>

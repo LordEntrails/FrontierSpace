@@ -1,0 +1,15 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <Scripts>
+    <ScriptName>TabsScript</ScriptName>
+    <FolderID>10</FolderID>
+    <Script>function onInit()
+	WindowTabManager.registerTab("vehicle", { sName = "main", sTabRes = "tab_main", sClass = "vehicle_main" });
+	WindowTabManager.registerTab("vehicle", { sName = "Equip", sText = "Equip", sClass = "vehicle_equipment" });
+	WindowTabManager.registerTab("vehicle", { sName = "Notes", sText = "Notes", sClass = "vehicle_notes" });
+	WindowTabManager.registerTab("vehicle", { sName = "pictures", sTabRes = "tab_pictures", sClass = "record_content_pictures" });
+end
+</Script>
+    <RegisterScript>true</RegisterScript>
+    <Encoding />
+  </Scripts>
+</DocumentElement>
