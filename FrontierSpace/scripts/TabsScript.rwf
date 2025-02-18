@@ -4,7 +4,6 @@
     <FolderID>10</FolderID>
     <Script>function onInit()
 	WindowTabManager.registerTab("vehicle", { sName = "main", sTabRes = "tab_main", sClass = "vehicle_main", bEmbed = true  });
-	WindowTabManager.registerTab("vehicle", { sName = "Equip", sText = "Equip", sClass = "vehicle_equipment", bEmbed = true  });
 	WindowTabManager.registerTab("vehicle", { sName = "Notes", sText = "Notes", sClass = "vehicle_notes", bEmbed = true  });
 	WindowTabManager.registerTab("vehicle", { sName = "pictures", sTabRes = "tab_pictures", sClass = "record_content_pictures", bEmbed = true  });
 end
