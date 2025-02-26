@@ -466,6 +466,34 @@ function SpecialistRoll(rSource, rTarget, rRoll)
 	return true
 end
 
+function InitiativeRoll(rSource, rTarget, rRoll)
+--  Name the function and accept 3 parameters
+
+     local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+     --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
+
+    local nodeChar = rSource.sCreatureNode;
+    
+     --  Capture the Character Node
+     local sIcon;
+     if rSource.sType == "npc" then
+          sIcon = "portrait_gm_token";
+     else
+          sIcon = DB.getValue(nodeChar .. ".token");
+          sIcon = string.gsub(sIcon, "token", "chat");
+     end
+     rMessage.icon = sIcon;
+     --  set Chat Icon even when GM is rolling for player
+     
+    Comm.deliverChatMessage(rMessage);
+
+    local nResult = tonumber(ActionsManager.total(rRoll));
+    local sCTNode = ActorManager.getCTNode(ActorManager.resolveActor(rSource));
+
+    DB.setValue(sCTNode, "initresult", "number", nResult);
+
+end
+
 </Script>
     <RegisterScript>true</RegisterScript>
     <Encoding />

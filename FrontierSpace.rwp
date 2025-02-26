@@ -18,7 +18,7 @@
     <LogoFile />
     <ImportRuleset>CoreRPG</ImportRuleset>
     <AdvancedDevelopment>true</AdvancedDevelopment>
-    <GeneratePath>C:\Users\danha\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
+    <GeneratePath>C:\Users\Raithath\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
     <UseAutoPath>false</UseAutoPath>
     <AnnouncementFont />
     <AnnouncementIcon />
@@ -3541,7 +3541,7 @@ end</LUACode>
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"45"}},
       {"Name":"DevelopmentComments"},
-      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","DiceRollString":"{self}d10k1","DiceRollDescription":"Initiative","DiceRollType":"initiative","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":{"LabelValue":{"Label":"init","Value":"{self}"}}}},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","DiceRollString":"{self}d10k1","DiceRollDescription":"Initiative","DiceRollType":"initiative","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"ResultHandlerFunction":"managerRolls.InitiativeRoll","AdditionalInfo":{"LabelValue":{"Label":"init","Value":"{self}"}}}},
       {"Name":"Disabled"},
       {"Name":"DisplaySign"},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"255;255;255;255"}},
@@ -31330,6 +31330,34 @@ function SpecialistRoll(rSource, rTarget, rRoll)
 	rMessage.text = rMessage.text .. "\n" .. sResult;
 	Comm.deliverChatMessage(rMessage); 
 	return true
+end
+
+function InitiativeRoll(rSource, rTarget, rRoll)
+--  Name the function and accept 3 parameters
+
+     local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+     --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
+
+    local nodeChar = rSource.sCreatureNode;
+    
+     --  Capture the Character Node
+     local sIcon;
+     if rSource.sType == "npc" then
+          sIcon = "portrait_gm_token";
+     else
+          sIcon = DB.getValue(nodeChar .. ".token");
+          sIcon = string.gsub(sIcon, "token", "chat");
+     end
+     rMessage.icon = sIcon;
+     --  set Chat Icon even when GM is rolling for player
+     
+    Comm.deliverChatMessage(rMessage);
+
+    local nResult = tonumber(ActionsManager.total(rRoll));
+    local sCTNode = ActorManager.getCTNode(ActorManager.resolveActor(rSource));
+
+    DB.setValue(sCTNode, "initresult", "number", nResult);
+
 end
 
 </Script>
