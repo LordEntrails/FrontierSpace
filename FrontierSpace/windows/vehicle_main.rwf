@@ -1289,7 +1289,7 @@
   <WindowControls>
     <WindowName>vehicle_main</WindowName>
     <ControlName>equipment_label</ControlName>
-    <ZIndex>41</ZIndex>
+    <ZIndex>34</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -1584,7 +1584,7 @@
   <WindowControls>
     <WindowName>vehicle_main</WindowName>
     <ControlName>inventorylist</ControlName>
-    <ZIndex>42</ZIndex>
+    <ZIndex>35</ZIndex>
     <ControlClass>FGWindowList</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AcceptDrop","Value":{"@xsi:type":"ArrayOfPropertyAcceptDrop"}},
@@ -1649,7 +1649,7 @@
   <WindowControls>
     <WindowName>vehicle_main</WindowName>
     <ControlName>inventorylist_iadd</ControlName>
-    <ZIndex>44</ZIndex>
+    <ZIndex>37</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -1712,7 +1712,7 @@
   <WindowControls>
     <WindowName>vehicle_main</WindowName>
     <ControlName>inventorylist_iedit</ControlName>
-    <ZIndex>43</ZIndex>
+    <ZIndex>36</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
