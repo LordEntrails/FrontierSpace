@@ -2,7 +2,7 @@
   <WindowControls>
     <WindowName>sub_item_scanner</WindowName>
     <ControlName>active</ControlName>
-    <ZIndex>8</ZIndex>
+    <ZIndex>7</ZIndex>
     <ControlClass>FGStringField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -66,7 +66,7 @@
   <WindowControls>
     <WindowName>sub_item_scanner</WindowName>
     <ControlName>active_label</ControlName>
-    <ZIndex>7</ZIndex>
+    <ZIndex>6</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -174,7 +174,7 @@
   <WindowControls>
     <WindowName>sub_item_scanner</WindowName>
     <ControlName>passive</ControlName>
-    <ZIndex>10</ZIndex>
+    <ZIndex>9</ZIndex>
     <ControlClass>FGStringField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -238,7 +238,7 @@
   <WindowControls>
     <WindowName>sub_item_scanner</WindowName>
     <ControlName>passive_label</ControlName>
-    <ZIndex>9</ZIndex>
+    <ZIndex>8</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -293,7 +293,7 @@
   <WindowControls>
     <WindowName>sub_item_scanner</WindowName>
     <ControlName>payload</ControlName>
-    <ZIndex>4</ZIndex>
+    <ZIndex>3</ZIndex>
     <ControlClass>FGStringField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -483,7 +483,7 @@ end
   <WindowControls>
     <WindowName>sub_item_scanner</WindowName>
     <ControlName>usage</ControlName>
-    <ZIndex>6</ZIndex>
+    <ZIndex>5</ZIndex>
     <ControlClass>FGStringField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -547,7 +547,7 @@ end
   <WindowControls>
     <WindowName>sub_item_scanner</WindowName>
     <ControlName>usage_label</ControlName>
-    <ZIndex>5</ZIndex>
+    <ZIndex>4</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
