@@ -488,8 +488,11 @@ function InitiativeRoll(rSource, rTarget, rRoll)
     Comm.deliverChatMessage(rMessage);
 
     local nResult = tonumber(ActionsManager.total(rRoll));
-
-    DB.setValue(ActorManager.getCTNode(rSource), "initresult", "number", nResult);
+    local sCTNode = ActorManager.getCTNodeName(rSource);
+    
+    --Debug.chat(DB.findNode((sCTNode .. ".initresult")), "sCTNode");
+    RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".initresult")), nResult);
+    --DB.setValue(ActorManager.getCTNode(rSource), "initresult", "number", nResult);
 
 end
 
