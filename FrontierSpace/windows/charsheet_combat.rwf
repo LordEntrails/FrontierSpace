@@ -669,7 +669,7 @@
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"329"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"17"}}
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"18"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
