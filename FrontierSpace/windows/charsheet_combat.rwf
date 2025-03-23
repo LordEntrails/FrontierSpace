@@ -223,7 +223,20 @@
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"37"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"66"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>
+function onValueChanged()
+	local nodeBPMax = getDatabaseNode();
+	
+	local nodeChar = DB.getChild(nodeBPMax, "..");
+	 -- Gets the parent node (charsheet) one layer up
+	 
+	local sCTNode = ActorManager.getCTNodeName(nodeChar);
+	
+	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".BodyPointsMax"));
+	
+	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".bptotal")), nValue);
+end
+</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -2308,7 +2321,20 @@
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"112"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"66"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>
+function onValueChanged()
+	local nodeWounds = getDatabaseNode();
+	
+	local nodeChar = DB.getChild(nodeWounds, "..");
+	 -- Gets the parent node (charsheet) one layer up
+	 
+	local sCTNode = ActorManager.getCTNodeName(nodeChar);
+	
+	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".WoundsCurrent"));
+	
+	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".wounds")), nValue);
+end
+</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>

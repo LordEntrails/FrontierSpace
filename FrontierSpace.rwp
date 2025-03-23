@@ -3190,7 +3190,20 @@ end</LUACode>
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"37"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"66"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>
+function onValueChanged()
+	local nodeBPMax = getDatabaseNode();
+	
+	local nodeChar = DB.getChild(nodeBPMax, "..");
+	 -- Gets the parent node (charsheet) one layer up
+	 
+	local sCTNode = ActorManager.getCTNodeName(nodeChar);
+	
+	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".BodyPointsMax"));
+	
+	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".bptotal")), nValue);
+end
+</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -5275,7 +5288,20 @@ end</LUACode>
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"112"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"66"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>
+function onValueChanged()
+	local nodeWounds = getDatabaseNode();
+	
+	local nodeChar = DB.getChild(nodeWounds, "..");
+	 -- Gets the parent node (charsheet) one layer up
+	 
+	local sCTNode = ActorManager.getCTNodeName(nodeChar);
+	
+	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".WoundsCurrent"));
+	
+	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".wounds")), nValue);
+end
+</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -31076,23 +31102,24 @@ end</Script>
 	if nResult &lt;= nTarget then
 		for k, v in ipairs(aDoubles) do
 			if nResult == v then
-				sResult = "Critical Success!";
+				sResult = "[CRITICAL SUCCESS]";
 			end
 		end
 		if sResult == '' then
-			sResult = "Success!";
+			sResult = "[SUCCESS]";
 		end
 	else
 		for k, v in ipairs(aDoubles) do
 			if nResult == v then
-				sResult = "Critical Fail!";
+				sResult = "[CRITICAL FAIL]";
 			end
 		end
 		if sResult == '' then
-			sResult = "Fail!";
+			sResult = "[FAIL]";
 		end
 	end
 	
+	rMessage.text = rMessage.text .. "\n" .. "Target [" .. nTarget .. "]";
 	rMessage.text = rMessage.text .. "\n" .. sResult;
 	Comm.deliverChatMessage(rMessage); 
 	return true
@@ -31101,8 +31128,9 @@ end
 
 function SkillRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
-
+	 
 	 local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	 rMessage.text = rMessage.text .. " (" .. rRoll.skill_score .. "),";
 	 --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
 	local nodeChar = rSource.sCreatureNode;
@@ -31133,37 +31161,37 @@ function SkillRoll(rSource, rTarget, rRoll)
 	local nUseWillpower = DB.getValue(nodeChar .. ".use_willpower", 0);
 
 	if nUseStrength == 1 then 
-		rMessage.text = rMessage.text .. " Strength  (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Strength (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_strength", 0);
 		DB.setValue(nodeChar .. ".use_strength", "number", 0);
 	end
 	if nUseAgility == 1 then 
-		rMessage.text = rMessage.text .. " Agility  (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Agility (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_agility", 0);
 		DB.setValue(nodeChar .. ".use_agility", "number", 0);
 	end
 	if nUseCoordination == 1 then 
-		rMessage.text = rMessage.text .. " Coordination  (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Coordination (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_coordination", 0);
 		DB.setValue(nodeChar .. ".use_coordination", "number", 0);
 	end
 	if nUsePerception == 1 then 
-		rMessage.text = rMessage.text .. " Perception  (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Perception (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_perception", 0);
 		DB.setValue(nodeChar .. ".use_perception", "number", 0);
 	end
 	if nUseIntelligence == 1 then 
-		rMessage.text = rMessage.text .. " Intelligence  (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Intelligence (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_intelligence", 0);
 		DB.setValue(nodeChar .. ".use_intelligence", "number", 0);
 	end
 	if nUseWillpower == 1 then 
-		rMessage.text = rMessage.text .. " Will Power  (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Will Power (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_willpower", 0);
 		DB.setValue(nodeChar .. ".use_willpower", "number", 0);
 	end								
 
-	rMessage.text = rMessage.text .. " Skill (" .. rRoll.skill_score .. ")";
+	--rMessage.text = rMessage.text .. " Skill (" .. rRoll.skill_score .. ")";
 	if nMod ~= 0 then 
 		rMessage.text = rMessage.text .. " Modifier (" .. sDesc .. ")";
 		nTarget = nTarget + nMod;
@@ -31243,23 +31271,24 @@ function SkillRoll(rSource, rTarget, rRoll)
 	if nResult &lt;= nTarget then
 		for k, v in ipairs(aDoubles) do
 			if nResult == v then
-				sResult = "Critical Success!";
+				sResult = "[CRITICAL SUCCESS]";
 			end
 		end
 		if sResult == '' then
-			sResult = "Success!";
+			sResult = "[SUCCESS]";
 		end
 	else
 		for k, v in ipairs(aDoubles) do
 			if nResult == v then
-				sResult = "Critical Fail!";
+				sResult = "[CRITICAL FAIL]";
 			end
 		end
 		if sResult == '' then
-			sResult = "Fail!";
+			sResult = "[FAIL]";
 		end
 	end
 	
+	rMessage.text = rMessage.text .. "\n" .. "Target [" .. nTarget .. "]";
 	rMessage.text = rMessage.text .. "\n" .. sResult;
 	Comm.deliverChatMessage(rMessage); 
 	return true
@@ -31270,6 +31299,7 @@ function SpecialistRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
 
 	 local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	 rMessage.text = rMessage.text .. " (" .. rRoll.skill_score .. "),";
 	 --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
 	local nodeChar = rSource.sCreatureNode;
@@ -31300,37 +31330,37 @@ function SpecialistRoll(rSource, rTarget, rRoll)
 	local nUseWillpower = DB.getValue(nodeChar .. ".use_willpower", 0);
 
 	if nUseStrength == 1 then 
-		rMessage.text = rMessage.text .. " Strength  (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Strength (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_strength", 0);
 		DB.setValue(nodeChar .. ".use_strength", "number", 0);
 	end
 	if nUseAgility == 1 then 
-		rMessage.text = rMessage.text .. " Agility  (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Agility (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_agility", 0);
 		DB.setValue(nodeChar .. ".use_agility", "number", 0);
 	end
 	if nUseCoordination == 1 then 
-		rMessage.text = rMessage.text .. " Coordination  (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Coordination (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_coordination", 0);
 		DB.setValue(nodeChar .. ".use_coordination", "number", 0);
 	end
 	if nUsePerception == 1 then 
-		rMessage.text = rMessage.text .. " Perception  (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Perception (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_perception", 0);
 		DB.setValue(nodeChar .. ".use_perception", "number", 0);
 	end
 	if nUseIntelligence == 1 then 
-		rMessage.text = rMessage.text .. " Intelligence  (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Intelligence (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_intelligence", 0);
 		DB.setValue(nodeChar .. ".use_intelligence", "number", 0);
 	end
 	if nUseWillpower == 1 then 
-		rMessage.text = rMessage.text .. " Will Power  (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")\n";
+		rMessage.text = rMessage.text .. " Will Power (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")";
 		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_willpower", 0);
 		DB.setValue(nodeChar .. ".use_willpower", "number", 0);
 	end								
 
-	rMessage.text = rMessage.text .. " Skill (" .. rRoll.skill_score .. ")";
+	--rMessage.text = rMessage.text .. " Skill (" .. rRoll.skill_score .. ")";
 	if nMod ~= 0 then 
 		rMessage.text = rMessage.text .. " Modifier (" .. sDesc .. ")";
 		nTarget = nTarget + nMod;
@@ -31411,23 +31441,24 @@ function SpecialistRoll(rSource, rTarget, rRoll)
 	if nResult &lt;= nTarget then
 		for k, v in ipairs(aDoubles) do
 			if nResult == v then
-				sResult = "Critical Success!";
+				sResult = "[CRITICAL SUCCESS]";
 			end
 		end
 		if sResult == '' then
-			sResult = "Success!";
+			sResult = "[SUCCESS]";
 		end
 	else
 		for k, v in ipairs(aDoubles) do
 			if nResult == v then
-				sResult = "Critical Fail!";
+				sResult = "[CRITICAL FAIL]";
 			end
 		end
 		if sResult == '' then
-			sResult = "Fail!";
+			sResult = "[FAIL]";
 		end
 	end
 	
+	rMessage.text = rMessage.text .. "\n" .. "Target [" .. nTarget .. "]";
 	rMessage.text = rMessage.text .. "\n" .. sResult;
 	Comm.deliverChatMessage(rMessage); 
 	return true
@@ -31435,11 +31466,13 @@ end
 
 function InitiativeRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
+Debug.chat(rSource, "rSource");
 
      local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
      --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
     local nodeChar = rSource.sCreatureNode;
+    Debug.chat(nodeChar, "nodeChar");
     
      --  Capture the Character Node
      local sIcon;
@@ -31455,10 +31488,13 @@ function InitiativeRoll(rSource, rTarget, rRoll)
     Comm.deliverChatMessage(rMessage);
 
     local nResult = tonumber(ActionsManager.total(rRoll));
-    local sCTNode = ActorManager.getCTNodeName(rSource);
     
-    --Debug.chat(DB.findNode((sCTNode .. ".initresult")), "sCTNode");
+    local sCTNode = ActorManager.getCTNodeName(rSource);
+     -- Find the string value of the actor's CTNode
+    
     RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".initresult")), nResult);
+     -- Change the initresult node of the given actor
+    
     --DB.setValue(ActorManager.getCTNode(rSource), "initresult", "number", nResult);
 
 end
