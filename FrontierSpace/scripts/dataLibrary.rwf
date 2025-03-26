@@ -5,18 +5,25 @@
     <Script>
 function onInit()
 
+LibraryData.aRecords["starships"] = {
+		bExport = true,
+		aDataMap = { "starships", "reference.starships" }, 
+		sRecordDisplayClass = "starships", 
+		sSidebarCategory = "campaign", 
+		}
+		
 LibraryData.aRecords["skills"] = {
 		bExport = true,
 		aDataMap = { "skills", "reference.skills" }, 
 		sRecordDisplayClass = "skills", 
-		sSidebarCategory = "create", 
+		sSidebarCategory = "player", 
 		}
 
 LibraryData.aRecords["benefits"] = {
 		bExport = true,
 		aDataMap = { "benefits", "reference.benefits" }, 
 		sRecordDisplayClass = "benefits", 
-		sSidebarCategory = "create", 
+		sSidebarCategory = "player", 
 		}
 
 
