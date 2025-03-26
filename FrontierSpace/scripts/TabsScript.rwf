@@ -6,6 +6,10 @@
 	WindowTabManager.registerTab("vehicle", { sName = "main", sTabRes = "tab_main", sClass = "vehicle_main", bEmbed = true  });
 	WindowTabManager.registerTab("vehicle", { sName = "Notes", sText = "Notes", sClass = "vehicle_notes", bEmbed = true  });
 	WindowTabManager.registerTab("vehicle", { sName = "pictures", sTabRes = "tab_pictures", sClass = "record_content_pictures", bEmbed = true  });
+	WindowTabManager.registerTab("starships", { sName = "main", sTabRes = "tab_main", sClass = "ss_main", bEmbed = true  });
+	WindowTabManager.registerTab("starships", { sName = "equip", sText = "Equip", sClass = "ss_equip", bEmbed = true  });
+	WindowTabManager.registerTab("starships", { sName = "notes", sTabRes = "tab_notes", sClass = "ss_notes", bEmbed = true  });
+	WindowTabManager.registerTab("starships", { sName = "pictures", sTabRes = "tab_pictures", sClass = "record_content_pictures", bEmbed = true  });
 end
 </Script>
     <RegisterScript>true</RegisterScript>
