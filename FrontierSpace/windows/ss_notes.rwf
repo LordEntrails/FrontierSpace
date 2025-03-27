@@ -31,7 +31,7 @@
       {"Name":"MaximumHeight"},
       {"Name":"MaximumWidth"},
       {"Name":"Merge"},
-      {"Name":"MinimumHeight","Value":{"@xsi:type":"xsd:int","#text":"75"}},
+      {"Name":"MinimumHeight","Value":{"@xsi:type":"xsd:int","#text":"90"}},
       {"Name":"MinimumWidth"},
       {"Name":"NextTabTarget"},
       {"Name":"PrevTabTarget"},
