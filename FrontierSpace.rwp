@@ -2143,7 +2143,6 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"375"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"9"}}
 ]}}</Definition>
@@ -3546,7 +3545,6 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"496"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"10"}}
 ]}}</Definition>
@@ -20610,7 +20608,6 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"301"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"10"}}
 ]}}</Definition>
@@ -35985,13 +35982,11 @@ end
 
 function InitiativeRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
-Debug.chat(rSource, "rSource");
 
      local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
      --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
     local nodeChar = rSource.sCreatureNode;
-    Debug.chat(nodeChar, "nodeChar");
     
      --  Capture the Character Node
      local sIcon;
