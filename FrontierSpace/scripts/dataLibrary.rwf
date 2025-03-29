@@ -10,6 +10,12 @@ LibraryData.aRecords["starships"] = {
 		aDataMap = { "starships", "reference.starships" }, 
 		sRecordDisplayClass = "starships", 
 		sSidebarCategory = "campaign", 
+		tOptions = {
+			bExport = true,
+			bID = true,
+			bPicture = true,
+			bToken = true,
+		},
 		}
 		
 LibraryData.aRecords["skills"] = {
