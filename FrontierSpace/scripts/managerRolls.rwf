@@ -8,8 +8,10 @@
 	 local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
 	 --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
-	local nodeChar = rSource.sCreatureNode;
 	local nTarget = tonumber(rRoll.stat);
+	if rSource then 
+	
+	local nodeChar = rSource.sCreatureNode;
 	 
 	 --  Capture the Character Node
 	 local sIcon;
@@ -21,6 +23,7 @@
 	 end
 	 rMessage.icon = sIcon;
 	 --  set Chat Icon even when GM is rolling for player
+	 end
 	 
 --	table.sort(rRoll.aDice, function(a,b) return a.result&gt;b.result end)
 
@@ -44,6 +47,7 @@
 	
 	local sResult = '';
 	
+	if rSource then 
 	local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
 	local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
 	local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
@@ -105,6 +109,7 @@
 	DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
 	DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
 			
+	end
 	
 	if nResult &lt;= nTarget then
 		for k, v in ipairs(aDoubles) do
