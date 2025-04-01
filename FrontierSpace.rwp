@@ -18,7 +18,7 @@
     <LogoFile />
     <ImportRuleset>CoreRPG</ImportRuleset>
     <AdvancedDevelopment>true</AdvancedDevelopment>
-    <GeneratePath>C:\Users\Raithath\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
+    <GeneratePath>C:\Users\danha\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
     <UseAutoPath>false</UseAutoPath>
     <AnnouncementFont />
     <AnnouncementIcon />
@@ -35518,7 +35518,7 @@ end</Script>
 	local nTarget = tonumber(rRoll.stat);
 	
 	if rSource then 
-		local nodeChar = rSource.sCreatureNode;
+		nodeChar = rSource.sCreatureNode;
 	 
 		--  Capture the Character Node
 		local sIcon;
@@ -35554,68 +35554,70 @@ end</Script>
 	
 	local sResult = '';
 	
-	if rSource.sType ~= "npc" then 
-		local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
-		local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
-		local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
-		local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
-		local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
-		local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
+	if rSource then
+		if rSource.sType == "charsheet" then 
+			local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
+			local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
+			local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
+			local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
+			local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
+			local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
 
-		if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
-			rMessage.text = rMessage.text .. " Advantage";
-			local sResult = tostring(nResult);
+			if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
+				rMessage.text = rMessage.text .. " Advantage";
+				local sResult = tostring(nResult);
 
-			if string.len(sResult) == 2 then
-				nResult1 = string.sub(sResult, 1, 1);
-				nResult2 = string.sub(sResult, 2, 2);
-				local aValues = {nResult1, nResult2};
-				table.sort(aValues, function(a,b) return a&lt;b end);
-				sResult = aValues[1] .. aValues[2];
-				nResult = tonumber(sResult);
-			
---				rRoll.aDice[1].result = 10;
-				rRoll.aDice[1].value = nResult;
-							
-			
-		end
-		nResult = tonumber(sResult);
+				if string.len(sResult) == 2 then
+					nResult1 = string.sub(sResult, 1, 1);
+					nResult2 = string.sub(sResult, 2, 2);
+					local aValues = {nResult1, nResult2};
+					table.sort(aValues, function(a,b) return a&lt;b end);
+					sResult = aValues[1] .. aValues[2];
+					nResult = tonumber(sResult);
 				
-		elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
-			rMessage.text = rMessage.text .. " Disadvantage";
-		
-			local sResult = tostring(nResult);
-		
-			if string.len(sResult) == 1 then
-				sResult = sResult .. "0";
-				nResult = tonumber(sResult);
+	--				rRoll.aDice[1].result = 10;
+					rRoll.aDice[1].value = nResult;
+								
+				
+			end
+			nResult = tonumber(sResult);
+					
+			elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
+				rMessage.text = rMessage.text .. " Disadvantage";
 			
---				rRoll.aDice[1].result = 10;
-				rRoll.aDice[1].value = nResult;
-			else
-				nResult1 = string.sub(sResult, 1, 1);
-				nResult2 = string.sub(sResult, 2, 2);
-				local aValues = {nResult1, nResult2};
-				table.sort(aValues, function(a,b) return a&gt;b end);
-				sResult = aValues[1] .. aValues[2];
-				nResult = tonumber(sResult);
+				local sResult = tostring(nResult);
 			
---				rRoll.aDice[1].result = 10;
-				rRoll.aDice[1].value = nResult;
-						
+				if string.len(sResult) == 1 then
+					sResult = sResult .. "0";
+					nResult = tonumber(sResult);
+				
+	--				rRoll.aDice[1].result = 10;
+					rRoll.aDice[1].value = nResult;
+				else
+					nResult1 = string.sub(sResult, 1, 1);
+					nResult2 = string.sub(sResult, 2, 2);
+					local aValues = {nResult1, nResult2};
+					table.sort(aValues, function(a,b) return a&gt;b end);
+					sResult = aValues[1] .. aValues[2];
+					nResult = tonumber(sResult);
+				
+	--				rRoll.aDice[1].result = 10;
+					rRoll.aDice[1].value = nResult;
+							
+				
+				end
+			nResult = tonumber(sResult);
 			
 			end
-		nResult = tonumber(sResult);
 		
+			DB.setValue(nodeChar .. ".adv_strength", "string", 0);
+			DB.setValue(nodeChar .. ".adv_agility", "string", 0);
+			DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
+			DB.setValue(nodeChar .. ".adv_perception", "string", 0);
+			DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
+			DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
+				
 		end
-	
-		DB.setValue(nodeChar .. ".adv_strength", "string", 0);
-		DB.setValue(nodeChar .. ".adv_agility", "string", 0);
-		DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
-		DB.setValue(nodeChar .. ".adv_perception", "string", 0);
-		DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
-		DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
-			
 	end
 	
 	if nResult &lt;= nTarget then
