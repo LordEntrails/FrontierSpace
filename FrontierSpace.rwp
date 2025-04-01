@@ -18,7 +18,7 @@
     <LogoFile />
     <ImportRuleset>CoreRPG</ImportRuleset>
     <AdvancedDevelopment>true</AdvancedDevelopment>
-    <GeneratePath>C:\Users\danha\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
+    <GeneratePath>C:\Users\Raithath\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
     <UseAutoPath>false</UseAutoPath>
     <AnnouncementFont />
     <AnnouncementIcon />
@@ -6579,7 +6579,6 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"496"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"10"}}
 ]}}</Definition>
@@ -19002,7 +19001,7 @@ end
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>cost</ControlName>
-    <ZIndex>4</ZIndex>
+    <ZIndex>8</ZIndex>
     <ControlClass>FGStringField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -19066,7 +19065,7 @@ end
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>cost_label</ControlName>
-    <ZIndex>3</ZIndex>
+    <ZIndex>7</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -19201,7 +19200,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>item_type</ControlName>
-    <ZIndex>2</ZIndex>
+    <ZIndex>6</ZIndex>
     <ControlClass>FGComboBox</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -19310,7 +19309,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>sub_defense</ControlName>
-    <ZIndex>9</ZIndex>
+    <ZIndex>13</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -19366,7 +19365,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>sub_gear</ControlName>
-    <ZIndex>7</ZIndex>
+    <ZIndex>11</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -19422,7 +19421,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>sub_implant</ControlName>
-    <ZIndex>11</ZIndex>
+    <ZIndex>15</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -19478,7 +19477,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>sub_scanner</ControlName>
-    <ZIndex>10</ZIndex>
+    <ZIndex>14</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -19534,7 +19533,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>sub_weapon</ControlName>
-    <ZIndex>8</ZIndex>
+    <ZIndex>12</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -19590,7 +19589,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>type_label</ControlName>
-    <ZIndex>1</ZIndex>
+    <ZIndex>5</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -19645,7 +19644,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>weight</ControlName>
-    <ZIndex>6</ZIndex>
+    <ZIndex>10</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -19710,7 +19709,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>item_main</WindowName>
     <ControlName>weight_label</ControlName>
-    <ZIndex>5</ZIndex>
+    <ZIndex>9</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -35517,21 +35516,21 @@ end</Script>
 	 --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
 	local nTarget = tonumber(rRoll.stat);
-	if rSource then 
 	
-	local nodeChar = rSource.sCreatureNode;
+	if rSource then 
+		local nodeChar = rSource.sCreatureNode;
 	 
-	 --  Capture the Character Node
-	 local sIcon;
-	 if rSource.sType == "npc" then
+		--  Capture the Character Node
+		local sIcon;
+		if rSource.sType == "npc" then
 		  sIcon = "portrait_gm_token";
-	 else
+		else
 		  sIcon = DB.getValue(nodeChar .. ".token");
 		  sIcon = string.gsub(sIcon, "token", "chat");
-	 end
-	 rMessage.icon = sIcon;
-	 --  set Chat Icon even when GM is rolling for player
-	 end
+		end
+		rMessage.icon = sIcon;
+		--  set Chat Icon even when GM is rolling for player
+	end
 	 
 --	table.sort(rRoll.aDice, function(a,b) return a.result&gt;b.result end)
 
@@ -35555,67 +35554,67 @@ end</Script>
 	
 	local sResult = '';
 	
-	if rSource then 
-	local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
-	local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
-	local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
-	local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
-	local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
-	local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
+	if rSource.sType ~= "npc" then 
+		local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
+		local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
+		local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
+		local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
+		local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
+		local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
 
-	if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
-		rMessage.text = rMessage.text .. " Advantage";
-		local sResult = tostring(nResult);
+		if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
+			rMessage.text = rMessage.text .. " Advantage";
+			local sResult = tostring(nResult);
 
-		if string.len(sResult) == 2 then
-			nResult1 = string.sub(sResult, 1, 1);
-			nResult2 = string.sub(sResult, 2, 2);
-			local aValues = {nResult1, nResult2};
-			table.sort(aValues, function(a,b) return a&lt;b end);
-			sResult = aValues[1] .. aValues[2];
-			nResult = tonumber(sResult);
+			if string.len(sResult) == 2 then
+				nResult1 = string.sub(sResult, 1, 1);
+				nResult2 = string.sub(sResult, 2, 2);
+				local aValues = {nResult1, nResult2};
+				table.sort(aValues, function(a,b) return a&lt;b end);
+				sResult = aValues[1] .. aValues[2];
+				nResult = tonumber(sResult);
 			
---			rRoll.aDice[1].result = 10;
-			rRoll.aDice[1].value = nResult;
-						
+--				rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
+							
 			
 		end
 		nResult = tonumber(sResult);
 				
-	elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
-		rMessage.text = rMessage.text .. " Disadvantage";
+		elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
+			rMessage.text = rMessage.text .. " Disadvantage";
 		
-		local sResult = tostring(nResult);
+			local sResult = tostring(nResult);
 		
-		if string.len(sResult) == 1 then
-			sResult = sResult .. "0";
-			nResult = tonumber(sResult);
+			if string.len(sResult) == 1 then
+				sResult = sResult .. "0";
+				nResult = tonumber(sResult);
 			
---			rRoll.aDice[1].result = 10;
-			rRoll.aDice[1].value = nResult;
-		else
-			nResult1 = string.sub(sResult, 1, 1);
-			nResult2 = string.sub(sResult, 2, 2);
-			local aValues = {nResult1, nResult2};
-			table.sort(aValues, function(a,b) return a&gt;b end);
-			sResult = aValues[1] .. aValues[2];
-			nResult = tonumber(sResult);
+--				rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
+			else
+				nResult1 = string.sub(sResult, 1, 1);
+				nResult2 = string.sub(sResult, 2, 2);
+				local aValues = {nResult1, nResult2};
+				table.sort(aValues, function(a,b) return a&gt;b end);
+				sResult = aValues[1] .. aValues[2];
+				nResult = tonumber(sResult);
 			
---			rRoll.aDice[1].result = 10;
-			rRoll.aDice[1].value = nResult;
+--				rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
 						
 			
-		end
+			end
 		nResult = tonumber(sResult);
 		
-	end
+		end
 	
-	DB.setValue(nodeChar .. ".adv_strength", "string", 0);
-	DB.setValue(nodeChar .. ".adv_agility", "string", 0);
-	DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
-	DB.setValue(nodeChar .. ".adv_perception", "string", 0);
-	DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
-	DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
+		DB.setValue(nodeChar .. ".adv_strength", "string", 0);
+		DB.setValue(nodeChar .. ".adv_agility", "string", 0);
+		DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
+		DB.setValue(nodeChar .. ".adv_perception", "string", 0);
+		DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
+		DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
 			
 	end
 	
@@ -35653,20 +35652,22 @@ function SkillRoll(rSource, rTarget, rRoll)
 	 rMessage.text = rMessage.text .. " (" .. rRoll.skill_score .. "),";
 	 --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
-	local nodeChar = rSource.sCreatureNode;
 	local nTarget = tonumber(rRoll.skill_score);
+	
+	if rSource then
+		local nodeChar = rSource.sCreatureNode;
 	 
-	 --  Capture the Character Node
-	 local sIcon;
-	 if rSource.sType == "npc" then
-		  sIcon = "portrait_gm_token";
-	 else
-		  sIcon = DB.getValue(nodeChar .. ".token");
-		  sIcon = string.gsub(sIcon, "token", "chat");
+		 --  Capture the Character Node
+		 local sIcon;
+		 if rSource.sType == "npc" then
+			  sIcon = "portrait_gm_token";
+		 else
+			  sIcon = DB.getValue(nodeChar .. ".token");
+			  sIcon = string.gsub(sIcon, "token", "chat");
+		 end
+		 rMessage.icon = sIcon;
+		 --  set Chat Icon even when GM is rolling for player
 	 end
-	 rMessage.icon = sIcon;
-	 --  set Chat Icon even when GM is rolling for player
-	 
 --	table.sort(rRoll.aDice, function(a,b) return a.result&gt;b.result end)
 
 	local nResult = ActionsManager.total(rRoll);
