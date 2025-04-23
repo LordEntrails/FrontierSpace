@@ -169,43 +169,47 @@ function SkillRoll(rSource, rTarget, rRoll)
 	local sDesc, nMod = ModifierStack.getStack(true);
 	ModifierStack.reset();
 
-	local nUseStrength = DB.getValue(nodeChar .. ".use_strength", 0);
-	local nUseAgility = DB.getValue(nodeChar .. ".use_agility", 0);
-	local nUseCoordination = DB.getValue(nodeChar .. ".use_coordination", 0);
-	local nUsePerception = DB.getValue(nodeChar ..  ".use_perception", 0);
-	local nUseIntelligence = DB.getValue(nodeChar .. ".use_intelligence", 0);
-	local nUseWillpower = DB.getValue(nodeChar .. ".use_willpower", 0);
+	if rSource then
+		if rSource.sType == "charsheet" then 
+			local nUseStrength = DB.getValue(nodeChar .. ".use_strength", 0);
+			local nUseAgility = DB.getValue(nodeChar .. ".use_agility", 0);
+			local nUseCoordination = DB.getValue(nodeChar .. ".use_coordination", 0);
+			local nUsePerception = DB.getValue(nodeChar ..  ".use_perception", 0);
+			local nUseIntelligence = DB.getValue(nodeChar .. ".use_intelligence", 0);
+			local nUseWillpower = DB.getValue(nodeChar .. ".use_willpower", 0);
 
-	if nUseStrength == 1 then 
-		rMessage.text = rMessage.text .. " Strength (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_strength", 0);
-		DB.setValue(nodeChar .. ".use_strength", "number", 0);
-	end
-	if nUseAgility == 1 then 
-		rMessage.text = rMessage.text .. " Agility (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_agility", 0);
-		DB.setValue(nodeChar .. ".use_agility", "number", 0);
-	end
-	if nUseCoordination == 1 then 
-		rMessage.text = rMessage.text .. " Coordination (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_coordination", 0);
-		DB.setValue(nodeChar .. ".use_coordination", "number", 0);
-	end
-	if nUsePerception == 1 then 
-		rMessage.text = rMessage.text .. " Perception (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_perception", 0);
-		DB.setValue(nodeChar .. ".use_perception", "number", 0);
-	end
-	if nUseIntelligence == 1 then 
-		rMessage.text = rMessage.text .. " Intelligence (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_intelligence", 0);
-		DB.setValue(nodeChar .. ".use_intelligence", "number", 0);
-	end
-	if nUseWillpower == 1 then 
-		rMessage.text = rMessage.text .. " Will Power (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_willpower", 0);
-		DB.setValue(nodeChar .. ".use_willpower", "number", 0);
-	end								
+			if nUseStrength == 1 then 
+				rMessage.text = rMessage.text .. " Strength (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_strength", 0);
+				DB.setValue(nodeChar .. ".use_strength", "number", 0);
+			end
+			if nUseAgility == 1 then 
+				rMessage.text = rMessage.text .. " Agility (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_agility", 0);
+				DB.setValue(nodeChar .. ".use_agility", "number", 0);
+			end
+			if nUseCoordination == 1 then 
+				rMessage.text = rMessage.text .. " Coordination (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_coordination", 0);
+				DB.setValue(nodeChar .. ".use_coordination", "number", 0);
+			end
+			if nUsePerception == 1 then 
+				rMessage.text = rMessage.text .. " Perception (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_perception", 0);
+				DB.setValue(nodeChar .. ".use_perception", "number", 0);
+			end
+			if nUseIntelligence == 1 then 
+				rMessage.text = rMessage.text .. " Intelligence (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_intelligence", 0);
+				DB.setValue(nodeChar .. ".use_intelligence", "number", 0);
+			end
+			if nUseWillpower == 1 then 
+				rMessage.text = rMessage.text .. " Will Power (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_willpower", 0);
+				DB.setValue(nodeChar .. ".use_willpower", "number", 0);
+			end		
+		end
+	end						
 
 	--rMessage.text = rMessage.text .. " Skill (" .. rRoll.skill_score .. ")";
 	if nMod ~= 0 then 
@@ -513,7 +517,74 @@ function InitiativeRoll(rSource, rTarget, rRoll)
 
 end
 
-</Script>
+--[[function StarshipRoll(rSource, rTarget, rRoll, ssNode)
+	local nTarget = tonumber(rRoll.stat);
+	local sSource = self.getSource();
+	Debug.chat(rSource, "rSource");
+	Debug.chat(ssNode, "ssNode");
+	--local structure = getDatabaseNode();
+	--local rThing = DB.getChild(structure, "..");
+	--Debug.chat(rThing, "rThing");
+	
+	local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	
+	local nResult = ActionsManager.total(rRoll);
+	local sDesc, nMod = ModifierStack.getStack(true);
+	ModifierStack.reset();
+
+	rMessage.text = rMessage.text .. " (" .. rRoll.stat .. ")";
+	if nMod ~= 0 then 
+		rMessage.text = rMessage.text .. " Modifier (" .. sDesc .. ")";
+		nTarget = nTarget + nMod;
+	end
+	
+	sResult = rollResult(nTarget, nResult, rRoll);
+	
+	rMessage.text = rMessage.text .. "\n" .. "Target [" .. nTarget .. "]";
+	rMessage.text = rMessage.text .. "\n" .. sResult;
+	Comm.deliverChatMessage(rMessage); 
+	--Debug.chat(rSource, "rSource");
+	--local rSource = ActorManager.
+	--Debug.chat(rSource, "rSource");
+	--local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	--Comm.deliverChatMessage(rMessage);
+	--Debug.chat(ActorManager.getRecordType(rSource), "rSource");
+	
+end]]
+
+function rollResult(nTarget, nResult, rRoll)
+	if nResult == 100 then
+		rRoll.aDice[1].result = 0;
+		rRoll.aDice[1].value = 0;
+		nResult = 0;
+	end
+
+	local aDoubles = {0,00,11,22,33,44,55,66,77,88,99};
+	
+	local sResult = '';
+	
+		if nResult &lt;= nTarget then
+		for k, v in ipairs(aDoubles) do
+			if nResult == v then
+				sResult = "[CRITICAL SUCCESS]";
+			end
+		end
+		if sResult == '' then
+			sResult = "[SUCCESS]";
+		end
+	else
+		for k, v in ipairs(aDoubles) do
+			if nResult == v then
+				sResult = "[CRITICAL FAIL]";
+			end
+		end
+		if sResult == '' then
+			sResult = "[FAIL]";
+		end
+	end
+	
+	return sResult;
+end</Script>
     <RegisterScript>true</RegisterScript>
     <Encoding />
   </Scripts>

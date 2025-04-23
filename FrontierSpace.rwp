@@ -10,7 +10,7 @@
     <Website />
     <Version>1</Version>
     <Release>1</Release>
-    <RulesetWizardVersion>0.9.3</RulesetWizardVersion>
+    <RulesetWizardVersion>0.9.4</RulesetWizardVersion>
     <RulesetList>CoreRPG</RulesetList>
     <LoadOrder />
     <Comments />
@@ -19,7 +19,7 @@ Ruleset version 1.1</Announcement>
     <LogoFile />
     <ImportRuleset>CoreRPG</ImportRuleset>
     <AdvancedDevelopment>true</AdvancedDevelopment>
-    <GeneratePath>C:\Users\danha\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
+    <GeneratePath>C:\Users\Raithath\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
     <UseAutoPath>false</UseAutoPath>
     <AnnouncementFont />
     <AnnouncementIcon />
@@ -6581,7 +6581,6 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"496"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"10"}}
 ]}}</Definition>
@@ -7830,7 +7829,7 @@ end
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"skills_list_iadd"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -7893,7 +7892,7 @@ end
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"skills_list_iedit"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -23242,7 +23241,7 @@ end
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>adv_computer</ControlName>
-    <ZIndex>69</ZIndex>
+    <ZIndex>62</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23306,7 +23305,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>adv_handling</ControlName>
-    <ZIndex>66</ZIndex>
+    <ZIndex>59</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23370,7 +23369,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>adv_scanners</ControlName>
-    <ZIndex>68</ZIndex>
+    <ZIndex>61</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23434,7 +23433,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>adv_structure</ControlName>
-    <ZIndex>65</ZIndex>
+    <ZIndex>58</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23498,7 +23497,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>adv_targeting</ControlName>
-    <ZIndex>67</ZIndex>
+    <ZIndex>60</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23562,7 +23561,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>atmo</ControlName>
-    <ZIndex>19</ZIndex>
+    <ZIndex>17</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23627,7 +23626,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>atmo_label</ControlName>
-    <ZIndex>16</ZIndex>
+    <ZIndex>14</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23682,7 +23681,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>atmo_unit_label</ControlName>
-    <ZIndex>22</ZIndex>
+    <ZIndex>20</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23737,7 +23736,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>cap_crnt_label</ControlName>
-    <ZIndex>41</ZIndex>
+    <ZIndex>39</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23792,7 +23791,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>cap_max_label</ControlName>
-    <ZIndex>39</ZIndex>
+    <ZIndex>37</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23847,7 +23846,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>capacitor_label</ControlName>
-    <ZIndex>26</ZIndex>
+    <ZIndex>24</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23902,7 +23901,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>capacitors</ControlName>
-    <ZIndex>31</ZIndex>
+    <ZIndex>29</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -23967,7 +23966,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>capacitors_current</ControlName>
-    <ZIndex>32</ZIndex>
+    <ZIndex>30</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24032,7 +24031,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>cargo</ControlName>
-    <ZIndex>52</ZIndex>
+    <ZIndex>50</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24097,7 +24096,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>cargo_crnt_label</ControlName>
-    <ZIndex>57</ZIndex>
+    <ZIndex>55</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24152,7 +24151,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>cargo_current</ControlName>
-    <ZIndex>53</ZIndex>
+    <ZIndex>51</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24217,7 +24216,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>cargo_label</ControlName>
-    <ZIndex>47</ZIndex>
+    <ZIndex>45</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24272,7 +24271,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>cargo_max_label</ControlName>
-    <ZIndex>56</ZIndex>
+    <ZIndex>54</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24327,7 +24326,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>cargo_unit_label</ControlName>
-    <ZIndex>48</ZIndex>
+    <ZIndex>46</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24437,7 +24436,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>computer</ControlName>
-    <ZIndex>12</ZIndex>
+    <ZIndex>10</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24557,7 +24556,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>crew</ControlName>
-    <ZIndex>50</ZIndex>
+    <ZIndex>48</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24622,7 +24621,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>crew_label</ControlName>
-    <ZIndex>45</ZIndex>
+    <ZIndex>43</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24677,7 +24676,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>fuel</ControlName>
-    <ZIndex>29</ZIndex>
+    <ZIndex>27</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24742,7 +24741,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>fuel_crnt_label</ControlName>
-    <ZIndex>38</ZIndex>
+    <ZIndex>36</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24797,7 +24796,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>fuel_current</ControlName>
-    <ZIndex>30</ZIndex>
+    <ZIndex>28</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24862,7 +24861,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>fuel_label</ControlName>
-    <ZIndex>25</ZIndex>
+    <ZIndex>23</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24917,7 +24916,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>fuel_max_label</ControlName>
-    <ZIndex>36</ZIndex>
+    <ZIndex>34</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -24972,7 +24971,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>handling</ControlName>
-    <ZIndex>9</ZIndex>
+    <ZIndex>7</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25092,7 +25091,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>hp_crnt_label</ControlName>
-    <ZIndex>35</ZIndex>
+    <ZIndex>33</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25147,7 +25146,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>hp_max_label</ControlName>
-    <ZIndex>33</ZIndex>
+    <ZIndex>31</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25202,7 +25201,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>hull_points</ControlName>
-    <ZIndex>27</ZIndex>
+    <ZIndex>25</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25267,7 +25266,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>hull_points_current</ControlName>
-    <ZIndex>28</ZIndex>
+    <ZIndex>26</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25332,7 +25331,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>hull_points_label</ControlName>
-    <ZIndex>24</ZIndex>
+    <ZIndex>22</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25387,7 +25386,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>inventory_label</ControlName>
-    <ZIndex>23</ZIndex>
+    <ZIndex>21</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25442,7 +25441,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>nova</ControlName>
-    <ZIndex>17</ZIndex>
+    <ZIndex>15</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25507,7 +25506,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>nova_label</ControlName>
-    <ZIndex>14</ZIndex>
+    <ZIndex>12</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25562,7 +25561,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>nova_unit_label</ControlName>
-    <ZIndex>20</ZIndex>
+    <ZIndex>18</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25617,7 +25616,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>passenger_label</ControlName>
-    <ZIndex>46</ZIndex>
+    <ZIndex>44</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25672,7 +25671,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>passengers</ControlName>
-    <ZIndex>51</ZIndex>
+    <ZIndex>49</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25737,7 +25736,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>performance_label</ControlName>
-    <ZIndex>13</ZIndex>
+    <ZIndex>11</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25792,7 +25791,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>prov_crnt_label</ControlName>
-    <ZIndex>59</ZIndex>
+    <ZIndex>57</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25847,7 +25846,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>prov_max_label</ControlName>
-    <ZIndex>58</ZIndex>
+    <ZIndex>56</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25902,7 +25901,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>provisions</ControlName>
-    <ZIndex>54</ZIndex>
+    <ZIndex>52</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -25967,7 +25966,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>provisions _current</ControlName>
-    <ZIndex>55</ZIndex>
+    <ZIndex>53</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26032,7 +26031,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>provisions_label</ControlName>
-    <ZIndex>49</ZIndex>
+    <ZIndex>47</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26087,7 +26086,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>pulse</ControlName>
-    <ZIndex>18</ZIndex>
+    <ZIndex>16</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26152,7 +26151,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>pulse_label</ControlName>
-    <ZIndex>15</ZIndex>
+    <ZIndex>13</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26207,7 +26206,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>pulse_unit_label</ControlName>
-    <ZIndex>21</ZIndex>
+    <ZIndex>19</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26262,7 +26261,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>recharge</ControlName>
-    <ZIndex>40</ZIndex>
+    <ZIndex>38</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26327,7 +26326,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>recharge_label</ControlName>
-    <ZIndex>44</ZIndex>
+    <ZIndex>42</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26437,7 +26436,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>scanners</ControlName>
-    <ZIndex>11</ZIndex>
+    <ZIndex>9</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26502,7 +26501,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>scoop_label</ControlName>
-    <ZIndex>43</ZIndex>
+    <ZIndex>41</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26557,7 +26556,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>scoops</ControlName>
-    <ZIndex>37</ZIndex>
+    <ZIndex>35</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26735,7 +26734,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>structure</ControlName>
-    <ZIndex>8</ZIndex>
+    <ZIndex>6</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26800,7 +26799,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>subsystem</ControlName>
-    <ZIndex>34</ZIndex>
+    <ZIndex>32</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26865,7 +26864,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>subsystem_label</ControlName>
-    <ZIndex>42</ZIndex>
+    <ZIndex>40</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -26920,7 +26919,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ss_main</WindowName>
     <ControlName>targeting</ControlName>
-    <ZIndex>10</ZIndex>
+    <ZIndex>8</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -37400,43 +37399,47 @@ function SkillRoll(rSource, rTarget, rRoll)
 	local sDesc, nMod = ModifierStack.getStack(true);
 	ModifierStack.reset();
 
-	local nUseStrength = DB.getValue(nodeChar .. ".use_strength", 0);
-	local nUseAgility = DB.getValue(nodeChar .. ".use_agility", 0);
-	local nUseCoordination = DB.getValue(nodeChar .. ".use_coordination", 0);
-	local nUsePerception = DB.getValue(nodeChar ..  ".use_perception", 0);
-	local nUseIntelligence = DB.getValue(nodeChar .. ".use_intelligence", 0);
-	local nUseWillpower = DB.getValue(nodeChar .. ".use_willpower", 0);
+	if rSource then
+		if rSource.sType == "charsheet" then 
+			local nUseStrength = DB.getValue(nodeChar .. ".use_strength", 0);
+			local nUseAgility = DB.getValue(nodeChar .. ".use_agility", 0);
+			local nUseCoordination = DB.getValue(nodeChar .. ".use_coordination", 0);
+			local nUsePerception = DB.getValue(nodeChar ..  ".use_perception", 0);
+			local nUseIntelligence = DB.getValue(nodeChar .. ".use_intelligence", 0);
+			local nUseWillpower = DB.getValue(nodeChar .. ".use_willpower", 0);
 
-	if nUseStrength == 1 then 
-		rMessage.text = rMessage.text .. " Strength (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_strength", 0);
-		DB.setValue(nodeChar .. ".use_strength", "number", 0);
-	end
-	if nUseAgility == 1 then 
-		rMessage.text = rMessage.text .. " Agility (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_agility", 0);
-		DB.setValue(nodeChar .. ".use_agility", "number", 0);
-	end
-	if nUseCoordination == 1 then 
-		rMessage.text = rMessage.text .. " Coordination (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_coordination", 0);
-		DB.setValue(nodeChar .. ".use_coordination", "number", 0);
-	end
-	if nUsePerception == 1 then 
-		rMessage.text = rMessage.text .. " Perception (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_perception", 0);
-		DB.setValue(nodeChar .. ".use_perception", "number", 0);
-	end
-	if nUseIntelligence == 1 then 
-		rMessage.text = rMessage.text .. " Intelligence (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_intelligence", 0);
-		DB.setValue(nodeChar .. ".use_intelligence", "number", 0);
-	end
-	if nUseWillpower == 1 then 
-		rMessage.text = rMessage.text .. " Will Power (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")";
-		nTarget = nTarget + DB.getValue(nodeChar .. ".stat_willpower", 0);
-		DB.setValue(nodeChar .. ".use_willpower", "number", 0);
-	end								
+			if nUseStrength == 1 then 
+				rMessage.text = rMessage.text .. " Strength (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_strength", 0);
+				DB.setValue(nodeChar .. ".use_strength", "number", 0);
+			end
+			if nUseAgility == 1 then 
+				rMessage.text = rMessage.text .. " Agility (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_agility", 0);
+				DB.setValue(nodeChar .. ".use_agility", "number", 0);
+			end
+			if nUseCoordination == 1 then 
+				rMessage.text = rMessage.text .. " Coordination (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_coordination", 0);
+				DB.setValue(nodeChar .. ".use_coordination", "number", 0);
+			end
+			if nUsePerception == 1 then 
+				rMessage.text = rMessage.text .. " Perception (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_perception", 0);
+				DB.setValue(nodeChar .. ".use_perception", "number", 0);
+			end
+			if nUseIntelligence == 1 then 
+				rMessage.text = rMessage.text .. " Intelligence (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_intelligence", 0);
+				DB.setValue(nodeChar .. ".use_intelligence", "number", 0);
+			end
+			if nUseWillpower == 1 then 
+				rMessage.text = rMessage.text .. " Will Power (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")";
+				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_willpower", 0);
+				DB.setValue(nodeChar .. ".use_willpower", "number", 0);
+			end		
+		end
+	end						
 
 	--rMessage.text = rMessage.text .. " Skill (" .. rRoll.skill_score .. ")";
 	if nMod ~= 0 then 
@@ -37744,7 +37747,74 @@ function InitiativeRoll(rSource, rTarget, rRoll)
 
 end
 
-</Script>
+--[[function StarshipRoll(rSource, rTarget, rRoll, ssNode)
+	local nTarget = tonumber(rRoll.stat);
+	local sSource = self.getSource();
+	Debug.chat(rSource, "rSource");
+	Debug.chat(ssNode, "ssNode");
+	--local structure = getDatabaseNode();
+	--local rThing = DB.getChild(structure, "..");
+	--Debug.chat(rThing, "rThing");
+	
+	local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	
+	local nResult = ActionsManager.total(rRoll);
+	local sDesc, nMod = ModifierStack.getStack(true);
+	ModifierStack.reset();
+
+	rMessage.text = rMessage.text .. " (" .. rRoll.stat .. ")";
+	if nMod ~= 0 then 
+		rMessage.text = rMessage.text .. " Modifier (" .. sDesc .. ")";
+		nTarget = nTarget + nMod;
+	end
+	
+	sResult = rollResult(nTarget, nResult, rRoll);
+	
+	rMessage.text = rMessage.text .. "\n" .. "Target [" .. nTarget .. "]";
+	rMessage.text = rMessage.text .. "\n" .. sResult;
+	Comm.deliverChatMessage(rMessage); 
+	--Debug.chat(rSource, "rSource");
+	--local rSource = ActorManager.
+	--Debug.chat(rSource, "rSource");
+	--local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	--Comm.deliverChatMessage(rMessage);
+	--Debug.chat(ActorManager.getRecordType(rSource), "rSource");
+	
+end]]
+
+function rollResult(nTarget, nResult, rRoll)
+	if nResult == 100 then
+		rRoll.aDice[1].result = 0;
+		rRoll.aDice[1].value = 0;
+		nResult = 0;
+	end
+
+	local aDoubles = {0,00,11,22,33,44,55,66,77,88,99};
+	
+	local sResult = '';
+	
+		if nResult &lt;= nTarget then
+		for k, v in ipairs(aDoubles) do
+			if nResult == v then
+				sResult = "[CRITICAL SUCCESS]";
+			end
+		end
+		if sResult == '' then
+			sResult = "[SUCCESS]";
+		end
+	else
+		for k, v in ipairs(aDoubles) do
+			if nResult == v then
+				sResult = "[CRITICAL FAIL]";
+			end
+		end
+		if sResult == '' then
+			sResult = "[FAIL]";
+		end
+	end
+	
+	return sResult;
+end</Script>
     <RegisterScript>true</RegisterScript>
     <Encoding />
   </Scripts>
