@@ -37457,66 +37457,71 @@ function SkillRoll(rSource, rTarget, rRoll)
 	
 	local sResult = '';
 	
-	local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
-	local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
-	local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
-	local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
-	local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
-	local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
+	if rSource then
+		if rSource.sType == "charsheet" then  
+			local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
+			local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
+			local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
+			local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
+			local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
+			local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
 
-	if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
-		rMessage.text = rMessage.text .. " Advantage";
-		local sResult = tostring(nResult);
+			if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
+				rMessage.text = rMessage.text .. " Advantage";
+				local sResult = tostring(nResult);
 
-		if string.len(sResult) == 2 then
-			nResult1 = string.sub(sResult, 1, 1);
-			nResult2 = string.sub(sResult, 2, 2);
-			local aValues = {nResult1, nResult2};
-			table.sort(aValues, function(a,b) return a&lt;b end);
-			sResult = aValues[1] .. aValues[2];
-			nResult = tonumber(sResult);
-			
---			rRoll.aDice[1].result = 10;
-			rRoll.aDice[1].value = nResult;
+				if string.len(sResult) == 2 then
+					nResult1 = string.sub(sResult, 1, 1);
+					nResult2 = string.sub(sResult, 2, 2);
+					local aValues = {nResult1, nResult2};
+					table.sort(aValues, function(a,b) return a&lt;b end);
+					sResult = aValues[1] .. aValues[2];
+					nResult = tonumber(sResult);
+					
+		--			rRoll.aDice[1].result = 10;
+					rRoll.aDice[1].value = nResult;
+								
+					
+				end
+				nResult = tonumber(sResult);
 						
-			
-		end
-		nResult = tonumber(sResult);
+			elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
+				rMessage.text = rMessage.text .. " Disadvantage";
 				
-	elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
-		rMessage.text = rMessage.text .. " Disadvantage";
-		
-		local sResult = tostring(nResult);
-		
-		if string.len(sResult) == 1 then
-			sResult = sResult .. "0";
-			nResult = tonumber(sResult);
-			
---			rRoll.aDice[1].result = 10;
-			rRoll.aDice[1].value = nResult;
-		else
-			nResult1 = string.sub(sResult, 1, 1);
-			nResult2 = string.sub(sResult, 2, 2);
-			local aValues = {nResult1, nResult2};
-			table.sort(aValues, function(a,b) return a&gt;b end);
-			sResult = aValues[1] .. aValues[2];
-			nResult = tonumber(sResult);
-			
---			rRoll.aDice[1].result = 10;
-			rRoll.aDice[1].value = nResult;
-						
-			
-		end
-		nResult = tonumber(sResult);
-		
-	end
+				local sResult = tostring(nResult);
+				
+				if string.len(sResult) == 1 then
+					sResult = sResult .. "0";
+					nResult = tonumber(sResult);
+					
+		--			rRoll.aDice[1].result = 10;
+					rRoll.aDice[1].value = nResult;
+				else
+					nResult1 = string.sub(sResult, 1, 1);
+					nResult2 = string.sub(sResult, 2, 2);
+					local aValues = {nResult1, nResult2};
+					table.sort(aValues, function(a,b) return a&gt;b end);
+					sResult = aValues[1] .. aValues[2];
+					nResult = tonumber(sResult);
+					
+		--			rRoll.aDice[1].result = 10;
+					rRoll.aDice[1].value = nResult;
+								
+					
+				end
+				nResult = tonumber(sResult);
+				
+			end
 	
-	DB.setValue(nodeChar .. ".adv_strength", "string", 0);
-	DB.setValue(nodeChar .. ".adv_agility", "string", 0);
-	DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
-	DB.setValue(nodeChar .. ".adv_perception", "string", 0);
-	DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
-	DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
+			DB.setValue(nodeChar .. ".adv_strength", "string", 0);
+			DB.setValue(nodeChar .. ".adv_agility", "string", 0);
+			DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
+			DB.setValue(nodeChar .. ".adv_perception", "string", 0);
+			DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
+			DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
+	
+		end
+	end
 		
 	if nResult &lt;= nTarget then
 		for k, v in ipairs(aDoubles) do
@@ -37768,7 +37773,7 @@ end
 		nTarget = nTarget + nMod;
 	end
 	
-	sResult = rollResult(nTarget, nResult, rRoll);
+	local sResult = rollResult(nTarget, nResult, rRoll);
 	
 	rMessage.text = rMessage.text .. "\n" .. "Target [" .. nTarget .. "]";
 	rMessage.text = rMessage.text .. "\n" .. sResult;
