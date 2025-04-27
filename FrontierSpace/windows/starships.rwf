@@ -221,16 +221,7 @@
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
-    <LUACode>function onLockChanged()
-
-	if ss_main and ss_main.subwindow then
-		ss_main.subwindow.update();
-	end
-
-	local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
-	name.setReadOnly(bReadOnly);
-			
-end</LUACode>
+    <LUACode />
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
