@@ -1114,7 +1114,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"308"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"309"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"165"}}
 ]}}</Definition>
     <LUACode />
@@ -1180,23 +1180,23 @@
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"330"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"165"}}
 ]}}</Definition>
-    <LUACode>
-function onValueChanged()
-	super.onValueChanged();
-
-	-- This template gets rid of the relative positioning of the headers, 
-	-- so their position must be adjusted manually when the delete button is shown and hidden.	
-	if getValue() == 1 then
-		window.location_label.setStaticBounds(-253, 12, 80, 20);
-		window.weight_label.setStaticBounds(-160, 12, 30, 20);
-		window.carried_header.setStaticBounds(-121, 12, 20, 20);
-	else
-		window.location_label.setStaticBounds(-233, 12, 80, 20);
-		window.weight_label.setStaticBounds(-140, 12, 30, 20);
-		window.carried_header.setStaticBounds(-101, 12, 20, 20);
-	end
-end
-</LUACode>
+    <LUACode>--
+--function onValueChanged()
+--	super.onValueChanged();
+--
+--	-- This template gets rid of the relative positioning of the headers, 
+--	-- so their position must be adjusted manually when the delete button is shown and hidden.	
+--	if getValue() == 1 then
+--		window.location_label.setStaticBounds(-253, 12, 80, 20);
+--		window.weight_label.setStaticBounds(-160, 12, 30, 20);
+--		window.carried_header.setStaticBounds(-121, 12, 20, 20);
+--	else
+--		window.location_label.setStaticBounds(-233, 12, 80, 20);
+--		window.weight_label.setStaticBounds(-140, 12, 30, 20);
+--		window.carried_header.setStaticBounds(-101, 12, 20, 20);
+--	end
+--end
+--</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
