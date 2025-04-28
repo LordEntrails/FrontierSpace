@@ -2,7 +2,7 @@
   <WindowControls>
     <WindowName>sub_veh_equip</WindowName>
     <ControlName>item_description</ControlName>
-    <ZIndex>6</ZIndex>
+    <ZIndex>1</ZIndex>
     <ControlClass>FGFormattedText</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
