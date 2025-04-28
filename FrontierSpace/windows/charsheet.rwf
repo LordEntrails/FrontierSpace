@@ -1037,10 +1037,12 @@ end</LUACode>
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"XMLCode","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"375"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"376"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"9"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>--&lt;portraitsize&gt;88&lt;/portraitsize&gt;
+--&lt;widgetsize&gt;40&lt;/widgetsize&gt;
+--See: CoreRPG\campaign\campaign_pictures.xml</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>

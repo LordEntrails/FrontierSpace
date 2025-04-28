@@ -104,7 +104,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"15"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"16"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"100"}}
 ]}}</Definition>
     <LUACode />
@@ -180,7 +180,7 @@
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"starships"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DataSource"},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"450"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"465"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"365"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
