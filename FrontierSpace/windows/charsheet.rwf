@@ -1000,7 +1000,7 @@ end</LUACode>
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"portrait"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
       {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"picture_charsheet_v2"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":[{"PropertyName":"portraitsize","PropertyValue":"88","PropertyAttributes":"portraitsize","ParentElement":null},{"PropertyName":"widgetsize","PropertyValue":"40","PropertyAttributes":"widgetsize","ParentElement":null}]}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"88"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"138"}},
@@ -1037,12 +1037,10 @@ end</LUACode>
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"XMLCode","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"376"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"377"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"9"}}
 ]}}</Definition>
-    <LUACode>--&lt;portraitsize&gt;88&lt;/portraitsize&gt;
---&lt;widgetsize&gt;40&lt;/widgetsize&gt;
---See: CoreRPG\campaign\campaign_pictures.xml</LUACode>
+    <LUACode />
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
