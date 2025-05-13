@@ -55,10 +55,7 @@
 	local nodeChar = window.getDatabaseNode();
 
 	DB.setValue(nodeChar, "adv_strength", "string", 0);
-	DB.setValue(nodeChar, "adv_coordination", "string", 0);
 	DB.setValue(nodeChar, "adv_perception", "string", 0);
-	DB.setValue(nodeChar, "adv_intelligence", "string", 0);
-	DB.setValue(nodeChar, "adv_willpower", "string", 0);
 
 end
 </LUACode>
@@ -122,9 +119,6 @@ end
 
 	DB.setValue(nodeChar, "adv_strength", "string", 0);
 	DB.setValue(nodeChar, "adv_agility", "string", 0);
-	DB.setValue(nodeChar, "adv_coordination", "string", 0);
-	DB.setValue(nodeChar, "adv_intelligence", "string", 0);
-	DB.setValue(nodeChar, "adv_willpower", "string", 0);
 
 end
 </LUACode>
@@ -187,10 +181,7 @@ end
 	local nodeChar = window.getDatabaseNode();
 
 	DB.setValue(nodeChar, "adv_agility", "string", 0);
-	DB.setValue(nodeChar, "adv_coordination", "string", 0);
 	DB.setValue(nodeChar, "adv_perception", "string", 0);
-	DB.setValue(nodeChar, "adv_intelligence", "string", 0);
-	DB.setValue(nodeChar, "adv_willpower", "string", 0);
 
 end
 </LUACode>
