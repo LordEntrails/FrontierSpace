@@ -10,7 +10,7 @@
     <Website />
     <Version>1</Version>
     <Release>1</Release>
-    <RulesetWizardVersion>0.9.3</RulesetWizardVersion>
+    <RulesetWizardVersion>0.9.4</RulesetWizardVersion>
     <RulesetList>CoreRPG</RulesetList>
     <LoadOrder />
     <Comments />
@@ -19,7 +19,7 @@ Ruleset version 1.1</Announcement>
     <LogoFile />
     <ImportRuleset>CoreRPG</ImportRuleset>
     <AdvancedDevelopment>true</AdvancedDevelopment>
-    <GeneratePath>C:\Users\danha\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
+    <GeneratePath>C:\Users\Raithath\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
     <UseAutoPath>false</UseAutoPath>
     <AnnouncementFont />
     <AnnouncementIcon />
@@ -2192,7 +2192,7 @@ end</LUACode>
       {"Name":"Columns","Value":{"@xsi:type":"PropertyColumns","ColumnWidth":"222","FillDown":{"@xsi:nil":"true"},"FillWidth":"true"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"abilities"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"newfocus","PropertyValue":"name","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"newfocus","PropertyValue":"name","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DataSource","Value":{"@xsi:type":"xsd:string","#text":".abilitylist"}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"423"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -2257,7 +2257,7 @@ end</LUACode>
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"abilities_iadd"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"abilities","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"abilities","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -2320,7 +2320,7 @@ end</LUACode>
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"abilities_iedit"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"abilities","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"abilities","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -7487,7 +7487,7 @@ end
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"skills_list_iadd"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -7550,7 +7550,7 @@ end
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"skills_list_iedit"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
@@ -33339,7 +33339,7 @@ end
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"73"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"57"}}
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"56"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -33654,7 +33654,7 @@ end
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"benefits_list_iadd"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"benefits_list","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"benefits_list","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"15"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
@@ -33717,7 +33717,7 @@ end
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"benefits_list_iedit"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"benefits_list","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"benefits_list","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"15"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
@@ -34257,7 +34257,7 @@ end
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"equipment_iadd"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"equipment","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"equipment","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"15"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
@@ -34320,7 +34320,7 @@ end
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"equipment_iedit"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"equipment","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"equipment","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"15"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
@@ -35103,7 +35103,7 @@ end</LUACode>
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"skills_list_iadd"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"15"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
@@ -35166,7 +35166,7 @@ end</LUACode>
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"skills_list_iedit"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"target","PropertyValue":"skills_list","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"15"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
@@ -41145,21 +41145,22 @@ end</Script>
     <Script>function StatRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
 
-	 local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
-	 --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
+	local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	--  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
 	local nTarget = tonumber(rRoll.stat);
+	local nodeChar = ActorManager.getCreatureNodeName(rSource);
 	
 	if rSource then 
-		nodeChar = rSource.sCreatureNode;
+		--nodeChar = rSource.sCreatureNode;
 	 
 		--  Capture the Character Node
 		local sIcon;
 		if rSource.sType == "npc" then
-		  sIcon = "portrait_gm_token";
+			sIcon = "portrait_gm_token";
 		else
-		  sIcon = DB.getValue(nodeChar .. ".token");
-		  sIcon = string.gsub(sIcon, "token", "chat");
+			sIcon = DB.getValue(nodeChar .. ".token");
+			sIcon = string.gsub(sIcon, "token", "chat");
 		end
 		rMessage.icon = sIcon;
 		--  set Chat Icon even when GM is rolling for player
@@ -41186,71 +41187,71 @@ end</Script>
 	local aDoubles = {0,00,11,22,33,44,55,66,77,88,99};
 	
 	local sResult = '';
-	
+
+	--local bIsPC = ActorManager.isPC(rSource);
+
 	if rSource then
-		if rSource.sType == "charsheet" then 
-			local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
-			local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
-			local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
-			local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
-			local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
-			local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
+		local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
+		local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
+		local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
+		local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
+		local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
+		local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
 
-			if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
-				rMessage.text = rMessage.text .. " Advantage";
-				local sResult = tostring(nResult);
+		if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
+			rMessage.text = rMessage.text .. " Advantage";
+			local sResult = tostring(nResult);
 
-				if string.len(sResult) == 2 then
-					nResult1 = string.sub(sResult, 1, 1);
-					nResult2 = string.sub(sResult, 2, 2);
-					local aValues = {nResult1, nResult2};
-					table.sort(aValues, function(a,b) return a&lt;b end);
-					sResult = aValues[1] .. aValues[2];
-					nResult = tonumber(sResult);
+			if string.len(sResult) == 2 then
+				nResult1 = string.sub(sResult, 1, 1);
+				nResult2 = string.sub(sResult, 2, 2);
+				local aValues = {nResult1, nResult2};
+				table.sort(aValues, function(a,b) return a&lt;b end);
+				sResult = aValues[1] .. aValues[2];
+				nResult = tonumber(sResult);
 				
-	--				rRoll.aDice[1].result = 10;
-					rRoll.aDice[1].value = nResult;
+	--			rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
 								
-				
-			end
-			nResult = tonumber(sResult);
+			
+		end
+		nResult = tonumber(sResult);
 					
-			elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
-				rMessage.text = rMessage.text .. " Disadvantage";
+		elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
+			rMessage.text = rMessage.text .. " Disadvantage";
 			
-				local sResult = tostring(nResult);
+			local sResult = tostring(nResult);
 			
-				if string.len(sResult) == 1 then
-					sResult = sResult .. "0";
-					nResult = tonumber(sResult);
+			if string.len(sResult) == 1 then
+				sResult = sResult .. "0";
+				nResult = tonumber(sResult);
 				
-	--				rRoll.aDice[1].result = 10;
-					rRoll.aDice[1].value = nResult;
-				else
-					nResult1 = string.sub(sResult, 1, 1);
-					nResult2 = string.sub(sResult, 2, 2);
-					local aValues = {nResult1, nResult2};
-					table.sort(aValues, function(a,b) return a&gt;b end);
-					sResult = aValues[1] .. aValues[2];
-					nResult = tonumber(sResult);
+	--			rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
+			else
+				nResult1 = string.sub(sResult, 1, 1);
+				nResult2 = string.sub(sResult, 2, 2);
+				local aValues = {nResult1, nResult2};
+				table.sort(aValues, function(a,b) return a&gt;b end);
+				sResult = aValues[1] .. aValues[2];
+				nResult = tonumber(sResult);
 				
-	--				rRoll.aDice[1].result = 10;
-					rRoll.aDice[1].value = nResult;
+	--			rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
 							
 				
-				end
-			nResult = tonumber(sResult);
-			
 			end
-		
-			DB.setValue(nodeChar .. ".adv_strength", "string", 0);
-			DB.setValue(nodeChar .. ".adv_agility", "string", 0);
-			DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
-			DB.setValue(nodeChar .. ".adv_perception", "string", 0);
-			DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
-			DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
-				
+		nResult = tonumber(sResult);
+			
 		end
+		
+		DB.setValue(nodeChar .. ".adv_strength", "string", 0);
+		DB.setValue(nodeChar .. ".adv_agility", "string", 0);
+		DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
+		DB.setValue(nodeChar .. ".adv_perception", "string", 0);
+		DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
+		DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
+				
 	end
 	
 	if nResult &lt;= nTarget then
@@ -41283,73 +41284,74 @@ end
 function SkillRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
 	 
-	 local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
-	 rMessage.text = rMessage.text .. " (" .. rRoll.skill_score .. "),";
-	 --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
+	local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	rMessage.text = rMessage.text .. " (" .. rRoll.skill_score .. "),";
+	--  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
 	local nTarget = tonumber(rRoll.skill_score);
+	local nodeChar = ActorManager.getCreatureNodeName(rSource);
 	
 	if rSource then
-		local nodeChar = rSource.sCreatureNode;
+		--nodeChar = rSource.sCreatureNode;
 	 
-		 --  Capture the Character Node
-		 local sIcon;
-		 if rSource.sType == "npc" then
-			  sIcon = "portrait_gm_token";
-		 else
-			  sIcon = DB.getValue(nodeChar .. ".token");
-			  sIcon = string.gsub(sIcon, "token", "chat");
-		 end
-		 rMessage.icon = sIcon;
-		 --  set Chat Icon even when GM is rolling for player
-	 end
+		--  Capture the Character Node
+		local sIcon;
+		if rSource.sType == "npc" then
+			sIcon = "portrait_gm_token";
+		else
+			sIcon = DB.getValue(nodeChar .. ".token");
+			sIcon = string.gsub(sIcon, "token", "chat");
+		end
+		rMessage.icon = sIcon;
+		--  set Chat Icon even when GM is rolling for player
+	end
 --	table.sort(rRoll.aDice, function(a,b) return a.result&gt;b.result end)
 
 	local nResult = ActionsManager.total(rRoll);
 	local sDesc, nMod = ModifierStack.getStack(true);
 	ModifierStack.reset();
 
-	if rSource then
-		if rSource.sType == "charsheet" then 
-			local nUseStrength = DB.getValue(nodeChar .. ".use_strength", 0);
-			local nUseAgility = DB.getValue(nodeChar .. ".use_agility", 0);
-			local nUseCoordination = DB.getValue(nodeChar .. ".use_coordination", 0);
-			local nUsePerception = DB.getValue(nodeChar ..  ".use_perception", 0);
-			local nUseIntelligence = DB.getValue(nodeChar .. ".use_intelligence", 0);
-			local nUseWillpower = DB.getValue(nodeChar .. ".use_willpower", 0);
+	local bIsPC = ActorManager.isPC(rSource);
 
-			if nUseStrength == 1 then 
-				rMessage.text = rMessage.text .. " Strength (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")";
-				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_strength", 0);
-				DB.setValue(nodeChar .. ".use_strength", "number", 0);
-			end
-			if nUseAgility == 1 then 
-				rMessage.text = rMessage.text .. " Agility (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")";
-				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_agility", 0);
-				DB.setValue(nodeChar .. ".use_agility", "number", 0);
-			end
-			if nUseCoordination == 1 then 
-				rMessage.text = rMessage.text .. " Coordination (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")";
-				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_coordination", 0);
-				DB.setValue(nodeChar .. ".use_coordination", "number", 0);
-			end
-			if nUsePerception == 1 then 
-				rMessage.text = rMessage.text .. " Perception (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")";
-				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_perception", 0);
-				DB.setValue(nodeChar .. ".use_perception", "number", 0);
-			end
-			if nUseIntelligence == 1 then 
-				rMessage.text = rMessage.text .. " Intelligence (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")";
-				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_intelligence", 0);
-				DB.setValue(nodeChar .. ".use_intelligence", "number", 0);
-			end
-			if nUseWillpower == 1 then 
-				rMessage.text = rMessage.text .. " Will Power (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")";
-				nTarget = nTarget + DB.getValue(nodeChar .. ".stat_willpower", 0);
-				DB.setValue(nodeChar .. ".use_willpower", "number", 0);
-			end		
+	if bIsPC then
+		local nUseStrength = DB.getValue(nodeChar .. ".use_strength", 0);
+		local nUseAgility = DB.getValue(nodeChar .. ".use_agility", 0);
+		local nUseCoordination = DB.getValue(nodeChar .. ".use_coordination", 0);
+		local nUsePerception = DB.getValue(nodeChar ..  ".use_perception", 0);
+		local nUseIntelligence = DB.getValue(nodeChar .. ".use_intelligence", 0);
+		local nUseWillpower = DB.getValue(nodeChar .. ".use_willpower", 0);
+
+		if nUseStrength == 1 then 
+			rMessage.text = rMessage.text .. " Strength (" ..  DB.getValue(nodeChar .. ".stat_strength", 0) .. ")";
+			nTarget = nTarget + DB.getValue(nodeChar .. ".stat_strength", 0);
+			DB.setValue(nodeChar .. ".use_strength", "number", 0);
 		end
-	end						
+		if nUseAgility == 1 then 
+			rMessage.text = rMessage.text .. " Agility (" ..  DB.getValue(nodeChar .. ".stat_agility", 0) .. ")";
+			nTarget = nTarget + DB.getValue(nodeChar .. ".stat_agility", 0);
+			DB.setValue(nodeChar .. ".use_agility", "number", 0);
+		end
+		if nUseCoordination == 1 then 
+			rMessage.text = rMessage.text .. " Coordination (" ..  DB.getValue(nodeChar .. ".stat_coordination", 0) .. ")";
+			nTarget = nTarget + DB.getValue(nodeChar .. ".stat_coordination", 0);
+			DB.setValue(nodeChar .. ".use_coordination", "number", 0);
+		end
+		if nUsePerception == 1 then 
+			rMessage.text = rMessage.text .. " Perception (" ..  DB.getValue(nodeChar .. ".stat_perception", 0) .. ")";
+			nTarget = nTarget + DB.getValue(nodeChar .. ".stat_perception", 0);
+			DB.setValue(nodeChar .. ".use_perception", "number", 0);
+		end
+		if nUseIntelligence == 1 then 
+			rMessage.text = rMessage.text .. " Intelligence (" ..  DB.getValue(nodeChar .. ".stat_intelligence", 0) .. ")";
+			nTarget = nTarget + DB.getValue(nodeChar .. ".stat_intelligence", 0);
+			DB.setValue(nodeChar .. ".use_intelligence", "number", 0);
+		end
+		if nUseWillpower == 1 then 
+			rMessage.text = rMessage.text .. " Will Power (" ..  DB.getValue(nodeChar .. ".stat_willpower", 0) .. ")";
+			nTarget = nTarget + DB.getValue(nodeChar .. ".stat_willpower", 0);
+			DB.setValue(nodeChar .. ".use_willpower", "number", 0);
+		end		
+	end					
 
 	--rMessage.text = rMessage.text .. " Skill (" .. rRoll.skill_score .. ")";
 	if nMod ~= 0 then 
@@ -41367,70 +41369,68 @@ function SkillRoll(rSource, rTarget, rRoll)
 	
 	local sResult = '';
 	
-	if rSource then
-		if rSource.sType == "charsheet" then  
-			local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
-			local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
-			local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
-			local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
-			local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
-			local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
+	if bIsPC then 
+		local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
+		local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
+		local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
+		local nAdvPerception = DB.getValue(nodeChar .. ".adv_perception", 0);
+		local nAdvIntelligence = DB.getValue(nodeChar .. ".adv_intelligence", 0);
+		local nAdvWillpower = DB.getValue(nodeChar .. ".adv_willpower", 0);
 
-			if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
-				rMessage.text = rMessage.text .. " Advantage";
-				local sResult = tostring(nResult);
+		if nAdvStrength == '1' or nAdvAgility == '1' or nAdvCoordination == '1' or nAdvPerception == '1' or nAdvIntelligence == '1' or nAdvWillpower == '1' then 
+			rMessage.text = rMessage.text .. " Advantage";
+			local sResult = tostring(nResult);
 
-				if string.len(sResult) == 2 then
-					nResult1 = string.sub(sResult, 1, 1);
-					nResult2 = string.sub(sResult, 2, 2);
-					local aValues = {nResult1, nResult2};
-					table.sort(aValues, function(a,b) return a&lt;b end);
-					sResult = aValues[1] .. aValues[2];
-					nResult = tonumber(sResult);
+			if string.len(sResult) == 2 then
+				nResult1 = string.sub(sResult, 1, 1);
+				nResult2 = string.sub(sResult, 2, 2);
+				local aValues = {nResult1, nResult2};
+				table.sort(aValues, function(a,b) return a&lt;b end);
+				sResult = aValues[1] .. aValues[2];
+				nResult = tonumber(sResult);
 					
-		--			rRoll.aDice[1].result = 10;
-					rRoll.aDice[1].value = nResult;
+		--		rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
 								
 					
-				end
-				nResult = tonumber(sResult);
-						
-			elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
-				rMessage.text = rMessage.text .. " Disadvantage";
-				
-				local sResult = tostring(nResult);
-				
-				if string.len(sResult) == 1 then
-					sResult = sResult .. "0";
-					nResult = tonumber(sResult);
-					
-		--			rRoll.aDice[1].result = 10;
-					rRoll.aDice[1].value = nResult;
-				else
-					nResult1 = string.sub(sResult, 1, 1);
-					nResult2 = string.sub(sResult, 2, 2);
-					local aValues = {nResult1, nResult2};
-					table.sort(aValues, function(a,b) return a&gt;b end);
-					sResult = aValues[1] .. aValues[2];
-					nResult = tonumber(sResult);
-					
-		--			rRoll.aDice[1].result = 10;
-					rRoll.aDice[1].value = nResult;
-								
-					
-				end
-				nResult = tonumber(sResult);
-				
 			end
-	
-			DB.setValue(nodeChar .. ".adv_strength", "string", 0);
-			DB.setValue(nodeChar .. ".adv_agility", "string", 0);
-			DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
-			DB.setValue(nodeChar .. ".adv_perception", "string", 0);
-			DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
-			DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
-	
+			nResult = tonumber(sResult);
+						
+		elseif nAdvStrength == '-1' or nAdvAgility == '-1' or nAdvCoordination == '-1' or nAdvPerception == '-1' or nAdvIntelligence == '-1' or nAdvWillpower == '-1' then 
+			rMessage.text = rMessage.text .. " Disadvantage";
+				
+			local sResult = tostring(nResult);
+				
+			if string.len(sResult) == 1 then
+				sResult = sResult .. "0";
+				nResult = tonumber(sResult);
+					
+		--		rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
+			else
+				nResult1 = string.sub(sResult, 1, 1);
+				nResult2 = string.sub(sResult, 2, 2);
+				local aValues = {nResult1, nResult2};
+				table.sort(aValues, function(a,b) return a&gt;b end);
+				sResult = aValues[1] .. aValues[2];
+				nResult = tonumber(sResult);
+					
+		--		rRoll.aDice[1].result = 10;
+				rRoll.aDice[1].value = nResult;
+								
+					
+			end
+			nResult = tonumber(sResult);
+				
 		end
+	
+		DB.setValue(nodeChar .. ".adv_strength", "string", 0);
+		DB.setValue(nodeChar .. ".adv_agility", "string", 0);
+		DB.setValue(nodeChar .. ".adv_coordination", "string", 0);
+		DB.setValue(nodeChar .. ".adv_perception", "string", 0);
+		DB.setValue(nodeChar .. ".adv_intelligence", "string", 0);
+		DB.setValue(nodeChar .. ".adv_willpower", "string", 0);
+	
 	end
 		
 	if nResult &lt;= nTarget then
@@ -41662,7 +41662,7 @@ function InitiativeRoll(rSource, rTarget, rRoll)
 
 end
 
---[[function StarshipRoll(rSource, rTarget, rRoll, ssNode)
+--[[function StarshipRoll(rSource, rTarget, rRoll)
 	local nTarget = tonumber(rRoll.stat);
 	local sSource = self.getSource();
 	Debug.chat(rSource, "rSource");
