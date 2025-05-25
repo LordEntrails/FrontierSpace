@@ -15,7 +15,7 @@ LibraryData.aRecords["starships"] = {
 			bID = true,
 			bPicture = true,
 			bToken = true,
-		},
+			},
 		}
 		
 LibraryData.aRecords["skills"] = {
@@ -31,7 +31,6 @@ LibraryData.aRecords["benefits"] = {
 		sRecordDisplayClass = "benefits", 
 		sSidebarCategory = "player", 
 		}
-
 
 	ColorManager.setSidebarCategoryIconColor("dedede");
 	ColorManager.setSidebarCategoryTextColor("dedede");
