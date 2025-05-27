@@ -60,7 +60,7 @@
   <WindowControls>
     <WindowName>skills</WindowName>
     <ControlName>skills_scroll</ControlName>
-    <ZIndex>6</ZIndex>
+    <ZIndex>2</ZIndex>
     <ControlClass>FGScrollBar</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -114,7 +114,7 @@
   <WindowControls>
     <WindowName>skills</WindowName>
     <ControlName>sub_skills_content</ControlName>
-    <ZIndex>5</ZIndex>
+    <ZIndex>1</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
