@@ -2,7 +2,7 @@
   <WindowControls>
     <WindowName>sub_npc_creature</WindowName>
     <ControlName>adv_agility</ControlName>
-    <ZIndex>20</ZIndex>
+    <ZIndex>16</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -65,7 +65,7 @@ end
   <WindowControls>
     <WindowName>sub_npc_creature</WindowName>
     <ControlName>adv_perception</ControlName>
-    <ZIndex>21</ZIndex>
+    <ZIndex>17</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -128,7 +128,7 @@ end
   <WindowControls>
     <WindowName>sub_npc_creature</WindowName>
     <ControlName>adv_strength</ControlName>
-    <ZIndex>19</ZIndex>
+    <ZIndex>15</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -311,7 +311,7 @@ end
   <WindowControls>
     <WindowName>sub_npc_creature</WindowName>
     <ControlName>behavior</ControlName>
-    <ZIndex>23</ZIndex>
+    <ZIndex>19</ZIndex>
     <ControlClass>FGStringField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -375,7 +375,7 @@ end
   <WindowControls>
     <WindowName>sub_npc_creature</WindowName>
     <ControlName>behavior_label</ControlName>
-    <ZIndex>22</ZIndex>
+    <ZIndex>18</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -896,7 +896,7 @@ end
   <WindowControls>
     <WindowName>sub_npc_creature</WindowName>
     <ControlName>move_mode</ControlName>
-    <ZIndex>24</ZIndex>
+    <ZIndex>20</ZIndex>
     <ControlClass>FGStringField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -960,7 +960,7 @@ end
   <WindowControls>
     <WindowName>sub_npc_creature</WindowName>
     <ControlName>npc_actions</ControlName>
-    <ZIndex>25</ZIndex>
+    <ZIndex>21</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
