@@ -504,31 +504,35 @@ end
 function InitiativeRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
 
-     local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
-     --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
+    local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+    --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
     local nodeChar = rSource.sCreatureNode;
+    --  Capture the Character Node
     
-     --  Capture the Character Node
-     local sIcon;
-     if rSource.sType == "npc" then
-          sIcon = "portrait_gm_token";
-     else
-          sIcon = DB.getValue(nodeChar .. ".token");
-          sIcon = string.gsub(sIcon, "token", "chat");
-     end
-     rMessage.icon = sIcon;
-     --  set Chat Icon even when GM is rolling for player
+    local sIcon;
+    if rSource.sType == "npc" then
+		sIcon = "portrait_gm_token";
+    else
+		sIcon = DB.getValue(nodeChar .. ".token");
+        if sIcon then
+			sIcon = string.gsub(sIcon, "token", "chat");
+		end
+    end
+    if sIcon then
+		rMessage.icon = sIcon;
+	end
+    --  set Chat Icon even when GM is rolling for player
      
     Comm.deliverChatMessage(rMessage);
 
     local nResult = tonumber(ActionsManager.total(rRoll));
     
     local sCTNode = ActorManager.getCTNodeName(rSource);
-     -- Find the string value of the actor's CTNode
+    -- Find the string value of the actor's CTNode
     
     RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".initresult")), nResult);
-     -- Change the initresult node of the given actor
+    -- Change the initresult node of the given actor
     
     --DB.setValue(ActorManager.getCTNode(rSource), "initresult", "number", nResult);
 
@@ -575,12 +579,13 @@ function rollResult(nTarget, nResult, rRoll)
 		rRoll.aDice[1].value = 0;
 		nResult = 0;
 	end
+	--  Changes dice range from 1-100 to 0-99
 
 	local aDoubles = {0,00,11,22,33,44,55,66,77,88,99};
 	
 	local sResult = '';
 	
-		if nResult &lt;= nTarget then
+	if nResult &lt;= nTarget then
 		for k, v in ipairs(aDoubles) do
 			if nResult == v then
 				sResult = "[CRITICAL SUCCESS]";
@@ -599,6 +604,7 @@ function rollResult(nTarget, nResult, rRoll)
 			sResult = "[FAIL]";
 		end
 	end
+	--  Check roll result against target and determine if it was a critical
 	
 	return sResult;
 end</Script>

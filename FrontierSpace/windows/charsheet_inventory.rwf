@@ -107,7 +107,7 @@
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
     <LUACode>function onInit()
-    CharEncumbranceManager.addStandardCalc()
+    CharEncumbranceManager.addStandardCalc();
 end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
