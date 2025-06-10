@@ -20,9 +20,13 @@
 			sIcon = "portrait_gm_token";
 		else
 			sIcon = DB.getValue(nodeChar .. ".token");
-			sIcon = string.gsub(sIcon, "token", "chat");
+			if sIcon then
+				sIcon = string.gsub(sIcon, "token", "chat");
+			end
 		end
-		rMessage.icon = sIcon;
+		if sIcon then
+			rMessage.icon = sIcon;
+		end
 		--  set Chat Icon even when GM is rolling for player
 	end
 	 
@@ -160,9 +164,13 @@ function SkillRoll(rSource, rTarget, rRoll)
 			sIcon = "portrait_gm_token";
 		else
 			sIcon = DB.getValue(nodeChar .. ".token");
-			sIcon = string.gsub(sIcon, "token", "chat");
+			if sIcon then
+				sIcon = string.gsub(sIcon, "token", "chat");
+			end
 		end
-		rMessage.icon = sIcon;
+		if sIcon then
+			rMessage.icon = sIcon;
+		end
 		--  set Chat Icon even when GM is rolling for player
 	end
 --	table.sort(rRoll.aDice, function(a,b) return a.result&gt;b.result end)
@@ -323,23 +331,27 @@ end
 function SpecialistRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
 
-	 local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
-	 rMessage.text = rMessage.text .. " (" .. rRoll.skill_score .. "),";
-	 --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
+	local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
+	rMessage.text = rMessage.text .. " (" .. rRoll.skill_score .. "),";
+	--  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
 	local nodeChar = rSource.sCreatureNode;
 	local nTarget = tonumber(rRoll.skill_score);
 	 
-	 --  Capture the Character Node
-	 local sIcon;
-	 if rSource.sType == "npc" then
-		  sIcon = "portrait_gm_token";
-	 else
-		  sIcon = DB.getValue(nodeChar .. ".token");
-		  sIcon = string.gsub(sIcon, "token", "chat");
-	 end
-	 rMessage.icon = sIcon;
-	 --  set Chat Icon even when GM is rolling for player
+	--  Capture the Character Node
+	local sIcon;
+	if rSource.sType == "npc" then
+		sIcon = "portrait_gm_token";
+	else
+		sIcon = DB.getValue(nodeChar .. ".token");
+		if sIcon then
+			sIcon = string.gsub(sIcon, "token", "chat");
+		end
+	end
+	if sIcon then
+		rMessage.icon = sIcon;
+	end
+	--  set Chat Icon even when GM is rolling for player
 	 
 --	table.sort(rRoll.aDice, function(a,b) return a.result&gt;b.result end)
 
