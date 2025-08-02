@@ -224,18 +224,18 @@
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"66"}}
 ]}}</Definition>
     <LUACode>
-function onValueChanged()
-	local nodeBPMax = getDatabaseNode();
+--function onValueChanged()
+	--local nodeBPMax = getDatabaseNode();
 	
-	local nodeChar = DB.getChild(nodeBPMax, "..");
+	--local nodeChar = DB.getChild(nodeBPMax, "..");
 	 -- Gets the parent node (charsheet) one layer up
 	 
-	local sCTNode = ActorManager.getCTNodeName(nodeChar);
+--	local sCTNode = ActorManager.getCTNodeName(nodeChar);
 	
-	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".BodyPointsMax"));
-	
-	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".bptotal")), nValue);
-end
+--	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".BodyPointsMax"));
+	--
+	--RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".bptotal")), nValue);
+--end
 </LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
@@ -2376,18 +2376,18 @@ end
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"66"}}
 ]}}</Definition>
     <LUACode>
-function onValueChanged()
-	local nodeWounds = getDatabaseNode();
+--function onValueChanged()
+--	local nodeWounds = getDatabaseNode();
 	
-	local nodeChar = DB.getChild(nodeWounds, "..");
+--	local nodeChar = DB.getChild(nodeWounds, "..");
 	 -- Gets the parent node (charsheet) one layer up
 	 
-	local sCTNode = ActorManager.getCTNodeName(nodeChar);
+--	local sCTNode = ActorManager.getCTNodeName(nodeChar);
 	
-	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".WoundsCurrent"));
+--	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".WoundsCurrent"));
 	
-	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".wounds")), nValue);
-end
+--	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".wounds")), nValue);
+--end
 </LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />

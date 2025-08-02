@@ -2423,18 +2423,18 @@ end</LUACode>
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"66"}}
 ]}}</Definition>
     <LUACode>
-function onValueChanged()
-	local nodeBPMax = getDatabaseNode();
+--function onValueChanged()
+	--local nodeBPMax = getDatabaseNode();
 	
-	local nodeChar = DB.getChild(nodeBPMax, "..");
+	--local nodeChar = DB.getChild(nodeBPMax, "..");
 	 -- Gets the parent node (charsheet) one layer up
 	 
-	local sCTNode = ActorManager.getCTNodeName(nodeChar);
+--	local sCTNode = ActorManager.getCTNodeName(nodeChar);
 	
-	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".BodyPointsMax"));
-	
-	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".bptotal")), nValue);
-end
+--	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".BodyPointsMax"));
+	--
+	--RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".bptotal")), nValue);
+--end
 </LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
@@ -4575,18 +4575,18 @@ end
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"66"}}
 ]}}</Definition>
     <LUACode>
-function onValueChanged()
-	local nodeWounds = getDatabaseNode();
+--function onValueChanged()
+--	local nodeWounds = getDatabaseNode();
 	
-	local nodeChar = DB.getChild(nodeWounds, "..");
+--	local nodeChar = DB.getChild(nodeWounds, "..");
 	 -- Gets the parent node (charsheet) one layer up
 	 
-	local sCTNode = ActorManager.getCTNodeName(nodeChar);
+--	local sCTNode = ActorManager.getCTNodeName(nodeChar);
 	
-	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".WoundsCurrent"));
+--	local nValue = DB.getValue(DB.findNode(ActorManager.getCreatureNodeName(nodeChar) .. ".WoundsCurrent"));
 	
-	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".wounds")), nValue);
-end
+--	RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".wounds")), nValue);
+--end
 </LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
@@ -11130,6 +11130,7 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"33"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"160"}}
 ]}}</Definition>
@@ -11737,6 +11738,7 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"403"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
@@ -11989,7 +11991,7 @@ end
       {"Name":"Center"},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"nonid_name"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"empty","PropertyValue":null,"PropertyAttributes":"textres=\"library_recordtype_empty_nonid_npc\"","ParentElement":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"empty","PropertyValue":null,"PropertyAttributes":"textres=\"library_recordtype_empty_nonid_npc\"","ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultText","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"DelayKeyUpdate","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
@@ -16008,6 +16010,7 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"34"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"267"}}
 ]}}</Definition>
@@ -16078,8 +16081,7 @@ end
 ]}}</Definition>
     <LUACode>function update()
     window.windowlist.applySort();
-end
-</LUACode>
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -16269,6 +16271,8 @@ function linkPCFields()
 	if nodeChar then
 		name.setLink(nodeChar.createChild("name", "string"), true);
 		senses.setLink(nodeChar.createChild("senses", "string"), true);
+		wounds.setLink(nodeChar.createChild("WoundsCurrent", "number"), true);
+		bptotal.setLink(nodeChar.createChild("BodyPointsMax", "number"), true);
 	end
 end
 
@@ -16877,8 +16881,7 @@ end</LUACode>
 ]}}</Definition>
     <LUACode>function onValueChanged()
     window.onLinkChanged();
-end
-</LUACode>
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -17882,8 +17885,7 @@ end</LUACode>
 ]}}</Definition>
     <LUACode>function update()
     window.windowlist.applySort();
-end
-</LUACode>
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>

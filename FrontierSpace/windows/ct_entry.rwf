@@ -497,6 +497,7 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"34"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"267"}}
 ]}}</Definition>
@@ -567,8 +568,7 @@ end
 ]}}</Definition>
     <LUACode>function update()
     window.windowlist.applySort();
-end
-</LUACode>
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -758,6 +758,8 @@ function linkPCFields()
 	if nodeChar then
 		name.setLink(nodeChar.createChild("name", "string"), true);
 		senses.setLink(nodeChar.createChild("senses", "string"), true);
+		wounds.setLink(nodeChar.createChild("WoundsCurrent", "number"), true);
+		bptotal.setLink(nodeChar.createChild("BodyPointsMax", "number"), true);
 	end
 end
 
@@ -1366,8 +1368,7 @@ end</LUACode>
 ]}}</Definition>
     <LUACode>function onValueChanged()
     window.onLinkChanged();
-end
-</LUACode>
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -2371,8 +2372,7 @@ end</LUACode>
 ]}}</Definition>
     <LUACode>function update()
     window.windowlist.applySort();
-end
-</LUACode>
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
