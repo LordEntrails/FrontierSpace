@@ -15,6 +15,7 @@ LibraryData.aRecords["starships"] = {
 			bID = true,
 			bPicture = true,
 			bToken = true,
+			bInventory = true,
 			},
 		}
 		
@@ -30,6 +31,24 @@ LibraryData.aRecords["benefits"] = {
 		aDataMap = { "benefits", "reference.benefits" }, 
 		sRecordDisplayClass = "benefits", 
 		sSidebarCategory = "player", 
+		}
+		
+LibraryData.aRecords["npc"] = {
+aDataMap = { "npc", "reference.npcs" }, 
+		sListDisplayClass = "masterindexitem_id",
+		aGMEditButtons = { "button_add_npc_import" },
+		aCustom = {
+			tWindowMenu = { ["left"] = { "chat_speak" } },
+		},
+		sGMExportTag = "npc",
+		tOptions = {
+			bExport = true,
+			bID = true,
+			bPicture = true,
+			bToken = true,
+			bCustomDie = true,
+			bInventory = true,
+			},
 		}
 
 	ColorManager.setSidebarCategoryIconColor("dedede");
