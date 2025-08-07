@@ -416,7 +416,7 @@ end
       {"Name":"StackVertWith"},
       {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
       {"Name":"StringCyclerAlign","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"StringCyclerItems","Value":{"@xsi:type":"ArrayOfLabelValue","LabelValue":[{"Label":"Energy &amp; Ammo","Value":"ammunition"},{"Label":"Comm. Gear","Value":"communication"},{"Label":"Tools of the Trade","Value":"tools"}]}},
+      {"Name":"StringCyclerItems","Value":{"@xsi:type":"ArrayOfLabelValue","LabelValue":[{"Label":"Energy &amp; Ammo","Value":"ammunition"},{"Label":"Attachment","Value":"attachment"},{"Label":"Comm. Gear","Value":"communication"},{"Label":"Tools of the Trade","Value":"tools"}]}},
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},

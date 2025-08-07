@@ -1722,7 +1722,7 @@ end
       {"Name":"ReadOnly"},
       {"Name":"RelativeMargin","Value":{"@xsi:type":"xsd:int","#text":"10"}},
       {"Name":"RelativeStacking","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"ScriptFile","Value":{"@xsi:type":"xsd:string","#text":"campaign/scripts/char_invlist.lua"}},
+      {"Name":"ScriptFile","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"StackVertWith","Value":{"@xsi:type":"xsd:string","#text":"benefits_list"}},
       {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
       {"Name":"Tooltip"},
@@ -1732,10 +1732,10 @@ end
       {"Name":"WindowListClassName","Value":{"@xsi:type":"xsd:string","#text":"char_invitem"}},
       {"Name":"WindowListFilterBy","Value":{"@xsi:type":"FilterByDefinition","FilterSourceType":"Control","FilterOnSourceType":"Control"}},
       {"Name":"WindowListSortBy","Value":{"@xsi:type":"ArrayOfSortByDefinition"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"6"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"8"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"425"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>--script file: campaign/scripts/char_invlist.lua</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -1861,21 +1861,21 @@ end
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"324"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"427"}}
 ]}}</Definition>
-    <LUACode>function onValueChanged()
-	super.onValueChanged();
-
-	-- This template gets rid of the relative positioning of the headers, 
-	-- so their position must be adjusted manually when the delete button is shown and hidden.	
-	if getValue() == 1 then
-		window.location_label.setStaticBounds(-253, 12, 80, 20);
-		window.weight_label.setStaticBounds(-160, 12, 30, 20);
-		window.carried_header.setStaticBounds(-121, 12, 20, 20);
-	else
-		window.location_label.setStaticBounds(-233, 12, 80, 20);
-		window.weight_label.setStaticBounds(-140, 12, 30, 20);
-		window.carried_header.setStaticBounds(-101, 12, 20, 20);
-	end
-end</LUACode>
+    <LUACode>--function onValueChanged()
+--	super.onValueChanged();
+--
+--	-- This template gets rid of the relative positioning of the headers, 
+--	-- so their position must be adjusted manually when the delete button is shown and hidden.	
+--	if getValue() == 1 then
+--		window.location_label.setStaticBounds(-253, 12, 80, 20);
+--		window.weight_label.setStaticBounds(-160, 12, 30, 20);
+--		window.carried_header.setStaticBounds(-121, 12, 20, 20);
+--	else
+--		window.location_label.setStaticBounds(-233, 12, 80, 20);
+--		window.weight_label.setStaticBounds(-140, 12, 30, 20);
+--		window.carried_header.setStaticBounds(-101, 12, 20, 20);
+--	end
+--end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
