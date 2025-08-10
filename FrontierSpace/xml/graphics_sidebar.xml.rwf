@@ -1,0 +1,18 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>graphics_sidebar.xml</XmlName>
+    <FolderID>5</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+		&lt;icon name="sidebar_icon_recordtype_battle" file="graphics/sidebar/sidebar_icon_battle_2.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_item" file="graphics/sidebar/sidebar_icon_cpu.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_location" file="graphics/sidebar/sidebar_icon_planet.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_npc" file="graphics/sidebar/sidebar_icon_race_3.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_vehicle" file="graphics/sidebar/sidebar_icon_vehicle_4.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_benefits" file="graphics/sidebar/sidebar_icon_benefit.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_skills" file="graphics/sidebar/sidebar_icon_skill.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_starships" file="graphics/sidebar/sidebar_icon_spaceship.png" /&gt;
+&lt;/root&gt;      
+	</XML>
+  </XMLFiles>
+</DocumentElement>
