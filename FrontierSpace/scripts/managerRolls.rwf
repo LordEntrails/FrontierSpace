@@ -179,9 +179,9 @@ function SkillRoll(rSource, rTarget, rRoll)
 	local sDesc, nMod = ModifierStack.getStack(true);
 	ModifierStack.reset();
 
-	local bIsPC = ActorManager.isPC(rSource);
+	--local bIsPC = ActorManager.isPC(rSource);
 
-	if bIsPC then
+	if rSource then
 		local nUseStrength = DB.getValue(nodeChar .. ".use_strength", 0);
 		local nUseAgility = DB.getValue(nodeChar .. ".use_agility", 0);
 		local nUseCoordination = DB.getValue(nodeChar .. ".use_coordination", 0);
@@ -237,7 +237,7 @@ function SkillRoll(rSource, rTarget, rRoll)
 	
 	local sResult = '';
 	
-	if bIsPC then 
+	if rSource then 
 		local nAdvStrength = DB.getValue(nodeChar .. ".adv_strength", 0);
 		local nAdvAgility = DB.getValue(nodeChar .. ".adv_agility", 0);
 		local nAdvCoordination = DB.getValue(nodeChar .. ".adv_coordination", 0);
