@@ -1348,7 +1348,7 @@ end
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_npc_minor"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DataSource"},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"240"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"275"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"350"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
