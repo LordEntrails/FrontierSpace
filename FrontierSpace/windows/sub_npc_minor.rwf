@@ -1,14 +1,14 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <WindowControls>
     <WindowName>sub_npc_minor</WindowName>
-    <ControlName>adv_score</ControlName>
+    <ControlName>adv_perception</ControlName>
     <ZIndex>9</ZIndex>
     <ControlClass>FGIconCycler</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
       {"Name":"AdvancedTemplate"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"adv_score"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"adv_perception"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DefaultIcon","Value":{"@xsi:type":"xsd:string","#text":"stats_none"}},
