@@ -1,0 +1,20 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>table_row</XmlName>
+    <FolderID>1</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+&lt;windowclass name="table_row" merge="join"&gt;
+    &lt;sheetdata&gt;
+        &lt;basicnumber name="fromrange"&gt;
+            &lt;hideonvalue merge="delete" /&gt;
+        &lt;/basicnumber&gt;
+        &lt;basicnumber name="torange"&gt;
+            &lt;hideonvalue merge="delete" /&gt;
+        &lt;/basicnumber&gt;
+    &lt;/sheetdata&gt;
+&lt;/windowclass&gt;
+&lt;/root&gt;      
+	</XML>
+  </XMLFiles>
+</DocumentElement>
