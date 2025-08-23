@@ -10,6 +10,7 @@ LibraryData.aRecords["starships"] = {
 		aDataMap = { "starships", "reference.starships" }, 
 		sRecordDisplayClass = "starships", 
 		sSidebarCategory = "campaign", 
+		sEditMode = "play", 
 		tOptions = {
 			bExport = true,
 			bID = true,
@@ -31,6 +32,9 @@ LibraryData.aRecords["benefits"] = {
 		aDataMap = { "benefits", "reference.benefits" }, 
 		sRecordDisplayClass = "benefits", 
 		sSidebarCategory = "player", 
+		aCustomFilters = {
+			["Type"] = { sField = "type" },
+			},
 		}
 		
 LibraryData.aRecords["npc"] = {
@@ -41,6 +45,8 @@ aDataMap = { "npc", "reference.npcs" },
 			tWindowMenu = { ["left"] = { "chat_speak" } },
 		},
 		sGMExportTag = "npc",
+		aCustomFilters = {
+			["Type"] = { sField = "npc_type" } },
 		tOptions = {
 			bExport = true,
 			bID = true,
@@ -50,11 +56,23 @@ aDataMap = { "npc", "reference.npcs" },
 			bInventory = true,
 			},
 		}
-
+LibraryData.aRecords["item"] = {
+		aDataMap = { "item", "reference.items" },
+		sListDisplayClass = "masterindexitem_id",
+		aCustomFilters = {
+			["Type"] = { sField = "item_type" } },
+		tOptions = {
+			bExport = true,
+			bID = true,
+			bPicture = true,
+		},
+	},
+	
 	ColorManager.setSidebarCategoryIconColor("dedede");
 	ColorManager.setSidebarCategoryTextColor("dedede");
 	ColorManager.setSidebarRecordIconColor("000000");
 	ColorManager.setSidebarRecordTextColor("000000");
+
 end
 
 </Script>

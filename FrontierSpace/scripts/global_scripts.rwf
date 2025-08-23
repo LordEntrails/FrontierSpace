@@ -1,0 +1,11 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <Scripts>
+    <ScriptName>global_scripts</ScriptName>
+    <FolderID>10</FolderID>
+    <Script>function onInit()
+    CharEncumbranceManager.addCustomCalc();
+end</Script>
+    <RegisterScript>true</RegisterScript>
+    <Encoding />
+  </Scripts>
+</DocumentElement>

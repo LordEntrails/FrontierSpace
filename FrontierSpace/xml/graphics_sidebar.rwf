@@ -1,6 +1,6 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <XMLFiles>
-    <XmlName>graphics_sidebar.xml</XmlName>
+    <XmlName>graphics_sidebar</XmlName>
     <FolderID>5</FolderID>
     <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;root&gt;
@@ -11,7 +11,7 @@
 		&lt;icon name="sidebar_icon_recordtype_vehicle" file="graphics/sidebar/sidebar_icon_vehicle_4.png" /&gt;
 		&lt;icon name="sidebar_icon_recordtype_benefits" file="graphics/sidebar/sidebar_icon_benefit.png" /&gt;
 		&lt;icon name="sidebar_icon_recordtype_skills" file="graphics/sidebar/sidebar_icon_skill.png" /&gt;
-		&lt;icon name="sidebar_icon_recordtype_starships" file="graphics/sidebar/sidebar_icon_spaceship.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_starships" file="graphics/sidebar/sidebar_icon_spaceship.png" /&gt;		
 &lt;/root&gt;      
 	</XML>
   </XMLFiles>

@@ -47451,6 +47451,7 @@ LibraryData.aRecords["starships"] = {
 		aDataMap = { "starships", "reference.starships" }, 
 		sRecordDisplayClass = "starships", 
 		sSidebarCategory = "campaign", 
+		sEditMode = "play", 
 		tOptions = {
 			bExport = true,
 			bID = true,
@@ -47472,6 +47473,9 @@ LibraryData.aRecords["benefits"] = {
 		aDataMap = { "benefits", "reference.benefits" }, 
 		sRecordDisplayClass = "benefits", 
 		sSidebarCategory = "player", 
+		aCustomFilters = {
+			["Type"] = { sField = "type" },
+			},
 		}
 		
 LibraryData.aRecords["npc"] = {
@@ -47482,6 +47486,8 @@ aDataMap = { "npc", "reference.npcs" },
 			tWindowMenu = { ["left"] = { "chat_speak" } },
 		},
 		sGMExportTag = "npc",
+		aCustomFilters = {
+			["Type"] = { sField = "npc_type" } },
 		tOptions = {
 			bExport = true,
 			bID = true,
@@ -47491,11 +47497,23 @@ aDataMap = { "npc", "reference.npcs" },
 			bInventory = true,
 			},
 		}
-
+LibraryData.aRecords["item"] = {
+		aDataMap = { "item", "reference.items" },
+		sListDisplayClass = "masterindexitem_id",
+		aCustomFilters = {
+			["Type"] = { sField = "item_type" } },
+		tOptions = {
+			bExport = true,
+			bID = true,
+			bPicture = true,
+		},
+	},
+	
 	ColorManager.setSidebarCategoryIconColor("dedede");
 	ColorManager.setSidebarCategoryTextColor("dedede");
 	ColorManager.setSidebarRecordIconColor("000000");
 	ColorManager.setSidebarRecordTextColor("000000");
+
 end
 
 </Script>
@@ -47567,6 +47585,15 @@ end
 
 function getDistanceUnitsPerGrid()
 	return 2;
+end</Script>
+    <RegisterScript>true</RegisterScript>
+    <Encoding />
+  </Scripts>
+  <Scripts>
+    <ScriptName>global_scripts</ScriptName>
+    <FolderID>10</FolderID>
+    <Script>function onInit()
+    CharEncumbranceManager.addCustomCalc();
 end</Script>
     <RegisterScript>true</RegisterScript>
     <Encoding />
@@ -48231,7 +48258,7 @@ end
     </XML>
   </XMLFiles>
   <XMLFiles>
-    <XmlName>graphics_sidebar.xml</XmlName>
+    <XmlName>graphics_sidebar</XmlName>
     <FolderID>5</FolderID>
     <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;root&gt;
@@ -48242,7 +48269,7 @@ end
 		&lt;icon name="sidebar_icon_recordtype_vehicle" file="graphics/sidebar/sidebar_icon_vehicle_4.png" /&gt;
 		&lt;icon name="sidebar_icon_recordtype_benefits" file="graphics/sidebar/sidebar_icon_benefit.png" /&gt;
 		&lt;icon name="sidebar_icon_recordtype_skills" file="graphics/sidebar/sidebar_icon_skill.png" /&gt;
-		&lt;icon name="sidebar_icon_recordtype_starships" file="graphics/sidebar/sidebar_icon_spaceship.png" /&gt;
+		&lt;icon name="sidebar_icon_recordtype_starships" file="graphics/sidebar/sidebar_icon_spaceship.png" /&gt;		
 &lt;/root&gt;      
 	</XML>
   </XMLFiles>
