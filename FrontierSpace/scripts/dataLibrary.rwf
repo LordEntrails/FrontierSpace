@@ -56,6 +56,7 @@ aDataMap = { "npc", "reference.npcs" },
 			bInventory = true,
 			},
 		}
+		
 LibraryData.aRecords["item"] = {
 		aDataMap = { "item", "reference.items" },
 		sListDisplayClass = "masterindexitem_id",
@@ -67,6 +68,21 @@ LibraryData.aRecords["item"] = {
 			bPicture = true,
 		},
 	},
+	
+LibraryData.aRecords["vehicle"] = {
+		aDataMap = { "vehicle", "reference.vehicles" },
+		aGMListButtons = { "button_vehicle_type" },
+		aCustomFilters = {
+			["Type"] = { sField = "type" },
+		},
+		sEditMode = "play",
+		tOptions = {
+			bExport = true,
+			bID = true,
+			bPicture = true,
+			bToken = true,
+		},
+	},	
 	
 	ColorManager.setSidebarCategoryIconColor("dedede");
 	ColorManager.setSidebarCategoryTextColor("dedede");

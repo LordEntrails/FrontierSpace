@@ -3,7 +3,7 @@
     <ScriptName>global_scripts</ScriptName>
     <FolderID>10</FolderID>
     <Script>function onInit()
-    CharEncumbranceManager.addCustomCalc();
+    CharEncumbranceManager.addCustomCalc(CharEncumbranceManager.calcDefaultEncumbrance);
 end</Script>
     <RegisterScript>true</RegisterScript>
     <Encoding />
