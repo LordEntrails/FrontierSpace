@@ -53,7 +53,10 @@
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
-    <LUACode>function onLockChanged()
+    <LUACode>function onInit()
+	update();
+end
+function onLockChanged()
 	if sub_minor and sub_minor.subwindow then
 		sub_minor.subwindow.update();
 	end
@@ -63,13 +66,44 @@
 	if sub_creature and sub_creature.subwindow then
 		sub_creature.subwindow.update();
 	end
-	
-	local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
-	name.setReadOnly(bReadOnly);
+--	local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
+--	name.setReadOnly(bReadOnly);
 --	cost.setReadOnly(bReadOnly);
---	item_type.setReadOnly(bReadOnly);	
-																																													
-end</LUACode>
+--	item_type.setReadOnly(bReadOnly);																																														
+end
+function VisDataCleared()
+	update();
+end
+
+function InvisDataAdded()
+	update();
+end
+
+function update()
+	local nodeRecord = getDatabaseNode();
+	local bReadOnly = WindowManager.getReadOnlyState(nodeRecord);
+	local bID = LibraryData.getIDState("npc", nodeRecord);
+
+	local bSection1 = false;
+	if Session.IsHost then
+		if WindowManager.callSafeControlUpdate(self, "nonid_name", bReadOnly) then bSection1 = true; end;
+	else
+		WindowManager.callSafeControlUpdate(self, "nonid_name", bReadOnly, true);
+	end
+--	divider.setVisible(bSection1);
+	
+--	space.setReadOnly(bReadOnly);
+--	reach.setReadOnly(bReadOnly);
+	senses.setReadOnly(bReadOnly);
+	
+--	local bSection2 = false;
+--	if WindowManager.callSafeControlUpdate(self, "skills", bReadOnly) then bSection2 = true; end;
+--	if WindowManager.callSafeControlUpdate(self, "items", bReadOnly) then bSection2 = true; end;
+--	if WindowManager.callSafeControlUpdate(self, "languages", bReadOnly) then bSection2 = true; end;
+--	divider2.setVisible(bSection2);
+
+end
+	</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>

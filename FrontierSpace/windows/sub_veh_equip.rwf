@@ -106,7 +106,13 @@
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
-    <LUACode>--function onInit()
+    <LUACode>function onInit()
+	update();
+end
+function update()
+	local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
+end
+--function onInit()
 --	update();
 --end
 --function update()

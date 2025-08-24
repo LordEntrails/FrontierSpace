@@ -57,7 +57,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"293"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"288"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"2"}}
 ]}}</Definition>
     <LUACode />
@@ -112,7 +112,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"250"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"245"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"3"}}
 ]}}</Definition>
     <LUACode />
@@ -166,7 +166,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"226"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"217"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"3"}}
 ]}}</Definition>
     <LUACode />
@@ -221,7 +221,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"166"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"157"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"4"}}
 ]}}</Definition>
     <LUACode />
@@ -242,7 +242,7 @@
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DataSource"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"310"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"340"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"330"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"Dynamic"},
@@ -282,29 +282,26 @@
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
-    <LUACode>--function onInit()
---	update();
---end
---function update()
+    <LUACode>function onInit()
+	update();
+end
+function update()
+	local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
+end
+
+function onLockChanged()
+	if sub_veh_equip and sub_veh_equip.subwindow then
+		sub_veh_equip.subwindow.update();
+	end
+	if sub_veh_weapon and sub_veh_weapon.subwindow then
+		sub_veh_weapon.subwindow.update();
+	end
+	if sub_veh_defense and sub_veh_defense.subwindow then
+		sub_veh_defense.subwindow.update();
+	end
 --	local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
---
---	damage.setReadOnly(bReadOnly);
-----	hands.setReadOnly(bReadOnly);
-----	cumbersome.setReadOnly(bReadOnly);
-----	finesse.setReadOnly(bReadOnly);
-----	thrown.setReadOnly(bReadOnly);
-----	ammo.setReadOnly(bReadOnly);
-----	reload.setReadOnly(bReadOnly);
-----	misfire.setReadOnly(bReadOnly);
-----	attacktype.setReadOnly(bReadOnly);
---	range.setReadOnly(bReadOnly);
-----	defense_bonus.setReadOnly(bReadOnly);
-----	reach.setReadOnly(bReadOnly);
---	item_description.setReadOnly(bReadOnly);
---			
---
---end
---</LUACode>
+																																													
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -323,7 +320,7 @@
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"265"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"340"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"330"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"DynamicSize","Value":{"@xsi:type":"xsd:string","#text":"Both"}},
@@ -357,7 +354,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"29"}}
 ]}}</Definition>
     <LUACode />
@@ -379,7 +376,7 @@
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"265"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"340"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"330"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"DynamicSize","Value":{"@xsi:type":"xsd:string","#text":"Both"}},
@@ -435,7 +432,7 @@
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"265"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"340"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"330"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"DynamicSize","Value":{"@xsi:type":"xsd:string","#text":"Both"}},
@@ -524,7 +521,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"7"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"3"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"3"}}
 ]}}</Definition>
     <LUACode />
@@ -581,7 +578,7 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"58"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"54"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"2"}}
 ]}}</Definition>
     <LUACode>function onInit()
@@ -591,25 +588,25 @@ end
 
 function onValueChanged()
 --	Debug.chat(getValue());
---    if getValue() == '' then
---        setValue("Equipment");
---    end
+    if getValue() == '' then
+        setValue("Equipment");
+    end
 
     getValue()
-    if getValue() == 'Equipment' then
+    if getValue() == 'equipment' then
         window.sub_veh_equip.setVisible(true);
         window.sub_veh_weapon.setVisible(false);
         window.sub_veh_defense.setVisible(false);
-    elseif getValue() == 'Weapon' then
+    elseif getValue() == 'weapon' then
         window.sub_veh_equip.setVisible(false);
         window.sub_veh_weapon.setVisible(true);
         window.sub_veh_defense.setVisible(false);
-    elseif getValue() == 'Defense' then
+    elseif getValue() == 'defense' then
         window.sub_veh_equip.setVisible(false);
         window.sub_veh_weapon.setVisible(false);
         window.sub_veh_defense.setVisible(true);
     end
---		Debug.chat("Return sub Window statuses")
+		Debug.chat("Return sub Window statuses")
 --		Debug.chat(window.sub_veh_equip.isVisible());
 --		Debug.chat(window.sub_veh_weapon.isVisible());
 --		Debug.chat(window.sub_veh_defense.isVisible());
