@@ -13,7 +13,7 @@
    &lt;string name="library_recordtype_label_benefits"&gt;Benefits&lt;/string&gt;
 
 	&lt;!-- Languages --&gt;
-	&lt;string name="language_value_common"&gt;GalacticCommon&lt;/string&gt;
+	&lt;string name="language_value_common"&gt;Galactic Common&lt;/string&gt;
 	&lt;string name="language_value_kiarian"&gt;Kiarian&lt;/string&gt;
 	&lt;string name="language_value_terran"&gt;Terran&lt;/string&gt;
 	&lt;string name="language_value_novarian"&gt;Novarian&lt;/string&gt;

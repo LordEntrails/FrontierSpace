@@ -23,6 +23,7 @@
 	  &lt;die name="d8" merge="delete"/&gt;
 	  &lt;die name="d12" merge="delete"/&gt;
 	  &lt;die name="d20" merge="delete"/&gt;  
+	
 &lt;/root&gt;      
     </XML>
   </XMLFiles>
