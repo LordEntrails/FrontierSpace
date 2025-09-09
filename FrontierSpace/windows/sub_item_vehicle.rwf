@@ -606,7 +606,7 @@ function onValueChanged()
         window.sub_veh_weapon.setVisible(false);
         window.sub_veh_defense.setVisible(true);
     end
-		Debug.chat("Return sub Window statuses")
+--		Debug.chat("Return sub Window statuses")
 --		Debug.chat(window.sub_veh_equip.isVisible());
 --		Debug.chat(window.sub_veh_weapon.isVisible());
 --		Debug.chat(window.sub_veh_defense.isVisible());

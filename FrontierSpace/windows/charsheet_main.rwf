@@ -561,14 +561,16 @@ end
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"5"}}
 ]}}</Definition>
     <LUACode>function onClickRelease(button, x, y)
-	super.onClickRelease();
+	
 	local nodeChar = window.getDatabaseNode();
 
-	DB.setValue(nodeChar, "adv_agility", "string", 0);
-	DB.setValue(nodeChar, "adv_coordination", "string", 0);
-	DB.setValue(nodeChar, "adv_perception", "string", 0);
-	DB.setValue(nodeChar, "adv_intelligence", "string", 0);
-	DB.setValue(nodeChar, "adv_willpower", "string", 0);
+	if getValue() == 0 then
+		DB.setValue(nodeChar, "adv_agility", "string", 0);
+		DB.setValue(nodeChar, "adv_coordination", "string", 0);
+		DB.setValue(nodeChar, "adv_perception", "string", 0);
+		DB.setValue(nodeChar, "adv_intelligence", "string", 0);
+		DB.setValue(nodeChar, "adv_willpower", "string", 0);
+	end
 
 end
 </LUACode>
