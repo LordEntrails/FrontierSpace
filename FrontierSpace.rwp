@@ -9,13 +9,13 @@
     <Author>Dan Harlan and Ryan Harlan</Author>
     <Website />
     <Version>1</Version>
-    <Release>5</Release>
+    <Release>6</Release>
     <RulesetWizardVersion>0.9.5</RulesetWizardVersion>
     <RulesetList>CoreRPG</RulesetList>
     <LoadOrder />
     <Comments />
     <Announcement>Frontier Space by DWD Studios
-Ruleset version 1.5</Announcement>
+Ruleset version 1.6</Announcement>
     <LogoFile />
     <ImportRuleset>CoreRPG</ImportRuleset>
     <AdvancedDevelopment>true</AdvancedDevelopment>
