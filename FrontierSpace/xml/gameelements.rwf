@@ -5,7 +5,7 @@
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 &lt;root&gt;
 	&lt;dicesettings&gt;
-		&lt;panel name="dicepanel" offset="20,5,5,5" padding="15" /&gt;
+		&lt;panel name="dicepanel" offset="210,5,5,5" padding="15" /&gt;
 	&lt;/dicesettings&gt;
 	&lt;!-- Desktop Dice --&gt;
     &lt;die name="d10"&gt;

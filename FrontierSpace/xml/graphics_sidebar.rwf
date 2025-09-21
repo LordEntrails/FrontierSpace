@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <XMLFiles>
     <XmlName>graphics_sidebar</XmlName>
-    <FolderID>5</FolderID>
+    <FolderID>6</FolderID>
     <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;root&gt;
 		&lt;icon name="sidebar_icon_recordtype_battle" file="graphics/sidebar/sidebar_icon_battle_2.png" /&gt;

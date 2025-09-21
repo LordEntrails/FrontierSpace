@@ -63,47 +63,53 @@ Ruleset version 1.7</Announcement>
   <Folders>
     <ID>5</ID>
     <ParentFolderID>0</ParentFolderID>
-    <Folder>graphics</Folder>
+    <Folder>desktop</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>6</ID>
-    <ParentFolderID>5</ParentFolderID>
-    <Folder>fonts</Folder>
+    <ParentFolderID>0</ParentFolderID>
+    <Folder>graphics</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>7</ID>
-    <ParentFolderID>5</ParentFolderID>
-    <Folder>frames</Folder>
+    <ParentFolderID>6</ParentFolderID>
+    <Folder>fonts</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>8</ID>
-    <ParentFolderID>5</ParentFolderID>
-    <Folder>icons</Folder>
+    <ParentFolderID>6</ParentFolderID>
+    <Folder>frames</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>9</ID>
-    <ParentFolderID>5</ParentFolderID>
-    <Folder>sidebar</Folder>
+    <ParentFolderID>6</ParentFolderID>
+    <Folder>icons</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>10</ID>
-    <ParentFolderID>0</ParentFolderID>
-    <Folder>scripts</Folder>
+    <ParentFolderID>6</ParentFolderID>
+    <Folder>sidebar</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>11</ID>
     <ParentFolderID>0</ParentFolderID>
-    <Folder>strings</Folder>
+    <Folder>scripts</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>12</ID>
+    <ParentFolderID>0</ParentFolderID>
+    <Folder>strings</Folder>
+    <Exclude>false</Exclude>
+  </Folders>
+  <Folders>
+    <ID>13</ID>
     <ParentFolderID>0</ParentFolderID>
     <Folder>templates</Folder>
     <Exclude>false</Exclude>
@@ -190,6 +196,10 @@ Ruleset version 1.7</Announcement>
   <Windows>
     <Name>item_main</Name>
     <FolderID>1</FolderID>
+  </Windows>
+  <Windows>
+    <Name>modifierstack</Name>
+    <FolderID>5</FolderID>
   </Windows>
   <Windows>
     <Name>npc_attack_row</Name>
@@ -18629,6 +18639,394 @@ end</LUACode>
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"274"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"9"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>MINUS1</ControlName>
+    <ZIndex>5</ZIndex>
+    <ControlClass>FGCustomControl</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"MINUS1"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"button_modifierkey"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"80"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"40"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>MINUS20</ControlName>
+    <ZIndex>7</ZIndex>
+    <ControlClass>FGCustomControl</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"MINUS20"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"button_modifierkey"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"160"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"40"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>MINUS5</ControlName>
+    <ZIndex>6</ZIndex>
+    <ControlClass>FGCustomControl</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"MINUS5"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"button_modifierkey"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"120"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"40"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>modifierstack</ControlName>
+    <ZIndex>0</ZIndex>
+    <ControlClass>FGWindow</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AllowResize"},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"35"}},
+      {"Name":"Comments"},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"modifierstack"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DataSource"},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"70"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"200"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"Dynamic"},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HostControl"},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"Invisible"},
+      {"Name":"Locked"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"MergeWindow","Value":{"@xsi:type":"xsd:string","#text":"join"}},
+      {"Name":"MinimizedIcon"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NoClose"},
+      {"Name":"NoDelete"},
+      {"Name":"NoMove"},
+      {"Name":"Panel","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"PanelModeClient"},
+      {"Name":"PanelModeHost"},
+      {"Name":"PanelModeLocal"},
+      {"Name":"PlayerControl"},
+      {"Name":"Resize","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"RightMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"ScriptFile"},
+      {"Name":"Sharable"},
+      {"Name":"ShareAs"},
+      {"Name":"SoftClose"},
+      {"Name":"Tooltip"},
+      {"Name":"TooltipField"},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"WindowClassCopy"},
+      {"Name":"WindowMargins"},
+      {"Name":"WindowTitle"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"5"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>PLUS1</ControlName>
+    <ZIndex>2</ZIndex>
+    <ControlClass>FGCustomControl</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"PLUS1"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"button_modifierkey"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"80"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"8"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>PLUS20</ControlName>
+    <ZIndex>4</ZIndex>
+    <ControlClass>FGCustomControl</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"PLUS20"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"button_modifierkey"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"160"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"8"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>PLUS5</ControlName>
+    <ZIndex>3</ZIndex>
+    <ControlClass>FGCustomControl</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"PLUS5"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"button_modifierkey"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XMLCode"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"120"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"8"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -46574,7 +46972,7 @@ end
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Scripts>
     <ScriptName>dataLibrary</ScriptName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <Script>
 function onInit()
 
@@ -46670,7 +47068,7 @@ end
   </Scripts>
   <Scripts>
     <ScriptName>GameSystem</ScriptName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <Script>-- Ruleset action types
 actions = {
 	["dice"] = { bUseModStack = "true" },
@@ -46733,13 +47131,48 @@ end
 
 function getDistanceUnitsPerGrid()
 	return 2;
+end
+
+-- copied and modified from 5E for desktop roll modifiers
+function encodeDesktopMods(rRoll)
+	local nMod = 0;
+
+	if ModifierManager.getKey("PLUS1") then
+		nMod = nMod + 1;
+	end
+	if ModifierManager.getKey("MINUS1") then
+		nMod = nMod - 1;
+	end
+	if ModifierManager.getKey("PLUS5") then
+		nMod = nMod + 5;
+	end
+	if ModifierManager.getKey("MINUS5") then
+		nMod = nMod - 5;
+	end
+		if ModifierManager.getKey("PLUS20") then
+		nMod = nMod + 20;
+	end
+	if ModifierManager.getKey("MINUS20") then
+		nMod = nMod - 20;
+	end
+
+	if nMod == 0 then
+		return;
+	end
+
+	rRoll.sDesc = rRoll.sDesc .. string.format(" [%+d]", nMod);
+	if rRoll.aDice.expr then
+		rRoll.aDice.expr = rRoll.aDice.expr .. string.format("%+d", nMod);
+	else
+		rRoll.nMod = rRoll.nMod + nMod;
+	end
 end</Script>
     <RegisterScript>true</RegisterScript>
     <Encoding />
   </Scripts>
   <Scripts>
     <ScriptName>managerRolls</ScriptName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <Script>function StatRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
 
@@ -47351,7 +47784,7 @@ end</Script>
   </Scripts>
   <Scripts>
     <ScriptName>TabsScript</ScriptName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <Script>function onInit()
 	WindowTabManager.registerTab("vehicle", { sName = "main", sTabRes = "tab_main", sClass = "vehicle_main", bEmbed = true  });
 	WindowTabManager.registerTab("vehicle", { sName = "Notes", sText = "Notes", sClass = "vehicle_notes", bEmbed = true  });
@@ -47375,7 +47808,7 @@ end
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 &lt;root&gt;
 	&lt;dicesettings&gt;
-		&lt;panel name="dicepanel" offset="20,5,5,5" padding="15" /&gt;
+		&lt;panel name="dicepanel" offset="210,5,5,5" padding="15" /&gt;
 	&lt;/dicesettings&gt;
 	&lt;!-- Desktop Dice --&gt;
     &lt;die name="d10"&gt;
@@ -47399,7 +47832,7 @@ end
   </XMLFiles>
   <XMLFiles>
     <XmlName>graphics_sidebar</XmlName>
-    <FolderID>5</FolderID>
+    <FolderID>6</FolderID>
     <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;root&gt;
 		&lt;icon name="sidebar_icon_recordtype_battle" file="graphics/sidebar/sidebar_icon_battle_2.png" /&gt;
@@ -47415,7 +47848,7 @@ end
   </XMLFiles>
   <XMLFiles>
     <XmlName>strings</XmlName>
-    <FolderID>11</FolderID>
+    <FolderID>12</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 
 &lt;root&gt;
@@ -47441,13 +47874,22 @@ end
 	&lt;string name="item_grouped_label_type"&gt;Type&lt;/string&gt;
 	&lt;string name="item_grouped_label_weight"&gt;Weight&lt;/string&gt;
 	&lt;string name="item_grouped_label_damage"&gt;Damage&lt;/string&gt;
-
+		
+	&lt;!-- Modifiers --&gt;
+	&lt;string name="modifier_label_ADV"&gt;ADV&lt;/string&gt;
+	&lt;string name="modifier_label_DIS"&gt;DIS&lt;/string&gt;
+	&lt;string name="modifier_label_PLUS1"&gt;+1&lt;/string&gt;
+	&lt;string name="modifier_label_MINUS1"&gt;-1&lt;/string&gt;
+	&lt;string name="modifier_label_PLUS5"&gt;+5&lt;/string&gt;
+	&lt;string name="modifier_label_MINUS5"&gt;-5&lt;/string&gt;
+	&lt;string name="modifier_label_PLUS20"&gt;+20&lt;/string&gt;
+	&lt;string name="modifier_label_MINUS20"&gt;-20&lt;/string&gt;
 &lt;/root&gt;
 </XML>
   </XMLFiles>
   <XMLFiles>
     <XmlName>strings_charsheet</XmlName>
-    <FolderID>11</FolderID>
+    <FolderID>12</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 
 &lt;!-- 
@@ -47482,7 +47924,7 @@ end
   </XMLFiles>
   <XMLFiles>
     <XmlName>template</XmlName>
-    <FolderID>12</FolderID>
+    <FolderID>13</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 &lt;root&gt;
 
@@ -47509,7 +47951,7 @@ end
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Frames>
     <FrameName>blank_label</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>blank_label.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -47526,7 +47968,7 @@ end
   </Frames>
   <Frames>
     <FrameName>buttonup</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>buttonup.png</ImageFile>
     <Definition>12,12,12,12</Definition>
     <TopLeft />
@@ -47543,7 +47985,7 @@ end
   </Frames>
   <Frames>
     <FrameName>charselect</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>charselect.png</ImageFile>
     <Definition>25,25,25,25</Definition>
     <TopLeft />
@@ -47560,7 +48002,7 @@ end
   </Frames>
   <Frames>
     <FrameName>charsheet</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>charsheet.png</ImageFile>
     <Definition>40,102,50,32</Definition>
     <TopLeft />
@@ -47577,7 +48019,7 @@ end
   </Frames>
   <Frames>
     <FrameName>chatbox</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>chatbox.png</ImageFile>
     <Definition>15,20,20,15</Definition>
     <TopLeft />
@@ -47594,7 +48036,7 @@ end
   </Frames>
   <Frames>
     <FrameName>ctbox</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>ctbox.png</ImageFile>
     <Definition>32,32,19,50</Definition>
     <TopLeft />
@@ -47611,7 +48053,7 @@ end
   </Frames>
   <Frames>
     <FrameName>desktop</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>desktop.jpg</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -47628,7 +48070,7 @@ end
   </Frames>
   <Frames>
     <FrameName>fielddark</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>fielddark.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -47645,7 +48087,7 @@ end
   </Frames>
   <Frames>
     <FrameName>fieldlight</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>fieldlight.png</ImageFile>
     <Definition>14,14,14,14</Definition>
     <TopLeft />
@@ -47662,7 +48104,7 @@ end
   </Frames>
   <Frames>
     <FrameName>frame_windowlist</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>frame_windowlist.png</ImageFile>
     <Definition>4,4,4,4</Definition>
     <TopLeft />
@@ -47679,7 +48121,7 @@ end
   </Frames>
   <Frames>
     <FrameName>groupbox</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>groupbox.png</ImageFile>
     <Definition>14,14,14,14</Definition>
     <TopLeft />
@@ -47696,7 +48138,7 @@ end
   </Frames>
   <Frames>
     <FrameName>number_hex</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>number_hex.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -47713,7 +48155,7 @@ end
   </Frames>
   <Frames>
     <FrameName>number_trans</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>number_trans.png</ImageFile>
     <Definition>5,5,5,5</Definition>
     <TopLeft />
@@ -47730,7 +48172,7 @@ end
   </Frames>
   <Frames>
     <FrameName>recordsheet</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>recordsheet.png</ImageFile>
     <Definition>40,40,90,40</Definition>
     <TopLeft />
@@ -47747,7 +48189,7 @@ end
   </Frames>
   <Frames>
     <FrameName>referencelist</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>referencepage.png</ImageFile>
     <Definition>40,40,140,110</Definition>
     <TopLeft />
@@ -47764,7 +48206,7 @@ end
   </Frames>
   <Frames>
     <FrameName>scrollbar_base</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>scrollbar.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -47781,7 +48223,7 @@ end
   </Frames>
   <Frames>
     <FrameName>scrollbutton_normal</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>scrollbutton_normal.png</ImageFile>
     <Definition>0,10,0,10</Definition>
     <TopLeft />
@@ -47798,7 +48240,7 @@ end
   </Frames>
   <Frames>
     <FrameName>shortcuts</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>shortcuts.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -47815,7 +48257,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>sidebar.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -47832,7 +48274,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_category</FrameName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <ImageFile>sidebar_dock_category.png</ImageFile>
     <Definition>8,8,8,8</Definition>
     <TopLeft />
@@ -47849,7 +48291,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_category_down</FrameName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <ImageFile>sidebar_dock_category_down.png</ImageFile>
     <Definition>8,8,8,8</Definition>
     <TopLeft />
@@ -47866,7 +48308,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_entry</FrameName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <ImageFile>sidebar_dock_entry.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -47883,7 +48325,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_entry_down</FrameName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <ImageFile>sidebar_dock_icon_down.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -47900,7 +48342,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_entry_down1</FrameName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <ImageFile>sidebar_dock_entry_down.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -47917,7 +48359,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_entry_icon</FrameName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <ImageFile>sidebar_dock_icon.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -47934,7 +48376,7 @@ end
   </Frames>
   <Frames>
     <FrameName>storybox</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>storybox.png</ImageFile>
     <Definition>40,40,140,80</Definition>
     <TopLeft />
@@ -47951,7 +48393,7 @@ end
   </Frames>
   <Frames>
     <FrameName>tabs</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>tabs.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft>0,0,18,73</TopLeft>
@@ -47968,7 +48410,7 @@ end
   </Frames>
   <Frames>
     <FrameName>utilitybox</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>utilitybox.png</ImageFile>
     <Definition>20,10,120,30</Definition>
     <TopLeft />
@@ -47985,7 +48427,7 @@ end
   </Frames>
   <Frames>
     <FrameName>utilitybox2</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>utilitybox2.png</ImageFile>
     <Definition>40,40,110,30</Definition>
     <TopLeft />
@@ -48002,7 +48444,7 @@ end
   </Frames>
   <Frames>
     <FrameName>windowtitlebar</FrameName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <ImageFile>windowtitle.png</ImageFile>
     <Definition>30,0,30,0</Definition>
     <TopLeft />
@@ -48022,82 +48464,82 @@ end
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Icons>
     <IconName>button_link</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>button_link.png</IconFile>
   </Icons>
   <Icons>
     <IconName>charlist_base</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>charlist_base.png</IconFile>
   </Icons>
   <Icons>
     <IconName>dicetower_drop</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>dicetower_drop.png</IconFile>
   </Icons>
   <Icons>
     <IconName>dicetower_icon</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>dicetower_icon.png</IconFile>
   </Icons>
   <Icons>
     <IconName>dicetower_normal</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>dicetower_normal.png</IconFile>
   </Icons>
   <Icons>
     <IconName>portrait_mask</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>portrait_mask.png</IconFile>
   </Icons>
   <Icons>
     <IconName>portrait_token_mask</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>portrait_token_mask.png</IconFile>
   </Icons>
   <Icons>
     <IconName>roundpoint</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>roundpoint14-80.png</IconFile>
   </Icons>
   <Icons>
     <IconName>roundsquare</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>roundsquare14-80.png</IconFile>
   </Icons>
   <Icons>
     <IconName>skills_label</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>skills_label.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>stats.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_advantage</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>stats_advantage.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_disadvantage</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>stats_disadvantage.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_none</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>stats_none.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_off</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>stats_off.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_on</IconName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <IconFile>stats_on.png</IconFile>
   </Icons>
 </DocumentElement>
@@ -48105,7 +48547,7 @@ end
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Fonts>
     <FontName>Aqua</FontName>
-    <FolderID>6</FolderID>
+    <FolderID>7</FolderID>
     <FontFile>DsAqua1-MVwP.ttf</FontFile>
     <FontFamilyName>DS_Aqua-1</FontFamilyName>
     <FontSize>12</FontSize>
@@ -48115,7 +48557,7 @@ end
   </Fonts>
   <Fonts>
     <FontName>Galactic Common</FontName>
-    <FolderID>6</FolderID>
+    <FolderID>7</FolderID>
     <FontFile>GalacticoBasic-r1ny.ttf</FontFile>
     <FontFamilyName>Galactico Basic</FontFamilyName>
     <FontSize>12</FontSize>
@@ -48125,7 +48567,7 @@ end
   </Fonts>
   <Fonts>
     <FontName>Sequoyah</FontName>
-    <FolderID>6</FolderID>
+    <FolderID>7</FolderID>
     <FontFile>Sequoyah-pDpa.ttf</FontFile>
     <FontFamilyName>Sequoyah</FontFamilyName>
     <FontSize>12</FontSize>
@@ -48135,7 +48577,7 @@ end
   </Fonts>
   <Fonts>
     <FontName>TengwarAnnatar</FontName>
-    <FolderID>6</FolderID>
+    <FolderID>7</FolderID>
     <FontFile>TengwarAnnatar-RpaW.ttf</FontFile>
     <FontFamilyName>Tengwar Annatar</FontFamilyName>
     <FontSize>12</FontSize>
