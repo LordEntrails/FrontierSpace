@@ -65,41 +65,7 @@ end
 function getDistanceUnitsPerGrid()
 	return 2;
 end
-
--- copied and modified from 5E for desktop roll modifiers
-function encodeDesktopMods(rRoll)
-	local nMod = 0;
-
-	if ModifierManager.getKey("PLUS1") then
-		nMod = nMod + 1;
-	end
-	if ModifierManager.getKey("MINUS1") then
-		nMod = nMod - 1;
-	end
-	if ModifierManager.getKey("PLUS5") then
-		nMod = nMod + 5;
-	end
-	if ModifierManager.getKey("MINUS5") then
-		nMod = nMod - 5;
-	end
-		if ModifierManager.getKey("PLUS20") then
-		nMod = nMod + 20;
-	end
-	if ModifierManager.getKey("MINUS20") then
-		nMod = nMod - 20;
-	end
-
-	if nMod == 0 then
-		return;
-	end
-
-	rRoll.sDesc = rRoll.sDesc .. string.format(" [%+d]", nMod);
-	if rRoll.aDice.expr then
-		rRoll.aDice.expr = rRoll.aDice.expr .. string.format("%+d", nMod);
-	else
-		rRoll.nMod = rRoll.nMod + nMod;
-	end
-end</Script>
+</Script>
     <RegisterScript>true</RegisterScript>
     <Encoding />
   </Scripts>
