@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Scripts>
     <ScriptName>GameSystem</ScriptName>
-    <FolderID>11</FolderID>
+    <FolderID>12</FolderID>
     <Script>-- Ruleset action types
 actions = {
 	["dice"] = { bUseModStack = "true" },

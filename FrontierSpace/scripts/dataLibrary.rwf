@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Scripts>
     <ScriptName>dataLibrary</ScriptName>
-    <FolderID>11</FolderID>
+    <FolderID>12</FolderID>
     <Script>
 function onInit()
 

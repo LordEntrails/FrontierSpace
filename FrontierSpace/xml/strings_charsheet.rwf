@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <XMLFiles>
     <XmlName>strings_charsheet</XmlName>
-    <FolderID>12</FolderID>
+    <FolderID>13</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 
 &lt;!-- 

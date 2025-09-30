@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Scripts>
     <ScriptName>TabsScript</ScriptName>
-    <FolderID>11</FolderID>
+    <FolderID>12</FolderID>
     <Script>function onInit()
 	WindowTabManager.registerTab("vehicle", { sName = "main", sTabRes = "tab_main", sClass = "vehicle_main", bEmbed = true  });
 	WindowTabManager.registerTab("vehicle", { sName = "Notes", sText = "Notes", sClass = "vehicle_notes", bEmbed = true  });
@@ -11,6 +11,8 @@
 	WindowTabManager.registerTab("starships", { sName = "combat", sText = "Combat", sClass = "ss_combat", bEmbed = true  });
 	WindowTabManager.registerTab("starships", { sName = "notes", sTabRes = "tab_notes", sClass = "ss_notes", bEmbed = true  });
 	WindowTabManager.registerTab("starships", { sName = "pictures", sTabRes = "tab_pictures", sClass = "record_content_pictures", bEmbed = true  });
+	WindowTabManager.registerTab("partysheet_host", { sName = "ps_log", sText = "Log", sClass = "ps_log", bEmbed = true  });
+	WindowTabManager.registerTab("partysheet_client", { sName = "ps_log", sText = "Log", sClass = "ps_log", bEmbed = true  });
 end
 </Script>
     <RegisterScript>true</RegisterScript>

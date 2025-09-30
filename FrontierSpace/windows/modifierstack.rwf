@@ -2,7 +2,7 @@
   <WindowControls>
     <WindowName>modifierstack</WindowName>
     <ControlName>minus1</ControlName>
-    <ZIndex>10</ZIndex>
+    <ZIndex>4</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -67,7 +67,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>modifierstack</WindowName>
     <ControlName>minus20</ControlName>
-    <ZIndex>12</ZIndex>
+    <ZIndex>6</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -132,7 +132,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>modifierstack</WindowName>
     <ControlName>minus5</ControlName>
-    <ZIndex>11</ZIndex>
+    <ZIndex>5</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -255,7 +255,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>modifierstack</WindowName>
     <ControlName>plus1</ControlName>
-    <ZIndex>7</ZIndex>
+    <ZIndex>1</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -322,7 +322,7 @@ end
   <WindowControls>
     <WindowName>modifierstack</WindowName>
     <ControlName>plus20</ControlName>
-    <ZIndex>9</ZIndex>
+    <ZIndex>3</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -387,7 +387,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>modifierstack</WindowName>
     <ControlName>plus5</ControlName>
-    <ZIndex>8</ZIndex>
+    <ZIndex>2</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
