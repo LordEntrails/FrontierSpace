@@ -1,6 +1,6 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>button_global_visibility</ControlName>
     <ZIndex>3</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -66,7 +66,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>clientview</ControlName>
     <ZIndex>12</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -133,8 +133,8 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
-    <ControlName>combattracker_host</ControlName>
+    <WindowName>combattracker_host_fs</WindowName>
+    <ControlName>combattracker_host_fs</ControlName>
     <ZIndex>0</ZIndex>
     <ControlClass>FGWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
@@ -142,7 +142,7 @@ end
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"Comments"},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"combattracker_host"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"combattracker_host_fs"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DataSource"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"400"}},
@@ -191,7 +191,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>frame_ctbox_host_header_visibility</ControlName>
     <ZIndex>2</ZIndex>
     <ControlClass>FGIconControl</ControlClass>
@@ -244,7 +244,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>host_controls</ControlName>
     <ZIndex>11</ZIndex>
     <ControlClass>FGCustomControl</ControlClass>
@@ -299,7 +299,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_bp</ControlName>
     <ZIndex>8</ZIndex>
     <ControlClass>FGLabel</ControlClass>
@@ -354,7 +354,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_init</ControlName>
     <ZIndex>6</ZIndex>
     <ControlClass>FGLabel</ControlClass>
@@ -409,7 +409,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_map</ControlName>
     <ZIndex>10</ZIndex>
     <ControlClass>FGLabel</ControlClass>
@@ -464,7 +464,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_name</ControlName>
     <ZIndex>5</ZIndex>
     <ControlClass>FGLabel</ControlClass>
@@ -519,7 +519,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_wounds</ControlName>
     <ZIndex>9</ZIndex>
     <ControlClass>FGLabel</ControlClass>
@@ -574,7 +574,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>list</ControlName>
     <ZIndex>4</ZIndex>
     <ControlClass>FGWindowList</ControlClass>
@@ -772,7 +772,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>menubar</ControlName>
     <ZIndex>1</ZIndex>
     <ControlClass>FGCustomControl</ControlClass>
@@ -827,7 +827,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_host</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>scrollbar_list</ControlName>
     <ZIndex>7</ZIndex>
     <ControlClass>FGScrollBar</ControlClass>
