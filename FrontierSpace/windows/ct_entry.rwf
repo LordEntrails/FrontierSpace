@@ -248,11 +248,11 @@ end</LUACode>
 ]}}</Definition>
     <LUACode>function onInit()
 	-- Set the displays to what should be shown
-	setTargetingVisible();
-	setSpacingVisible();
-	setEffectsVisible();
-	setAttacksVisible();
-	setDefenseVisible();
+	--setTargetingVisible();
+	--setSpacingVisible();
+	--setEffectsVisible();
+	--setAttacksVisible();
+	--setDefenseVisible();
 	
 	-- Acquire token reference, if any
 	self.linkToken();
@@ -454,7 +454,8 @@ function setDefenseVisible()
 	end
 	defenseicon.setVisible(v);
 	sub_defense.setVisible(v);
-end</LUACode>
+end
+</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
