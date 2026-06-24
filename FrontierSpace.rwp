@@ -19,7 +19,7 @@ Ruleset version 1.7</Announcement>
     <LogoFile />
     <ImportRuleset>CoreRPG</ImportRuleset>
     <AdvancedDevelopment>true</AdvancedDevelopment>
-    <GeneratePath>C:\Users\danha\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
+    <GeneratePath>C:\Users\ryanh\AppData\Roaming\SmiteWorks\Fantasy Grounds\rulesets\FrontierSpace.pak</GeneratePath>
     <UseAutoPath>false</UseAutoPath>
     <AnnouncementFont />
     <AnnouncementIcon />
@@ -188,7 +188,7 @@ Ruleset version 1.7</Announcement>
     <FolderID>4</FolderID>
   </Windows>
   <Windows>
-    <Name>ct_entry_fs</Name>
+    <Name>ct_entry_old</Name>
     <FolderID>4</FolderID>
   </Windows>
   <Windows>
@@ -12008,7 +12008,7 @@ end</LUACode>
       {"Name":"TooltipField"},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"WindowClassCopy"},
-      {"Name":"WindowMargins"},
+      {"Name":"WindowMargins","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"WindowTitle"},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
@@ -15783,7 +15783,216 @@ end</LUACode>
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>function onInit()
+	-- Set the displays to what should be shown
+	--setTargetingVisible();
+	--setSpacingVisible();
+	--setEffectsVisible();
+	--setAttacksVisible();
+	--setDefenseVisible();
+	
+	-- Acquire token reference, if any
+	self.linkToken();
+	
+	-- Set up the PC links
+	self.onLinkChanged();
+	self.onFactionChanged();
+	
+	-- Register the deletion menu item for the host
+	registerMenuItem(Interface.getString("list_menu_deleteitem"), "delete", 6);
+	registerMenuItem(Interface.getString("list_menu_deleteconfirm"), "delete", 6, 7);
+end
+
+function onMenuSelection(selection, subselection)
+	if selection == 6 and subselection == 7 then
+		self.delete();
+	end
+end
+function onLinkChanged()
+	-- If a PC, then set up the links to the char sheet
+	if self.isPC() then
+		self.linkPCFields();
+		name.setLine(false);
+	end
+	self.onIDChanged();
+end
+function onIDChanged()
+	local nodeRecord = getDatabaseNode();
+	local sClass = link.getValue();
+	local sRecordType = LibraryData.getRecordTypeFromDisplayClass(sClass);
+	local bID = LibraryData.getIDState(sRecordType, nodeRecord, true);
+	
+	name.setVisible(bID);
+	nonid_name.setVisible(not bID);
+
+	isidentified.setVisible(LibraryData.getIDMode(sRecordType));
+end
+function onFactionChanged()
+	-- Update the entry frame
+	self.updateDisplay();
+
+	-- If not a friend, then show visibility toggle
+	if friendfoe.getStringValue() == "friend" then
+		tokenvis.setVisible(false);
+	else
+		tokenvis.setVisible(true);
+	end
+end
+function onVisibilityChanged()
+	TokenManager.updateVisibility(getDatabaseNode());
+	windowlist.onVisibilityToggle();
+end
+
+function updateDisplay()
+	local sFaction = friendfoe.getStringValue();
+
+	if DB.getValue(getDatabaseNode(), "active", 0) == 1 then
+		name.setFont("sheetlabel");
+		nonid_name.setFont("sheetlabel");
+		
+		if sFaction == "friend" then
+			setFrame("ctentrybox_friend_active");
+		elseif sFaction == "neutral" then
+			setFrame("ctentrybox_neutral_active");
+		elseif sFaction == "foe" then
+			setFrame("ctentrybox_foe_active");
+		else
+			setFrame("ctentrybox_active");
+		end
+	else
+		name.setFont("sheettext");
+		nonid_name.setFont("sheettext");
+		
+		if sFaction == "friend" then
+			setFrame("ctentrybox_friend");
+		elseif sFaction == "neutral" then
+			setFrame("ctentrybox_neutral");
+		elseif sFaction == "foe" then
+			setFrame("ctentrybox_foe");
+		else
+			setFrame("ctentrybox");
+		end
+	end
+end
+
+function linkToken()
+	local imageinstance = token.populateFromImageNode(tokenrefnode.getValue(), tokenrefid.getValue());
+	if imageinstance then
+		TokenManager.linkToken(getDatabaseNode(), imageinstance);
+	end
+end
+
+function delete()
+	local node = getDatabaseNode();
+	if not node then
+		close();
+		return;
+	end
+	
+	-- Clear any effects first, so that saves aren't triggered when initiative advanced
+	DB.deleteChildren(node, "effects");
+
+	-- Clear NPC wounds, so that ruleset turn end dying checks aren't triggered when initiative advanced
+	if wounds and not self.isPC() then
+		DB.setValue(node, "wounds", "number", 0);
+	end
+
+	-- Move to the next actor, if this CT entry is active
+	if self.isActive() then
+		CombatManager.nextActor();
+	end
+
+	-- Delete the database node and close the window
+	local cList = windowlist;
+	node.delete();
+
+	-- Update list information (global subsection toggles)
+	cList.onVisibilityToggle();
+end
+
+function linkPCFields()
+	local nodeChar = link.getTargetDatabaseNode();
+	if nodeChar then
+		name.setLink(nodeChar.createChild("name", "string"), true);
+		senses.setLink(nodeChar.createChild("senses", "string"), true);
+		wounds.setLink(nodeChar.createChild("WoundsCurrent", "number"), true);
+		bptotal.setLink(nodeChar.createChild("BodyPointsMax", "number"), true);
+	end
+end
+
+--function linkNPCFields
+--
+--	HELPERS
+--
+
+function isRecordType(s)
+	local sClass = link.getValue();
+	local sRecordType = LibraryData.getRecordTypeFromDisplayClass(sClass);
+	return (sRecordType == s);
+end
+function isPC()
+	return self.isRecordType("charsheet");
+end
+function isActive()
+	return (active.getValue() == 1);
+end
+
+
+--
+-- SECTION VISIBILITY FUNCTIONS
+--
+
+function setTargetingVisible()
+	local v = false;
+	if activatetargeting.getValue() == 1 then
+		v = true;
+	end
+	targetingicon.setVisible(v);
+	sub_targeting.setVisible(v);
+	target_summary.onTargetsChanged();
+end
+
+function setSpacingVisible()
+	local v = false;
+	if activatespacing.getValue() == 1 then
+		v = true;
+	end
+	spacingicon.setVisible(v);
+	sub_spacing.setVisible(v);
+end
+
+function setEffectsVisible()
+	local v = false;
+	if activateeffects.getValue() == 1 then
+		v = true;
+	end
+	
+	effecticon.setVisible(v);
+	sub_effects.setVisible(v);
+	if sub_effects.subwindow then
+        sub_effects.subwindow.setEffectsVisible(v);
+	end
+	effect_summary.onEffectsChanged();
+end
+
+function setAttacksVisible()
+	local v = false;
+	if activateattacks.getValue() == 1 then
+		v = true;
+	end
+	attacksicon.setVisible(v);
+	sub_attacks.setVisible(v);
+end
+
+function setDefenseVisible()
+	local v = false;
+	if activatedefense.getValue() == 1 then
+		v = true;
+	end
+	defenseicon.setVisible(v);
+	sub_defense.setVisible(v);
+end
+</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -16043,7 +16252,7 @@ end
   <WindowControls>
     <WindowName>ct_entry</WindowName>
     <ControlName>sub_active</ControlName>
-    <ZIndex>10</ZIndex>
+    <ZIndex>9</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate"},
@@ -16099,7 +16308,7 @@ end
   <WindowControls>
     <WindowName>ct_entry</WindowName>
     <ControlName>sub_defense</ControlName>
-    <ZIndex>12</ZIndex>
+    <ZIndex>10</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate"},
@@ -16220,7 +16429,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>activateattacks</ControlName>
     <ZIndex>12</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -16287,7 +16496,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>activatedefense</ControlName>
     <ZIndex>13</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -16354,7 +16563,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>activateeffects</ControlName>
     <ZIndex>9</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -16421,7 +16630,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>activatespacing</ControlName>
     <ZIndex>10</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -16488,7 +16697,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>activatetargeting</ControlName>
     <ZIndex>11</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -16555,7 +16764,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>active</ControlName>
     <ZIndex>4</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -16618,7 +16827,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>attacksicon</ControlName>
     <ZIndex>28</ZIndex>
     <ControlClass>FGIconControl</ControlClass>
@@ -16671,7 +16880,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>bottom_spacer</ControlName>
     <ZIndex>33</ZIndex>
     <ControlClass>FGCustomControl</ControlClass>
@@ -16726,7 +16935,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>bptotal</ControlName>
     <ZIndex>18</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
@@ -16793,8 +17002,8 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
-    <ControlName>ct_entry_fs</ControlName>
+    <WindowName>ct_entry_old</WindowName>
+    <ControlName>ct_entry_old</ControlName>
     <ZIndex>0</ZIndex>
     <ControlClass>FGWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
@@ -16802,7 +17011,7 @@ end</LUACode>
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"Comments"},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"ct_entry_fs"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"ct_entry_old"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DataSource"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"280"}},
@@ -17060,7 +17269,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>defenseicon</ControlName>
     <ZIndex>30</ZIndex>
     <ControlClass>FGIconControl</ControlClass>
@@ -17113,7 +17322,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>effect_summary</ControlName>
     <ZIndex>32</ZIndex>
     <ControlClass>FGLabel</ControlClass>
@@ -17168,7 +17377,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>effecticon</ControlName>
     <ZIndex>26</ZIndex>
     <ControlClass>FGIconControl</ControlClass>
@@ -17221,7 +17430,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>friendfoe</ControlName>
     <ZIndex>14</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -17287,7 +17496,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>initresult</ControlName>
     <ZIndex>17</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
@@ -17355,7 +17564,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>isidentified</ControlName>
     <ZIndex>7</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -17422,7 +17631,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>link</ControlName>
     <ZIndex>8</ZIndex>
     <ControlClass>FGLinkField</ControlClass>
@@ -17481,7 +17690,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>mapcurrent</ControlName>
     <ZIndex>20</ZIndex>
     <ControlClass>FGStringCycler</ControlClass>
@@ -17538,7 +17747,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>name</ControlName>
     <ZIndex>15</ZIndex>
     <ControlClass>FGStringField</ControlClass>
@@ -17602,7 +17811,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>nonid_name</ControlName>
     <ZIndex>16</ZIndex>
     <ControlClass>FGStringField</ControlClass>
@@ -17666,7 +17875,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>senses</ControlName>
     <ZIndex>3</ZIndex>
     <ControlClass>FGStringField</ControlClass>
@@ -17730,7 +17939,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>spacingicon</ControlName>
     <ZIndex>24</ZIndex>
     <ControlClass>FGIconControl</ControlClass>
@@ -17783,7 +17992,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>sub_attacks</ControlName>
     <ZIndex>27</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
@@ -17839,7 +18048,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>sub_defense</ControlName>
     <ZIndex>29</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
@@ -17895,7 +18104,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>sub_effects</ControlName>
     <ZIndex>25</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
@@ -17951,7 +18160,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>sub_spacing</ControlName>
     <ZIndex>23</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
@@ -18007,7 +18216,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>sub_targeting</ControlName>
     <ZIndex>21</ZIndex>
     <ControlClass>FGSubWindow</ControlClass>
@@ -18063,7 +18272,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>target_summary</ControlName>
     <ZIndex>31</ZIndex>
     <ControlClass>FGLabel</ControlClass>
@@ -18118,7 +18327,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>targetingicon</ControlName>
     <ZIndex>22</ZIndex>
     <ControlClass>FGIconControl</ControlClass>
@@ -18171,7 +18380,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>token</ControlName>
     <ZIndex>5</ZIndex>
     <ControlClass>FGToken</ControlClass>
@@ -18225,7 +18434,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>tokenrefid</ControlName>
     <ZIndex>1</ZIndex>
     <ControlClass>FGStringField</ControlClass>
@@ -18289,7 +18498,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>tokenrefnode</ControlName>
     <ZIndex>2</ZIndex>
     <ControlClass>FGStringField</ControlClass>
@@ -18353,7 +18562,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>tokenvis</ControlName>
     <ZIndex>6</ZIndex>
     <ControlClass>FGButton</ControlClass>
@@ -18418,7 +18627,7 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>ct_entry_fs</WindowName>
+    <WindowName>ct_entry_old</WindowName>
     <ControlName>wounds</ControlName>
     <ZIndex>19</ZIndex>
     <ControlClass>FGNumberField</ControlClass>
