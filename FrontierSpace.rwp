@@ -136,10 +136,6 @@ Ruleset version 1.7</Announcement>
     <FolderID>11</FolderID>
   </Windows>
   <Windows>
-    <Name>char_benefits</Name>
-    <FolderID>1</FolderID>
-  </Windows>
-  <Windows>
     <Name>charsheet</Name>
     <FolderID>1</FolderID>
   </Windows>
@@ -1055,64 +1051,6 @@ end
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"32"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"8"}}
-]}}</Definition>
-    <LUACode />
-    <GroupIndex>0</GroupIndex>
-    <Template />
-  </WindowControls>
-  <WindowControls>
-    <WindowName>char_benefits</WindowName>
-    <ControlName>char_benefits</ControlName>
-    <ZIndex>0</ZIndex>
-    <ControlClass>FGWindow</ControlClass>
-    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AllowResize"},
-      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"Comments"},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"char_benefits"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DataSource"},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"300"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"300"}},
-      {"Name":"DevelopmentComments"},
-      {"Name":"Disabled"},
-      {"Name":"Dynamic"},
-      {"Name":"FrameName"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"HostControl"},
-      {"Name":"HoverCursor"},
-      {"Name":"InheritSizePosition"},
-      {"Name":"Invisible"},
-      {"Name":"Locked"},
-      {"Name":"MaximumHeight"},
-      {"Name":"MaximumWidth"},
-      {"Name":"MergeWindow"},
-      {"Name":"MinimizedIcon"},
-      {"Name":"MinimumHeight"},
-      {"Name":"MinimumWidth"},
-      {"Name":"NoClose"},
-      {"Name":"NoDelete"},
-      {"Name":"NoMove"},
-      {"Name":"Panel"},
-      {"Name":"PanelModeClient"},
-      {"Name":"PanelModeHost"},
-      {"Name":"PanelModeLocal"},
-      {"Name":"PlayerControl"},
-      {"Name":"Resize","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"RightMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"ScriptFile"},
-      {"Name":"Sharable"},
-      {"Name":"ShareAs"},
-      {"Name":"SoftClose"},
-      {"Name":"Tooltip"},
-      {"Name":"TooltipField"},
-      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"WindowClassCopy","Value":{"@xsi:type":"xsd:string","#text":"char_ability"}},
-      {"Name":"WindowMargins","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"WindowTitle"},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -7422,11 +7360,11 @@ end
     <ZIndex>25</ZIndex>
     <ControlClass>FGWindowList</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AcceptDrop","Value":{"@xsi:type":"ArrayOfPropertyAcceptDrop","PropertyAcceptDrop":[{"ClassName":"referencetext"},{"ClassName":"referencetextwide"},{"ClassName":"ability"},{"ClassName":"note"},{"ClassName":"encounter"},{"ClassName":"benefits"}]}},
+      {"Name":"AcceptDrop","Value":{"@xsi:type":"ArrayOfPropertyAcceptDrop","PropertyAcceptDrop":{"ClassName":"benefits"}}},
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
       {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"list_text"}},
-      {"Name":"AllowCreate"},
-      {"Name":"AllowDelete"},
+      {"Name":"AllowCreate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"AllowDelete","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"Columns","Value":{"@xsi:type":"PropertyColumns","ColumnWidth":"175","FillDown":"true","FillWidth":"true"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"abilities"}},
@@ -7471,13 +7409,18 @@ end
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"WindowListChildDefinition","Value":{"@xsi:type":"ArrayOfChildDefinition"}},
-      {"Name":"WindowListClassName","Value":{"@xsi:type":"xsd:string","#text":"char_ability"}},
+      {"Name":"WindowListClassName","Value":{"@xsi:type":"xsd:string","#text":"char_benefits"}},
       {"Name":"WindowListFilterBy","Value":{"@xsi:type":"FilterByDefinition","FilterSourceType":"Control","FilterOnSourceType":"Control"}},
       {"Name":"WindowListSortBy","Value":{"@xsi:type":"ArrayOfSortByDefinition"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"140"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"271"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>function onDrop(x, y, draginfo)
+    if draginfo.isType("shortcut") then
+        local sClass, sRecord = draginfo.getShortcutData();
+        Debug.console("THE REAL DRAG CLASS IS: ", sClass);
+    end
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -50372,6 +50315,20 @@ end
 </DocumentElement>
 
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>char_benefits</XmlName>
+    <FolderID>1</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;root&gt;
+    &lt;windowclass name="char_benefits" copy="char_ability"&gt;
+        &lt;sheetdata&gt;
+            &lt;windowreferencecontrol name="link" merge="join"&gt;
+                &lt;class&gt;benefits&lt;/class&gt;
+            &lt;/windowreferencecontrol&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+&lt;/root&gt;</XML>
+  </XMLFiles>
   <XMLFiles>
     <XmlName>gameelements</XmlName>
     <FolderID>0</FolderID>

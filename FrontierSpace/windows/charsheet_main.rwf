@@ -5,11 +5,11 @@
     <ZIndex>25</ZIndex>
     <ControlClass>FGWindowList</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AcceptDrop","Value":{"@xsi:type":"ArrayOfPropertyAcceptDrop","PropertyAcceptDrop":[{"ClassName":"referencetext"},{"ClassName":"referencetextwide"},{"ClassName":"ability"},{"ClassName":"note"},{"ClassName":"encounter"},{"ClassName":"benefits"}]}},
+      {"Name":"AcceptDrop","Value":{"@xsi:type":"ArrayOfPropertyAcceptDrop","PropertyAcceptDrop":{"ClassName":"benefits"}}},
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
       {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"list_text"}},
-      {"Name":"AllowCreate"},
-      {"Name":"AllowDelete"},
+      {"Name":"AllowCreate","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"AllowDelete","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"Columns","Value":{"@xsi:type":"PropertyColumns","ColumnWidth":"175","FillDown":"true","FillWidth":"true"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"abilities"}},
@@ -54,13 +54,18 @@
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"WindowListChildDefinition","Value":{"@xsi:type":"ArrayOfChildDefinition"}},
-      {"Name":"WindowListClassName","Value":{"@xsi:type":"xsd:string","#text":"char_ability"}},
+      {"Name":"WindowListClassName","Value":{"@xsi:type":"xsd:string","#text":"char_benefits"}},
       {"Name":"WindowListFilterBy","Value":{"@xsi:type":"FilterByDefinition","FilterSourceType":"Control","FilterOnSourceType":"Control"}},
       {"Name":"WindowListSortBy","Value":{"@xsi:type":"ArrayOfSortByDefinition"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"140"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"271"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>function onDrop(x, y, draginfo)
+    if draginfo.isType("shortcut") then
+        local sClass, sRecord = draginfo.getShortcutData();
+        Debug.console("THE REAL DRAG CLASS IS: ", sClass);
+    end
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
