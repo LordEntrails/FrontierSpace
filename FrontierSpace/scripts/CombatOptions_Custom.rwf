@@ -170,29 +170,43 @@ end
     
     -- This intercepts the rest command
 function customRest(bLongRest)
+    -- DEBUG: Confirming what is coming in
+--    Debug.chat("DEBUG: customRest triggered. bLongRest is: " .. tostring(bLongRest));
+
     -- 1. Run the original CoreRPG rest logic first
     fOldRest(bLongRest);
 
-    -- 2. Only perform the destiny reset if it is an Overnight (Long) Rest
-    if bLongRest then
-        -- Loop through all combatants
+    -- 2. Process Destiny Reset (Always resets on any rest)
+    for _, nodeCT in pairs(CombatManager.getCombatantNodes()) do
+        local rActor = ActorManager.resolveActor(nodeCT);
+        
+        if rActor and ActorManager.isPC(rActor) then
+            local nodeChar = ActorManager.getCreatureNode(rActor);
+            if nodeChar then
+                DB.setValue(nodeChar, "destiny_used", "number", 0);
+            end
+        end
+    end
+
+    -- 3. Process Wound Reset (ONLY if it is NOT "short")
+    -- We check if it is explicitly NOT short (i.e., it's a Long Rest)
+    if bLongRest ~= "short" and bLongRest ~= false then
         for _, nodeCT in pairs(CombatManager.getCombatantNodes()) do
             local rActor = ActorManager.resolveActor(nodeCT);
             
-            -- Only target PCs
+            DB.setValue(nodeCT, "wounds", "number", 0);
+            
             if rActor and ActorManager.isPC(rActor) then
-                -- Correct way to get the character node from the actor object
                 local nodeChar = ActorManager.getCreatureNode(rActor);
-                
-                -- Check if the character node exists and reset the value
                 if nodeChar then
-                    DB.setValue(nodeChar, "destiny_used", "number", 0);
+                    DB.setValue(nodeChar, "WoundsCurrent", "number", 0);
                 end
             end
         end
         
-        -- Optional: Add a chat message so the group knows Destiny reset
-        Comm.deliverChatMessage({text = "Destiny pools have been replenished after the long rest."});
+        Comm.deliverChatMessage({text = "Destiny pools have been reset and all wounds cleared."});
+    else
+        Comm.deliverChatMessage({text = "Destiny pools have been reset."});
     end
 end</Script>
     <RegisterScript>true</RegisterScript>
