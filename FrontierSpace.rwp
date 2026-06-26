@@ -49540,6 +49540,24 @@ function onInit()
     if CombatManager.nextActor then
         fOldNextActor = CombatManager.nextActor;
         CombatManager.nextActor = customNextActor;
+        
+    -- 5. Hijack the Combat Tracker Radial Menu for Initiative
+    CombatManager.rollInit = customRollInit;
+    end
+end
+
+-- This replaces the CoreRPG radial menu roll logic
+function customRollInit(sType)
+    for _,nodeCT in pairs(CombatManager.getCombatantNodes()) do
+        local rActor = ActorManager.resolveActor(nodeCT);
+        if rActor then
+            local bPC = ActorManager.isPC(rActor);
+            
+            -- If sType is blank (Roll All), or matches the specific PC/NPC menu click
+            if not sType or sType == "" or (sType == "pc" and bPC) or (sType == "npc" and not bPC) then
+                rollInitiative(nodeCT);
+            end
+        end
     end
 end
 
