@@ -201,7 +201,7 @@ Ruleset version 1.7</Announcement>
   </Windows>
   <Windows>
     <Name>item_main</Name>
-    <FolderID>1</FolderID>
+    <FolderID>2</FolderID>
   </Windows>
   <Windows>
     <Name>modifierstack</Name>
@@ -36724,10 +36724,9 @@ end
 function onValueChanged()
 --	Debug.chat(getValue());
     if getValue() == '' then
-        setValue("Equipment");
+        setValue("equipment");
     end
 
-    getValue()
     if getValue() == 'equipment' then
         window.sub_veh_equip.setVisible(true);
         window.sub_veh_weapon.setVisible(false);
