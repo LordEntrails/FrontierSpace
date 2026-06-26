@@ -5294,12 +5294,57 @@ end</LUACode>
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
       {"Name":"WindowListChildDefinition","Value":{"@xsi:type":"ArrayOfChildDefinition"}},
       {"Name":"WindowListClassName","Value":{"@xsi:type":"xsd:string","#text":"charsheet_weapontable"}},
-      {"Name":"WindowListFilterBy","Value":{"@xsi:type":"FilterByDefinition","FilterSourceType":"Control","FilterSourceName":"inventory_filter_weapon","FilterOnSourceType":"Database","FilterOnSourceName":"item_typevalue"}},
+      {"Name":"WindowListFilterBy","Value":{"@xsi:type":"FilterByDefinition","FilterSourceType":"Control","FilterSourceName":null,"FilterOnSourceType":"Database","FilterOnSourceName":null}},
       {"Name":"WindowListSortBy","Value":{"@xsi:type":"ArrayOfSortByDefinition"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"30"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"250"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>function onInit()
+    local node = getDatabaseNode();
+    if node then
+        -- Add handlers to watch for changes to the 'carried' and 'item_typevalue' fields
+        DB.addHandler(DB.getPath(node, "*.carried"), "onUpdate", onEquipChanged);
+        DB.addHandler(DB.getPath(node, "*.item_typevalue"), "onUpdate", onEquipChanged);
+    end
+end
+
+function onClose()
+    local node = getDatabaseNode();
+    if node then
+        -- Clean up handlers when the window closes to prevent memory leaks
+        DB.removeHandler(DB.getPath(node, "*.carried"), "onUpdate", onEquipChanged);
+        DB.removeHandler(DB.getPath(node, "*.item_typevalue"), "onUpdate", onEquipChanged);
+    end
+end
+
+function onEquipChanged()
+    -- Force the windowlist to re-evaluate the filter when a watched field changes
+    applyFilter();
+end
+
+function onFilter(w)
+    -- 1. Get the filter string (e.g., "Weapon")
+    local sFilter = window.inventory_filter_weapon.getValue();
+    
+    -- 2. Get the item's type
+    local sType = DB.getValue(w.getDatabaseNode(), "item_typevalue", "");
+    
+    -- 3. Get the item's equipped state
+    -- Note: In standard CoreRPG, 0 = Not Carried, 1 = Carried, 2 = Equipped
+    local nCarried = DB.getValue(w.getDatabaseNode(), "carried", 0);
+
+    -- Check if it matches the weapon type
+    if sFilter ~= "" and string.lower(sType) ~= string.lower(sFilter) then
+        return false;
+    end
+
+    -- Check if it is currently equipped
+    if nCarried ~= 2 then
+        return false;
+    end
+
+    return true;
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
