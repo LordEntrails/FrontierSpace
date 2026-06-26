@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <XMLFiles>
     <XmlName>strings</XmlName>
-    <FolderID>11</FolderID>
+    <FolderID>13</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 
 &lt;root&gt;
@@ -27,7 +27,7 @@
 	&lt;string name="item_grouped_label_type"&gt;Type&lt;/string&gt;
 	&lt;string name="item_grouped_label_weight"&gt;Weight&lt;/string&gt;
 	&lt;string name="item_grouped_label_damage"&gt;Damage&lt;/string&gt;
-
+		
 &lt;/root&gt;
 </XML>
   </XMLFiles>

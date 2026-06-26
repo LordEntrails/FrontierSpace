@@ -1,0 +1,215 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <Scripts>
+    <ScriptName>CombatOptions_Custom</ScriptName>
+    <FolderID>12</FolderID>
+    <Script>-- Variable to hold the native CoreRPG nextActor function
+local fOldNextActor;
+-- A flag to tell our script when to block the automatic turn advance
+local bBlockAutoNextActor = false;
+-- used to override the overnight rest function
+local fOldRest;
+
+function onInit()
+    -- 1. Register: Roll Init Each Round
+    OptionsManager.registerOption2("OPT_ROLL_INIT", false, "option_header_combat", "option_label_roll_init", "option_entry_cycler", 
+        { labels = "option_val_all|option_val_pc|option_val_npc", values = "all|pc|npc", baselabel = "option_val_off", baseval = "off", default = "off" });
+
+    -- 2. Register: Silent Initiative Rolls
+    OptionsManager.registerOption2("OPT_SILENT_INIT", false, "option_header_combat", "option_label_silent_init", "option_entry_cycler", 
+        { labels = "option_val_silent", values = "on", baselabel = "3D Dice", baseval = "off", default = "off" });
+
+    -- 3. Hook into CoreRPG's Next Round logic
+    CombatManager.setCustomRoundStart(onRoundStart);
+
+    -- 4. Hook into CoreRPG's Next Actor logic to prevent premature turn advancement
+    if CombatManager.nextActor then
+        fOldNextActor = CombatManager.nextActor;
+        CombatManager.nextActor = customNextActor;
+     end
+     
+    -- 5. Hijack the Combat Tracker Radial Menu for Initiative
+    CombatManager.rollInit = customRollInit;
+    
+    -- 6. Hook the rest function
+    if CombatManager.rest then
+        fOldRest = CombatManager.rest;
+        CombatManager.rest = customRest;
+    end
+end
+
+-- This replaces the CoreRPG radial menu roll logic
+function customRollInit(sType)
+    for _,nodeCT in pairs(CombatManager.getCombatantNodes()) do
+        local rActor = ActorManager.resolveActor(nodeCT);
+        if rActor then
+            local bPC = ActorManager.isPC(rActor);
+            
+            -- If sType is blank (Roll All), or matches the specific PC/NPC menu click
+            if not sType or sType == "" or (sType == "pc" and bPC) or (sType == "npc" and not bPC) then
+                rollInitiative(nodeCT);
+            end
+        end
+    end
+end
+
+-- This intercepts the turn advance. If our flag is active, it blocks it exactly once.
+function customNextActor(bSkipBell, ...)
+    if bBlockAutoNextActor then
+        -- Consume the flag so the GM's manual click works next time
+        bBlockAutoNextActor = false;
+        
+        -- Wipe the active green target completely off the board while dice roll
+        for _,nodeCT in pairs(CombatManager.getCombatantNodes()) do
+            DB.setValue(nodeCT, "active", "number", 0);
+        end
+        
+        -- Abort the function so the turn does not advance
+        return;
+    end
+
+    -- If the flag is not set, proceed with native CoreRPG turn advancement
+    if fOldNextActor then
+        fOldNextActor(bSkipBell, ...);
+    end
+end
+
+-- Fires automatically when the "Next Round" button is clicked
+function onRoundStart(nCurrent)
+    local sOptRollInit = OptionsManager.getOption("OPT_ROLL_INIT");
+    if sOptRollInit == "off" then return; end
+
+    -- Check if we are using 3D dice. If so, raise the flag to block nextActor!
+    local bSilent = (OptionsManager.getOption("OPT_SILENT_INIT") == "on");
+    if not bSilent then
+        bBlockAutoNextActor = true;
+    end
+
+    for _,nodeCT in pairs(CombatManager.getCombatantNodes()) do
+        local rActor = ActorManager.resolveActor(nodeCT);
+        if rActor then
+            local bPC = ActorManager.isPC(rActor);
+            if sOptRollInit == "all" or (sOptRollInit == "pc" and bPC) or (sOptRollInit == "npc" and not bPC) then
+                rollInitiative(nodeCT);
+            end
+        end
+    end
+end
+
+-- The custom logic to calculate and assign the initiative
+function rollInitiative(nodeCT)
+    local rSource = ActorManager.resolveActor(nodeCT);
+    if not rSource then return; end
+    
+    local bIsPC = ActorManager.isPC(rSource);
+    local nodeChar = nil;
+
+    if bIsPC then
+        nodeChar = DB.findNode(rSource.sCreatureNode);
+    else
+        local sClass, sRecord = DB.getValue(nodeCT, "link");
+        if type(sRecord) == "string" and sRecord ~= "" then
+            nodeChar = DB.findNode(sRecord);
+        end
+        
+        if not nodeChar then
+            nodeChar = nodeCT;
+        end
+    end
+
+    if not nodeChar then return; end
+
+    local nBaseInit = 1;
+    local bIsMinorNPC = false; 
+
+    if bIsPC then
+        nBaseInit = DB.getValue(nodeChar, "Initiative", 1);
+    else
+        nBaseInit = DB.getValue(nodeChar, "initiative", 1);
+        local sNpcType = DB.getValue(nodeChar, "npc_type", "Minor");
+        bIsMinorNPC = (sNpcType == "Minor");
+    end
+
+    if bIsMinorNPC then
+        -- MINOR NPCs: Direct assignment (Always Silent)
+        DB.setValue(nodeCT, "initresult", "number", nBaseInit);
+        local rMessage = ActionsManager.createActionMessage(rSource, { sDesc = "[INITIATIVE] (Fixed)" });
+        rMessage.text = rMessage.text .. " [Result: " .. nBaseInit .. "]";
+        Comm.deliverChatMessage(rMessage);
+    else
+        -- PCs / MAJOR NPCs / CREATURES
+        local nDiceCount = math.max(1, nBaseInit); 
+        local bSilent = (OptionsManager.getOption("OPT_SILENT_INIT") == "on");
+        
+        if bSilent then
+            -- SILENT ROUTE: Lua Math Generator
+            local nResult = 0;
+            for i = 1, nDiceCount do
+                local nRoll = math.random(10);
+                if nRoll &gt; nResult then nResult = nRoll; end
+            end
+            
+            DB.setValue(nodeCT, "initresult", "number", nResult);
+            
+            local rMessage = ActionsManager.createActionMessage(rSource, { sDesc = "[INITIATIVE] (Silent)" });
+            rMessage.text = rMessage.text .. " [Result: " .. nResult .. "]";
+            if rSource.sType == "npc" and OptionsManager.isOption("GMRO", "on") then rMessage.secret = true; end
+            
+            Comm.deliverChatMessage(rMessage);
+        else
+            -- 3D ROUTE: Throw Physical Dice
+            local aDice = {};
+            for i = 1, nDiceCount do table.insert(aDice, "d10"); end
+            
+            local rRoll = { sType = "initiative", sDesc = "[INITIATIVE]", aDice = aDice, nMod = 0 };
+            if rSource.sType == "npc" and OptionsManager.isOption("GMRO", "on") then rRoll.bSecret = true; end
+            
+            ActionsManager.performAction(nil, rSource, rRoll);
+        end
+    end
+end
+    
+    -- This intercepts the rest command
+function customRest(bLongRest)
+    -- DEBUG: Confirming what is coming in
+--    Debug.chat("DEBUG: customRest triggered. bLongRest is: " .. tostring(bLongRest));
+
+    -- 1. Run the original CoreRPG rest logic first
+    fOldRest(bLongRest);
+
+    -- 2. Process Destiny Reset (Always resets on any rest)
+    for _, nodeCT in pairs(CombatManager.getCombatantNodes()) do
+        local rActor = ActorManager.resolveActor(nodeCT);
+        
+        if rActor and ActorManager.isPC(rActor) then
+            local nodeChar = ActorManager.getCreatureNode(rActor);
+            if nodeChar then
+                DB.setValue(nodeChar, "destiny_used", "number", 0);
+            end
+        end
+    end
+
+    -- 3. Process Wound Reset (ONLY if it is NOT "short")
+    -- We check if it is explicitly NOT short (i.e., it's a Long Rest)
+    if bLongRest ~= "short" and bLongRest ~= false then
+        for _, nodeCT in pairs(CombatManager.getCombatantNodes()) do
+            local rActor = ActorManager.resolveActor(nodeCT);
+            
+            DB.setValue(nodeCT, "wounds", "number", 0);
+            
+            if rActor and ActorManager.isPC(rActor) then
+                local nodeChar = ActorManager.getCreatureNode(rActor);
+                if nodeChar then
+                    DB.setValue(nodeChar, "WoundsCurrent", "number", 0);
+                end
+            end
+        end
+        
+        Comm.deliverChatMessage({text = "Destiny pools have been reset and all wounds cleared."});
+    else
+        Comm.deliverChatMessage({text = "Destiny pools have been reset."});
+    end
+end</Script>
+    <RegisterScript>true</RegisterScript>
+    <Encoding />
+  </Scripts>
+</DocumentElement>

@@ -1,24 +1,24 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <WindowControls>
-    <WindowName>npc_defense_row</WindowName>
-    <ControlName>defense_idelete</ControlName>
-    <ZIndex>5</ZIndex>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>minus1</ControlName>
+    <ZIndex>4</ZIndex>
     <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"button_idelete"}},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"button_text"}},
       {"Name":"AllowDoubleClick"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"ButtonField"},
       {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"defense_idelete"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"minus1"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"editmode","PropertyValue":"defenselist_iedit","PropertyAttributes":null,"ParentElement":null,"XMLCode":null}}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"text","PropertyValue":"-1","PropertyAttributes":"state","ParentElement":null,"XMLCode":null}}},
       {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
       {"Name":"DevelopmentComments"},
       {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
@@ -29,7 +29,7 @@
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
       {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
       {"Name":"HoverIconName"},
       {"Name":"InheritSizePosition"},
@@ -41,7 +41,7 @@
       {"Name":"MinimumHeight"},
       {"Name":"MinimumWidth"},
       {"Name":"NextTabTarget"},
-      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string","#text":"button_delete"}},
+      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"PressedIconName"},
       {"Name":"PressedOffset"},
       {"Name":"PrevTabTarget"},
@@ -55,59 +55,60 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"287"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"2"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"80"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"40"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>function onButtonPress()
+	ModifierStack.addSlot("", -1);
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>npc_defense_row</WindowName>
-    <ControlName>name</ControlName>
-    <ZIndex>1</ZIndex>
-    <ControlClass>FGStringField</ControlClass>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>minus20</ControlName>
+    <ZIndex>6</ZIndex>
+    <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate"},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"button_text"}},
+      {"Name":"AllowDoubleClick"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"Center"},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"name"}},
+      {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"ButtonField"},
+      {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"minus20"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DefaultText","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"DelayKeyUpdate","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"text","PropertyValue":"-20","PropertyAttributes":"state","ParentElement":null,"XMLCode":null}}},
+      {"Name":"DefaultValue"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"85"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
       {"Name":"DevelopmentComments"},
       {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
-      {"Name":"DynamicSize"},
-      {"Name":"EmptyText","Value":{"@xsi:type":"xsd:string","#text":"(Defense)"}},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
       {"Name":"FrameHideReadonly"},
-      {"Name":"FrameName"},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"buttonup"}},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
       {"Name":"GMVisibleOnly"},
       {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
+      {"Name":"HoverIconName"},
       {"Name":"InheritSizePosition"},
       {"Name":"InsertBefore"},
       {"Name":"Invisible"},
-      {"Name":"LineOffset","Value":{"@xsi:type":"xsd:int","#text":"2"}},
       {"Name":"MaximumHeight"},
       {"Name":"MaximumWidth"},
       {"Name":"Merge"},
       {"Name":"MinimumHeight"},
       {"Name":"MinimumWidth"},
-      {"Name":"MultilineSpacing"},
       {"Name":"NextTabTarget"},
-      {"Name":"NoDrag","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"NoDragselect","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"NoDrop","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"PressedIconName"},
+      {"Name":"PressedOffset"},
       {"Name":"PrevTabTarget"},
       {"Name":"ReadOnly"},
       {"Name":"RelativeMargin"},
@@ -119,59 +120,60 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"4"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"4"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"160"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"40"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>function onButtonPress()
+	ModifierStack.addSlot("Hard", -20);
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>npc_defense_row</WindowName>
-    <ControlName>notes</ControlName>
-    <ZIndex>4</ZIndex>
-    <ControlClass>FGStringField</ControlClass>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>minus5</ControlName>
+    <ZIndex>5</ZIndex>
+    <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate"},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"button_text"}},
+      {"Name":"AllowDoubleClick"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"Center","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"notes"}},
+      {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"ButtonField"},
+      {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"minus5"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DefaultText","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"DelayKeyUpdate","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"19"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"text","PropertyValue":"-5","PropertyAttributes":"state","ParentElement":null,"XMLCode":null}}},
+      {"Name":"DefaultValue"},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"110"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
       {"Name":"DevelopmentComments"},
-      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","DiceRollString":"{self}10","DiceRollDescription":"Damage","DiceRollType":"damage","UseModStack":"true","ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":{"LabelValue":{"Label":"damage","Value":"{self}"}}}},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
-      {"Name":"DynamicSize"},
-      {"Name":"EmptyText","Value":{"@xsi:type":"xsd:string","#text":"(Note)"}},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
       {"Name":"FrameHideReadonly"},
-      {"Name":"FrameName"},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"buttonup"}},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
       {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
+      {"Name":"HoverIconName"},
       {"Name":"InheritSizePosition"},
       {"Name":"InsertBefore"},
       {"Name":"Invisible"},
-      {"Name":"LineOffset","Value":{"@xsi:type":"xsd:int","#text":"2"}},
       {"Name":"MaximumHeight"},
       {"Name":"MaximumWidth"},
       {"Name":"Merge"},
       {"Name":"MinimumHeight"},
       {"Name":"MinimumWidth"},
-      {"Name":"MultilineSpacing"},
       {"Name":"NextTabTarget"},
-      {"Name":"NoDrag","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"NoDragselect","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"NoDrop","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"PressedIconName"},
+      {"Name":"PressedOffset"},
       {"Name":"PrevTabTarget"},
       {"Name":"ReadOnly"},
       {"Name":"RelativeMargin"},
@@ -183,33 +185,35 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"196"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"4"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"120"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"40"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>function onButtonPress()
+	ModifierStack.addSlot("", -5);
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>npc_defense_row</WindowName>
-    <ControlName>npc_defense_row</ControlName>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>modifierstack</ControlName>
     <ZIndex>0</ZIndex>
     <ControlClass>FGWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AllowResize","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"AllowResize"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"35"}},
       {"Name":"Comments"},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"npc_defense_row"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"modifierstack"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DataSource"},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"25"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"310"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"70"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"200"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"Dynamic"},
-      {"Name":"FrameName"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HostControl"},
       {"Name":"HoverCursor"},
       {"Name":"InheritSizePosition"},
@@ -217,14 +221,14 @@
       {"Name":"Locked"},
       {"Name":"MaximumHeight"},
       {"Name":"MaximumWidth"},
-      {"Name":"MergeWindow"},
+      {"Name":"MergeWindow","Value":{"@xsi:type":"xsd:string","#text":"join"}},
       {"Name":"MinimizedIcon"},
       {"Name":"MinimumHeight"},
       {"Name":"MinimumWidth"},
       {"Name":"NoClose"},
       {"Name":"NoDelete"},
       {"Name":"NoMove"},
-      {"Name":"Panel"},
+      {"Name":"Panel","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"PanelModeClient"},
       {"Name":"PanelModeHost"},
       {"Name":"PanelModeLocal"},
@@ -237,11 +241,11 @@
       {"Name":"SoftClose"},
       {"Name":"Tooltip"},
       {"Name":"TooltipField"},
-      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
       {"Name":"WindowClassCopy"},
       {"Name":"WindowMargins","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"WindowTitle"},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"5"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
     <LUACode />
@@ -249,51 +253,50 @@
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>npc_defense_row</WindowName>
-    <ControlName>protection</ControlName>
-    <ZIndex>2</ZIndex>
-    <ControlClass>FGStringField</ControlClass>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>plus1</ControlName>
+    <ZIndex>1</ZIndex>
+    <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate"},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"button_text"}},
+      {"Name":"AllowDoubleClick"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"Center","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"protection"}},
+      {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"ButtonField"},
+      {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"plus1"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DefaultText","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"DelayKeyUpdate","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"25"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"text","PropertyValue":"+1","PropertyAttributes":"state","ParentElement":null,"XMLCode":null}}},
+      {"Name":"DefaultValue"},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"45"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
       {"Name":"DevelopmentComments"},
       {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
-      {"Name":"DynamicSize"},
-      {"Name":"EmptyText"},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
       {"Name":"FrameHideReadonly"},
-      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"fielddark"}},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"buttonup"}},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
       {"Name":"GMVisibleOnly"},
       {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
+      {"Name":"HoverIconName"},
       {"Name":"InheritSizePosition"},
       {"Name":"InsertBefore"},
       {"Name":"Invisible"},
-      {"Name":"LineOffset"},
       {"Name":"MaximumHeight"},
       {"Name":"MaximumWidth"},
       {"Name":"Merge"},
       {"Name":"MinimumHeight"},
       {"Name":"MinimumWidth"},
-      {"Name":"MultilineSpacing"},
       {"Name":"NextTabTarget"},
-      {"Name":"NoDrag","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"NoDragselect","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"NoDrop","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"PressedIconName"},
+      {"Name":"PressedOffset"},
       {"Name":"PrevTabTarget"},
       {"Name":"ReadOnly"},
       {"Name":"RelativeMargin"},
@@ -305,40 +308,50 @@
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"93"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"2"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"80"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"8"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>
+function onButtonPress()
+	ModifierStack.addSlot("", 1);
+end
+</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>npc_defense_row</WindowName>
-    <ControlName>protectionType</ControlName>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>plus20</ControlName>
     <ZIndex>3</ZIndex>
-    <ControlClass>FGStringCycler</ControlClass>
+    <ControlClass>FGButton</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate"},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"button_text"}},
+      {"Name":"AllowDoubleClick"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"protectionType"}},
+      {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"ButtonField"},
+      {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"plus20"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DefaultLabel","Value":{"@xsi:type":"xsd:string","#text":"BP"}},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"25"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"text","PropertyValue":"+20","PropertyAttributes":"state","ParentElement":null,"XMLCode":null}}},
+      {"Name":"DefaultValue"},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"45"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
       {"Name":"DevelopmentComments"},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
       {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
       {"Name":"FrameHideReadonly"},
-      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"fielddark"}},
-      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string","#text":"0,0,0,0"}},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"buttonup"}},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMEditOnly"},
       {"Name":"GMVisibleOnly"},
       {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
+      {"Name":"HoverIconName"},
       {"Name":"InheritSizePosition"},
       {"Name":"InsertBefore"},
       {"Name":"Invisible"},
@@ -348,24 +361,91 @@
       {"Name":"MinimumHeight"},
       {"Name":"MinimumWidth"},
       {"Name":"NextTabTarget"},
+      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"PressedIconName"},
+      {"Name":"PressedOffset"},
       {"Name":"PrevTabTarget"},
       {"Name":"ReadOnly"},
       {"Name":"RelativeMargin"},
       {"Name":"RelativeStacking"},
       {"Name":"ScriptFile"},
       {"Name":"Source"},
-      {"Name":"Sourceless"},
       {"Name":"StackVertWith"},
       {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
-      {"Name":"StringCyclerAlign","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"StringCyclerItems","Value":{"@xsi:type":"ArrayOfLabelValue","LabelValue":[{"Label":"Beam","Value":"beam"},{"Label":"Electric","Value":"electric"},{"Label":"Sonic","Value":"sonic"}]}},
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"141"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"2"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"160"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"8"}}
 ]}}</Definition>
-    <LUACode />
+    <LUACode>function onButtonPress()
+	ModifierStack.addSlot("Easy", 20);
+end</LUACode>
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>modifierstack</WindowName>
+    <ControlName>plus5</ControlName>
+    <ZIndex>2</ZIndex>
+    <ControlClass>FGButton</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"button_text"}},
+      {"Name":"AllowDoubleClick"},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"ButtonField"},
+      {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"plus5"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty","CustomProperty":{"PropertyName":"text","PropertyValue":"+5","PropertyAttributes":"state","ParentElement":null,"XMLCode":null}}},
+      {"Name":"DefaultValue"},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"30"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
+      {"Name":"Disabled"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"buttonup"}},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"HoverIconName"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"PressedIconName"},
+      {"Name":"PressedOffset"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"120"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"8"}}
+]}}</Definition>
+    <LUACode>function onButtonPress()
+	ModifierStack.addSlot("", 5);
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>

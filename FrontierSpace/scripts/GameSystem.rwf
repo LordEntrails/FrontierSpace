@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Scripts>
     <ScriptName>GameSystem</ScriptName>
-    <FolderID>10</FolderID>
+    <FolderID>12</FolderID>
     <Script>-- Ruleset action types
 actions = {
 	["dice"] = { bUseModStack = "true" },
@@ -34,11 +34,6 @@ function getCharSelectDetailLocal(nodeLocal)
 	return DB.getValue(nodeLocal, "name", ""), "";
 end
 
---function getDistanceUnitsPerGrid()
---	return 1;
---end
-
-
 function onInit()    
     languages = {
         -- Standard languages
@@ -64,6 +59,11 @@ end
 
 function getDistanceUnitsPerGrid()
 	return 2;
+end
+
+function onInit()
+	CharEncumbranceManager.addStandardCalc();
+	CombatListManager.registerStandardInitSupport();
 end</Script>
     <RegisterScript>true</RegisterScript>
     <Encoding />

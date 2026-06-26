@@ -1,22 +1,155 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
-    <ControlName>combattracker_client</ControlName>
+    <WindowName>combattracker_host_fs</WindowName>
+    <ControlName>button_global_visibility</ControlName>
+    <ZIndex>3</ZIndex>
+    <ControlClass>FGButton</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"AdvancedTemplate"},
+      {"Name":"AllowDoubleClick"},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"ButtonField"},
+      {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition","ButtonStateDefinition":[{"Tooltip":"Show all NPCs","Icon":"visibilityoff"},{"Tooltip":"Hide all NPCs","Icon":"visibilityon"}]}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"button_global_visibility"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DefaultValue"},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
+      {"Name":"Disabled"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"HoverIconName"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string","#text":"visibilityon"}},
+      {"Name":"PressedIconName"},
+      {"Name":"PressedOffset"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"30"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"35"}}
+]}}</Definition>
+    <LUACode>function onValueChanged()
+    window.list.toggleVisibility();
+end
+</LUACode>
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>combattracker_host_fs</WindowName>
+    <ControlName>clientview</ControlName>
+    <ZIndex>12</ZIndex>
+    <ControlClass>FGButton</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"AdvancedTemplate"},
+      {"Name":"AllowDoubleClick"},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string","#text":"Client"}},
+      {"Name":"ButtonField"},
+      {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"clientview"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DefaultValue"},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"25"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"60"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
+      {"Name":"Disabled"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"buttonup"}},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"HoverCursor"},
+      {"Name":"HoverIconName"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"PressedIconName"},
+      {"Name":"PressedOffset"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"293"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"354"}}
+]}}</Definition>
+    <LUACode>
+function onButtonPress()
+    Interface.openWindow("combattracker_client", "combattracker");
+end
+</LUACode>
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>combattracker_host_fs</WindowName>
+    <ControlName>combattracker_host_fs</ControlName>
     <ZIndex>0</ZIndex>
     <ControlClass>FGWindow</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AllowResize","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"BottomMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"Comments","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"combattracker_client"}},
+      {"Name":"Comments"},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"combattracker_host_fs"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DataSource"},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"400"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"523"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
-      {"Name":"Dynamic"},
+      {"Name":"Dynamic","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
       {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"ctbox"}},
       {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HostControl"},
@@ -29,7 +162,7 @@
       {"Name":"MergeWindow","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"MinimizedIcon"},
       {"Name":"MinimumHeight","Value":{"@xsi:type":"xsd:int","#text":"400"}},
-      {"Name":"MinimumWidth","Value":{"@xsi:type":"xsd:int","#text":"400"}},
+      {"Name":"MinimumWidth","Value":{"@xsi:type":"xsd:int","#text":"500"}},
       {"Name":"NoClose"},
       {"Name":"NoDelete"},
       {"Name":"NoMove"},
@@ -53,31 +186,122 @@
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
-    <LUACode>function onInit()
-	OptionsManager.registerCallback("CTSI", onOptionCTSIChanged);
-	self.onOptionCTSIChanged();
-end
-function onClose()
-	OptionsManager.unregisterCallback("CTSI", onOptionCTSIChanged);
-end
-
-function onOptionCTSIChanged()
-	if label_init then
-		local bShowInit = not OptionsManager.isOption("CTSI", "off");
-		label_init.setVisible(bShowInit);
-	end
-	if list and list.onOptionCTSIChanged then
-		list.onOptionCTSIChanged();
-	end
-end
-</LUACode>
+    <LUACode />
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
+    <ControlName>frame_ctbox_host_header_visibility</ControlName>
+    <ZIndex>2</ZIndex>
+    <ControlClass>FGIconControl</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"AdvancedTemplate"},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"frame_ctbox_host_header_visibility"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"35"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"40"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
+      {"Name":"Disabled"},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"ct_groupbox"}},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"IconColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"IconName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"20"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"28"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>combattracker_host_fs</WindowName>
+    <ControlName>host_controls</ControlName>
+    <ZIndex>11</ZIndex>
+    <ControlClass>FGCustomControl</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"host_controls"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomClassName","Value":{"@xsi:type":"xsd:string","#text":"sub_ct_controls_host"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"25"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"470"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge","Value":{"@xsi:type":"xsd:string","#text":"replace"}},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"XMLCode"},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"27"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"354"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_bp</ControlName>
-    <ZIndex>10</ZIndex>
+    <ZIndex>8</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -122,7 +346,7 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"316"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"202"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"39"}}
 ]}}</Definition>
     <LUACode />
@@ -130,64 +354,9 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
-    <ControlName>label_ct_host_rounds</ControlName>
-    <ZIndex>7</ZIndex>
-    <ControlClass>FGLabel</ControlClass>
-    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate"},
-      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"Center"},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"label_ct_host_rounds"}},
-      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
-      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"39"}},
-      {"Name":"DevelopmentComments"},
-      {"Name":"Disabled"},
-      {"Name":"DynamicSize"},
-      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"255;255;255;255"}},
-      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"sheetlabel"}},
-      {"Name":"FrameHideReadonly"},
-      {"Name":"FrameName"},
-      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
-      {"Name":"HoverCursor"},
-      {"Name":"InheritSizePosition"},
-      {"Name":"InsertBefore"},
-      {"Name":"Invisible"},
-      {"Name":"LabelCaption","Value":{"@xsi:type":"xsd:string","#text":"Round"}},
-      {"Name":"MaximumHeight"},
-      {"Name":"MaximumWidth"},
-      {"Name":"Merge"},
-      {"Name":"MinimumHeight"},
-      {"Name":"MinimumWidth"},
-      {"Name":"MultilineSpacing"},
-      {"Name":"NextTabTarget"},
-      {"Name":"PrevTabTarget"},
-      {"Name":"RelativeMargin"},
-      {"Name":"RelativeStacking"},
-      {"Name":"ScriptFile"},
-      {"Name":"StackVertWith"},
-      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
-      {"Name":"TextUnderlined"},
-      {"Name":"Tooltip"},
-      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"406"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"358"}}
-]}}</Definition>
-    <LUACode />
-    <GroupIndex>0</GroupIndex>
-    <Template />
-  </WindowControls>
-  <WindowControls>
-    <WindowName>combattracker_client</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_init</ControlName>
-    <ZIndex>3</ZIndex>
+    <ZIndex>6</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -209,7 +378,7 @@ end
       {"Name":"FrameName"},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
       {"Name":"InheritSizePosition"},
       {"Name":"InsertBefore"},
@@ -232,7 +401,7 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"280"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"166"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"39"}}
 ]}}</Definition>
     <LUACode />
@@ -240,9 +409,9 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_map</ControlName>
-    <ZIndex>12</ZIndex>
+    <ZIndex>10</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -264,7 +433,7 @@ end
       {"Name":"FrameName"},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
       {"Name":"InheritSizePosition"},
       {"Name":"InsertBefore"},
@@ -287,7 +456,7 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"382"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"268"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"39"}}
 ]}}</Definition>
     <LUACode />
@@ -295,15 +464,15 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_name</ControlName>
-    <ZIndex>2</ZIndex>
+    <ZIndex>5</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
       {"Name":"AdvancedTemplate"},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"Center"},
+      {"Name":"Center","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"label_name"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
@@ -319,12 +488,12 @@ end
       {"Name":"FrameName"},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
       {"Name":"InheritSizePosition"},
       {"Name":"InsertBefore"},
       {"Name":"Invisible"},
-      {"Name":"LabelCaption","Value":{"@xsi:type":"xsd:string","#text":"Name"}},
+      {"Name":"LabelCaption","Value":{"@xsi:type":"xsd:string","#text":"NameXX"}},
       {"Name":"MaximumHeight"},
       {"Name":"MaximumWidth"},
       {"Name":"Merge"},
@@ -342,7 +511,7 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"31"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"65"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"39"}}
 ]}}</Definition>
     <LUACode />
@@ -350,9 +519,9 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>label_wounds</ControlName>
-    <ZIndex>11</ZIndex>
+    <ZIndex>9</ZIndex>
     <ControlClass>FGLabel</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -374,7 +543,7 @@ end
       {"Name":"FrameName"},
       {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"HoverCursor"},
       {"Name":"InheritSizePosition"},
       {"Name":"InsertBefore"},
@@ -397,7 +566,7 @@ end
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"345"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"231"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"39"}}
 ]}}</Definition>
     <LUACode />
@@ -405,7 +574,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>list</ControlName>
     <ZIndex>4</ZIndex>
     <ControlClass>FGWindowList</ControlClass>
@@ -459,39 +628,68 @@ end
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
       {"Name":"WindowListChildDefinition","Value":{"@xsi:type":"ArrayOfChildDefinition"}},
-      {"Name":"WindowListClassName","Value":{"@xsi:type":"xsd:string","#text":"client_ct_entry"}},
+      {"Name":"WindowListClassName","Value":{"@xsi:type":"xsd:string","#text":"ct_entry"}},
       {"Name":"WindowListFilterBy","Value":{"@xsi:type":"FilterByDefinition","FilterSourceType":"Control","FilterOnSourceType":"Control"}},
       {"Name":"WindowListSortBy","Value":{"@xsi:type":"ArrayOfSortByDefinition"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"68"}}
 ]}}</Definition>
-    <LUACode>function onInit()
+    <LUACode>local enableglobaltoggle = true;
+local enablevisibilitytoggle = true;
+
+function onInit()
+	registerMenuItem(Interface.getString("list_menu_createitem"), "insert", 5);
+
 	Interface.onHotkeyActivated = onHotkey;
 	
+	onVisibilityToggle();
+	onEntrySectionToggle();
+
 	local node = getDatabaseNode();
-	DB.addHandler(DB.getPath(node, "*.name"), "onUpdate", onNameUpdated);
-	DB.addHandler(DB.getPath(node, "*.nonid_name"), "onUpdate", onNameUpdated);
-	DB.addHandler(DB.getPath(node, "*.isidentified"), "onUpdate", onNameUpdated);
+	DB.addHandler(DB.getPath(node, "*.name"), "onUpdate", onNameOrTokenUpdated);
+	DB.addHandler(DB.getPath(node, "*.nonid_name"), "onUpdate", onNameOrTokenUpdated);
+	DB.addHandler(DB.getPath(node, "*.isidentified"), "onUpdate", onNameOrTokenUpdated);
+	DB.addHandler(DB.getPath(node, "*.token"), "onUpdate", onNameOrTokenUpdated);
 end
 
 function onClose()
 	local node = getDatabaseNode();
-	DB.removeHandler(DB.getPath(node, "*.name"), "onUpdate", onNameUpdated);
-	DB.removeHandler(DB.getPath(node, "*.nonid_name"), "onUpdate", onNameUpdated);
-	DB.removeHandler(DB.getPath(node, "*.isidentified"), "onUpdate", onNameUpdated);
+	DB.removeHandler(DB.getPath(node, "*.name"), "onUpdate", onNameOrTokenUpdated);
+	DB.removeHandler(DB.getPath(node, "*.nonid_name"), "onUpdate", onNameOrTokenUpdated);
+	DB.removeHandler(DB.getPath(node, "*.isidentified"), "onUpdate", onNameOrTokenUpdated);
+	DB.removeHandler(DB.getPath(node, "*.token"), "onUpdate", onNameOrTokenUpdated);
 end
 
-function onNameUpdated(vNode)
+function onNameOrTokenUpdated()
 	for _,w in pairs(getWindows()) do
 		w.target_summary.onTargetsChanged();
+		
+		if w.sub_targeting.subwindow then
+			for _,wTarget in pairs(w.sub_targeting.subwindow.targets.getWindows()) do
+				wTarget.onRefChanged();
+			end
+		end
+		
+		if w.sub_effects.subwindow then
+            for _,wEffect in pairs(w.sub_effects.subwindow.effects.getWindows()) do
+                wEffect.target_summary.onTargetsChanged();
+            end
+        end
 	end
 end
 
-function onOptionCTSIChanged()
-	for _,v in pairs(getWindows()) do
-		v.updateDisplay();
+function addEntry(bFocus)
+	local w = createWindow();
+	if bFocus and w then
+		w.name.setFocus();
 	end
-	applySort();
+	return w;
+end
+
+function onMenuSelection(selection)
+	if selection == 5 then
+		addEntry(true);
+	end
 end
 
 function onSortCompare(w1, w2)
@@ -501,45 +699,72 @@ end
 function onHotkey(draginfo)
 	local sDragType = draginfo.getType();
 	if sDragType == "combattrackernextactor" then
-		CombatManager.notifyEndTurn();
+		CombatManager.nextActor();
+		return true;
+	elseif sDragType == "combattrackernextround" then
+		CombatManager.nextRound(1);
 		return true;
 	end
 end
 
-function onFilter(w)
-	if w.friendfoe.getStringValue() == "friend" then
-		return true;
+function toggleVisibility()
+	if not enablevisibilitytoggle then
+		return;
 	end
-	if w.tokenvis.getValue() ~= 0 then
-		return true;
+		
+	local visibilityon = window.button_global_visibility.getValue();
+	for _,v in pairs(getWindows()) do
+		if v.friendfoe.getStringValue() ~= "friend" then
+			if visibilityon ~= v.tokenvis.getValue() then
+				v.tokenvis.setValue(visibilityon);
+			end
+		end
 	end
-	return false;
+end
+
+function onVisibilityToggle()
+	local anyVisible = 0;
+	for _,v in pairs(getWindows()) do
+		if (v.friendfoe.getStringValue() ~= "friend") and (v.tokenvis.getValue() == 1) then
+			anyVisible = 1;
+		end
+	end
+	
+    enablevisibilitytoggle = false;
+	window.button_global_visibility.setValue(anyVisible);
+	enablevisibilitytoggle = true;
+end
+
+function onEntrySectionToggle()
+	local anyTargeting = 0;
+	local anySpacing = 0;
+	local anyEffects = 0;
+
+	for _,v in pairs(getWindows()) do
+		if v.activatetargeting.getValue() == 1 then
+			anyTargeting = 1;
+		end
+		if v.activatespacing.getValue() == 1 then
+			anySpacing = 1;
+		end
+		if v.activateeffects.getValue() == 1 then
+			anyEffects = 1;
+		end
+	end
 end
 
 function onDrop(x, y, draginfo)
-	local w = getWindowAt(x,y);
-	if w then
-		local nodeWin = w.getDatabaseNode();
+	if draginfo.isType("shortcut") then
+		return CampaignDataManager.handleDrop("combattracker", draginfo);
+	end
+	
+	-- Capture any drops meant for specific CT entries
+	local win = getWindowAt(x,y);
+	if win then
+		local nodeWin = win.getDatabaseNode();
 		if nodeWin then
 			return CombatManager.onDrop("ct", nodeWin.getPath(), draginfo);
 		end
-	end
-end
-
-function onClickDown(button, x, y)
-	if Input.isControlPressed() then
-		return true;
-	end
-end
-
-function onClickRelease(button, x, y)
-	if Input.isControlPressed() then
-		local w = getWindowAt(x, y);
-		if w then
-			TargetingManager.toggleClientCTTarget(w.getDatabaseNode());
-		end
-
-		return true;
 	end
 end
 </LUACode>
@@ -547,7 +772,7 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>menubar</ControlName>
     <ZIndex>1</ZIndex>
     <ControlClass>FGCustomControl</ControlClass>
@@ -560,7 +785,7 @@ end
       {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
       {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"20"}},
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"500"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"490"}},
       {"Name":"DevelopmentComments"},
       {"Name":"Disabled"},
       {"Name":"DynamicSize"},
@@ -602,127 +827,9 @@ end
     <Template />
   </WindowControls>
   <WindowControls>
-    <WindowName>combattracker_client</WindowName>
-    <ControlName>resize_ctbox</ControlName>
-    <ZIndex>9</ZIndex>
-    <ControlClass>FGIconControl</ControlClass>
-    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate"},
-      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"resize_ctbox"}},
-      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"18"}},
-      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"18"}},
-      {"Name":"DevelopmentComments"},
-      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
-      {"Name":"Disabled","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"FrameHideReadonly"},
-      {"Name":"FrameName"},
-      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"GMEditOnly"},
-      {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
-      {"Name":"HoverCursor"},
-      {"Name":"IconColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"IconName","Value":{"@xsi:type":"xsd:string","#text":"window_resize"}},
-      {"Name":"InheritSizePosition"},
-      {"Name":"InsertBefore"},
-      {"Name":"Invisible"},
-      {"Name":"MaximumHeight"},
-      {"Name":"MaximumWidth"},
-      {"Name":"Merge"},
-      {"Name":"MinimumHeight"},
-      {"Name":"MinimumWidth"},
-      {"Name":"NextTabTarget"},
-      {"Name":"PrevTabTarget"},
-      {"Name":"ReadOnly"},
-      {"Name":"RelativeMargin"},
-      {"Name":"RelativeStacking"},
-      {"Name":"ScriptFile"},
-      {"Name":"StackVertWith"},
-      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
-      {"Name":"Tooltip"},
-      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"498"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"376"}}
-]}}</Definition>
-    <LUACode />
-    <GroupIndex>0</GroupIndex>
-    <Template />
-  </WindowControls>
-  <WindowControls>
-    <WindowName>combattracker_client</WindowName>
-    <ControlName>round</ControlName>
-    <ZIndex>8</ZIndex>
-    <ControlClass>FGNumberField</ControlClass>
-    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"simplenumber"}},
-      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"round"}},
-      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DefaultValue"},
-      {"Name":"DelayKeyUpdate"},
-      {"Name":"DescriptionText"},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"25"}},
-      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"50"}},
-      {"Name":"DevelopmentComments"},
-      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
-      {"Name":"Disabled"},
-      {"Name":"DisplaySign"},
-      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"FontName","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"FrameHideReadonly"},
-      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"ct_groupbox"}},
-      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string","#text":"3,3,3,3"}},
-      {"Name":"GMEditOnly"},
-      {"Name":"GMVisibleOnly"},
-      {"Name":"HideOnValue"},
-      {"Name":"HideRollWidget"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
-      {"Name":"HoverCursor"},
-      {"Name":"InheritSizePosition"},
-      {"Name":"InsertBefore"},
-      {"Name":"Invisible"},
-      {"Name":"MaximumHeight"},
-      {"Name":"MaximumWidth"},
-      {"Name":"MaxValue"},
-      {"Name":"Merge"},
-      {"Name":"MinimumHeight"},
-      {"Name":"MinimumWidth"},
-      {"Name":"MinValue"},
-      {"Name":"NextTabTarget"},
-      {"Name":"NoDrag"},
-      {"Name":"NoDrop"},
-      {"Name":"NoKeyEdit"},
-      {"Name":"PrevTabTarget"},
-      {"Name":"ReadOnly"},
-      {"Name":"RelativeMargin"},
-      {"Name":"RelativeStacking"},
-      {"Name":"ScriptFile"},
-      {"Name":"Source"},
-      {"Name":"StackVertWith"},
-      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
-      {"Name":"Tooltip"},
-      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"449"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"355"}}
-]}}</Definition>
-    <LUACode />
-    <GroupIndex>0</GroupIndex>
-    <Template />
-  </WindowControls>
-  <WindowControls>
-    <WindowName>combattracker_client</WindowName>
+    <WindowName>combattracker_host_fs</WindowName>
     <ControlName>scrollbar_list</ControlName>
-    <ZIndex>5</ZIndex>
+    <ZIndex>7</ZIndex>
     <ControlClass>FGScrollBar</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -767,81 +874,9 @@ end
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"2"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"497"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"64"}}
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"65"}}
 ]}}</Definition>
     <LUACode />
-    <GroupIndex>0</GroupIndex>
-    <Template />
-  </WindowControls>
-  <WindowControls>
-    <WindowName>combattracker_client</WindowName>
-    <ControlName>turn_complete</ControlName>
-    <ZIndex>6</ZIndex>
-    <ControlClass>FGButton</ControlClass>
-    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
-      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate"},
-      {"Name":"AllowDoubleClick"},
-      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"ButtonCaption","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"ButtonField"},
-      {"Name":"ButtonStateList","Value":{"@xsi:type":"ArrayOfButtonStateDefinition"}},
-      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"turn_complete"}},
-      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
-      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
-      {"Name":"DefaultValue"},
-      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"26"}},
-      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
-      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"33"}},
-      {"Name":"DevelopmentComments"},
-      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":{"@xsi:nil":"true"},"SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
-      {"Name":"Disabled"},
-      {"Name":"FontColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
-      {"Name":"FontName","Value":{"@xsi:type":"xsd:string","#text":"button-white"}},
-      {"Name":"FrameHideReadonly"},
-      {"Name":"FrameName","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"GMEditOnly"},
-      {"Name":"GMVisibleOnly"},
-      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"HoverCursor"},
-      {"Name":"HoverIconName"},
-      {"Name":"InheritSizePosition"},
-      {"Name":"InsertBefore"},
-      {"Name":"Invisible"},
-      {"Name":"MaximumHeight"},
-      {"Name":"MaximumWidth"},
-      {"Name":"Merge"},
-      {"Name":"MinimumHeight"},
-      {"Name":"MinimumWidth"},
-      {"Name":"NextTabTarget"},
-      {"Name":"NormalIconName","Value":{"@xsi:type":"xsd:string","#text":"button_ctnextactor"}},
-      {"Name":"PressedIconName","Value":{"@xsi:type":"xsd:string","#text":"button_ctnextactor_down"}},
-      {"Name":"PressedOffset"},
-      {"Name":"PrevTabTarget"},
-      {"Name":"ReadOnly"},
-      {"Name":"RelativeMargin"},
-      {"Name":"RelativeStacking"},
-      {"Name":"ScriptFile"},
-      {"Name":"Source"},
-      {"Name":"StackVertWith"},
-      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
-      {"Name":"Tooltip","Value":{"@xsi:type":"xsd:string","#text":"End Turn"}},
-      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
-      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"1"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"29"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"354"}}
-]}}</Definition>
-    <LUACode>function onButtonPress()
-    CombatManager.notifyEndTurn();
-end
-
-function onDragStart(button, x, y, draginfo)
-    draginfo.setType("combattrackernextactor");
-    draginfo.setIcon("button_ctnextactor");
-    
-    return true;
-end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>

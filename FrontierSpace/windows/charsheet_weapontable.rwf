@@ -137,7 +137,7 @@
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"85"}},
       {"Name":"DevelopmentComments"},
-      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":"true","SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":"true","ResetModStack":"true","SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
       {"Name":"FrameHideReadonly"},
       {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"fieldlight"}},
@@ -191,7 +191,7 @@
       {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
       {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"62"}},
       {"Name":"DevelopmentComments"},
-      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":{"@xsi:nil":"true"},"ResetModStack":"true","SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
+      {"Name":"DiceRoll","Value":{"@xsi:type":"PropertyDiceRoll","UseModStack":"true","ResetModStack":"true","SecretRoll":{"@xsi:nil":"true"},"AllowDragDrop":{"@xsi:nil":"true"},"AdditionalInfo":null}},
       {"Name":"Disabled"},
       {"Name":"FrameHideReadonly"},
       {"Name":"FrameName","Value":{"@xsi:type":"xsd:string","#text":"fieldlight"}},
@@ -425,7 +425,7 @@
   <WindowControls>
     <WindowName>charsheet_weapontable</WindowName>
     <ControlName>usage</ControlName>
-    <ZIndex>9</ZIndex>
+    <ZIndex>7</ZIndex>
     <ControlClass>FGStringField</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},

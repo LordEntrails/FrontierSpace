@@ -1,0 +1,16 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>char_benefits</XmlName>
+    <FolderID>1</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;root&gt;
+    &lt;windowclass name="char_benefits" copy="char_ability"&gt;
+        &lt;sheetdata&gt;
+            &lt;windowreferencecontrol name="link" merge="join"&gt;
+                &lt;class&gt;benefits&lt;/class&gt;
+            &lt;/windowreferencecontrol&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+&lt;/root&gt;</XML>
+  </XMLFiles>
+</DocumentElement>

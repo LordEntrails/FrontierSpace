@@ -1,0 +1,21 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>strings_combat_options</XmlName>
+    <FolderID>13</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;root&gt;
+    &lt;!-- Headers and Labels --&gt;
+    &lt;string name="option_header_combat"&gt;Combat&lt;/string&gt;
+    &lt;string name="option_label_roll_init"&gt;Init: Roll Init Each Round&lt;/string&gt;
+    &lt;string name="option_label_silent_init"&gt;Init: Silent Rolls&lt;/string&gt;
+
+    &lt;!-- Values --&gt;
+    &lt;string name="option_val_off"&gt;Off&lt;/string&gt;
+    &lt;string name="option_val_on"&gt;On&lt;/string&gt;
+    &lt;string name="option_val_all"&gt;All&lt;/string&gt;
+    &lt;string name="option_val_pc"&gt;PCs&lt;/string&gt;
+    &lt;string name="option_val_npc"&gt;NPCs&lt;/string&gt;
+    &lt;string name="option_val_silent"&gt;Silent Math&lt;/string&gt;
+&lt;/root&gt;	</XML>
+  </XMLFiles>
+</DocumentElement>

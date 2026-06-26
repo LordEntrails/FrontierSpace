@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Scripts>
     <ScriptName>managerRolls</ScriptName>
-    <FolderID>10</FolderID>
+    <FolderID>12</FolderID>
     <Script>function StatRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
 
@@ -502,40 +502,46 @@ function SpecialistRoll(rSource, rTarget, rRoll)
 end
 
 function InitiativeRoll(rSource, rTarget, rRoll)
---  Name the function and accept 3 parameters
-
+    --  Create a message from the rSource and rRoll parameters
     local rMessage = ActionsManager.createActionMessage(rSource, rRoll);
-    --  Create a message from the rSource and rRoll parameters using CoreRPGs createActionMessage function
 
     local nodeChar = rSource.sCreatureNode;
-    --  Capture the Character Node
     
     local sIcon;
     if rSource.sType == "npc" then
-		sIcon = "portrait_gm_token";
+        sIcon = "portrait_gm_token";
     else
-		sIcon = DB.getValue(nodeChar .. ".token");
+        sIcon = DB.getValue(nodeChar .. ".token");
         if sIcon then
-			sIcon = string.gsub(sIcon, "token", "chat");
-		end
+            sIcon = string.gsub(sIcon, "token", "chat");
+        end
     end
     if sIcon then
-		rMessage.icon = sIcon;
-	end
-    --  set Chat Icon even when GM is rolling for player
+        rMessage.icon = sIcon;
+    end
      
+    -- THE MATH FIX: Calculate "Keep Highest 1" instead of Summing
+    local nResult = 0;
+    if rRoll.aDice then
+        -- Loop through every die that was rolled
+        for _,vDie in ipairs(rRoll.aDice) do
+            -- If this die is higher than our current saved result, overwrite it
+            if vDie.result &gt; nResult then
+                nResult = vDie.result;
+            end
+        end
+    end
+    -- Add any flat modifiers (usually 0 in this system, but good practice)
+    nResult = nResult + tonumber(rRoll.nMod or 0);
+
+    -- Deliver the chat message so everyone sees the dice
     Comm.deliverChatMessage(rMessage);
-
-    local nResult = tonumber(ActionsManager.total(rRoll));
     
-    local sCTNode = ActorManager.getCTNodeName(rSource);
     -- Find the string value of the actor's CTNode
+    local sCTNode = ActorManager.getCTNodeName(rSource);
     
+    -- Change the initresult node of the given actor on the combat tracker
     RulesetWizard.changeDBValueOOB(DB.findNode((sCTNode .. ".initresult")), nResult);
-    -- Change the initresult node of the given actor
-    
-    --DB.setValue(ActorManager.getCTNode(rSource), "initresult", "number", nResult);
-
 end
 
 --[[function StarshipRoll(rSource, rTarget, rRoll)
