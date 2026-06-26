@@ -49523,6 +49523,8 @@ end
 local fOldNextActor;
 -- A flag to tell our script when to block the automatic turn advance
 local bBlockAutoNextActor = false;
+-- used to override the overnight rest function
+local fOldRest;
 
 function onInit()
     -- 1. Register: Roll Init Each Round
@@ -49540,9 +49542,15 @@ function onInit()
     if CombatManager.nextActor then
         fOldNextActor = CombatManager.nextActor;
         CombatManager.nextActor = customNextActor;
-        
+     end
+     
     -- 5. Hijack the Combat Tracker Radial Menu for Initiative
     CombatManager.rollInit = customRollInit;
+    
+    -- 6. Hook the rest function
+    if CombatManager.rest then
+        fOldRest = CombatManager.rest;
+        CombatManager.rest = customRest;
     end
 end
 
@@ -49674,6 +49682,34 @@ function rollInitiative(nodeCT)
             
             ActionsManager.performAction(nil, rSource, rRoll);
         end
+    end
+end
+    
+    -- This intercepts the rest command
+function customRest(bLongRest)
+    -- 1. Run the original CoreRPG rest logic first
+    fOldRest(bLongRest);
+
+    -- 2. Only perform the destiny reset if it is an Overnight (Long) Rest
+    if bLongRest then
+        -- Loop through all combatants
+        for _, nodeCT in pairs(CombatManager.getCombatantNodes()) do
+            local rActor = ActorManager.resolveActor(nodeCT);
+            
+            -- Only target PCs
+            if rActor and ActorManager.isPC(rActor) then
+                -- Correct way to get the character node from the actor object
+                local nodeChar = ActorManager.getCreatureNode(rActor);
+                
+                -- Check if the character node exists and reset the value
+                if nodeChar then
+                    DB.setValue(nodeChar, "destiny_used", "number", 0);
+                end
+            end
+        end
+        
+        -- Optional: Add a chat message so the group knows Destiny reset
+        Comm.deliverChatMessage({text = "Destiny pools have been replenished after the long rest."});
     end
 end</Script>
     <RegisterScript>true</RegisterScript>
