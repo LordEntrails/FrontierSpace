@@ -1,0 +1,31 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>sub_ct_controls_host</XmlName>
+    <FolderID>4</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+	&lt;windowclass name="sub_ct_controls_host" merge="join"&gt;
+		&lt;sheetdata&gt;
+			&lt;buttoncontrol name="clientview"&gt;
+				&lt;frame name="buttonup" /&gt;
+				&lt;anchored width="55" height="24"&gt;
+					&lt;left parent="button_menu" anchor="right" offset="10" /&gt;
+					&lt;top parent="button_menu" anchor="top" offset="-2" /&gt;
+				&lt;/anchored&gt;
+				&lt;text&gt;CLIENT&lt;/text&gt;
+				&lt;stateframe&gt;
+					&lt;pressed name="buttonup" offset="-1,-1,-1,-1" nobaseframe="true" /&gt;
+				&lt;/stateframe&gt;
+				&lt;font&gt;button-white&lt;/font&gt;
+				&lt;script&gt;
+					function onButtonPress()
+					Interface.openWindow("combattracker_client", "combattracker");
+					end
+				&lt;/script&gt;
+			&lt;/buttoncontrol&gt;
+		&lt;/sheetdata&gt;
+	&lt;/windowclass&gt;	
+&lt;/root&gt;      
+	</XML>
+  </XMLFiles>
+</DocumentElement>
