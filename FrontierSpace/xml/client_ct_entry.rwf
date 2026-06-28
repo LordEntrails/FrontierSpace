@@ -1,0 +1,81 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>client_ct_entry</XmlName>
+    <FolderID>4</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+	&lt;windowclass name="client_ct_entry" merge="join"&gt;
+		&lt;sheetdata&gt;
+			&lt;!-- 1. Mapcurrent (Furthest Right) --&gt;
+			&lt;button_stringcycler name="mapcurrent" insertbefore="initresult"&gt;
+				&lt;anchored width="35" height="28"&gt;
+					&lt;top parent="rightanchor" offset="-3" /&gt;
+					&lt;right parent="rightanchor" anchor="left" relation="relative" offset="-2" /&gt;
+				&lt;/anchored&gt;
+				&lt;frame name="buttonup" offset="0,0,0,0" /&gt;
+				&lt;color&gt;#FFFFFFFF&lt;/color&gt;
+				&lt;parameters&gt;
+					&lt;defaultlabelres&gt;client_ct_entry_mapcurrent_DefaultLabel&lt;/defaultlabelres&gt;
+					&lt;labelsres&gt;client_ct_entry_mapcurrent_Label__20|client_ct_entry_mapcurrent_Label__40|client_ct_entry_mapcurrent_Label__60|client_ct_entry_mapcurrent_Label__80&lt;/labelsres&gt;
+					&lt;values&gt;-20|-40|-60|-80&lt;/values&gt;
+				&lt;/parameters&gt;
+			&lt;/button_stringcycler&gt;
+
+			&lt;!-- 2. Wounds --&gt;
+			&lt;number_ct_crosslink name="wounds" insertbefore="initresult"&gt;
+				&lt;anchored width="35" height="30" merge="replace"&gt;
+					&lt;top parent="rightanchor" offset="-3" /&gt;
+					&lt;right parent="rightanchor" anchor="left" relation="relative" offset="0" /&gt;
+				&lt;/anchored&gt;
+				&lt;frame name="fielddark" /&gt;
+				&lt;tabtarget&gt;
+					&lt;prev&gt;nonid_name&lt;/prev&gt;
+				&lt;/tabtarget&gt;
+				&lt;hideonvalue&gt;0&lt;/hideonvalue&gt;
+				&lt;script&gt;
+					function update()
+						window.windowlist.applySort();
+					end
+				&lt;/script&gt;
+			&lt;/number_ct_crosslink&gt;
+
+			&lt;!-- 3. BP Total --&gt;
+			&lt;number_ct_crosslink name="bptotal" insertbefore="initresult"&gt;
+				&lt;anchored width="35" height="30" merge="replace"&gt;
+					&lt;top parent="rightanchor" offset="-3" /&gt;
+					&lt;right parent="rightanchor" anchor="left" relation="relative" offset="0" /&gt;
+				&lt;/anchored&gt;
+				&lt;frame name="fielddark" /&gt;
+				&lt;tabtarget&gt;
+					&lt;prev&gt;nonid_name&lt;/prev&gt;
+				&lt;/tabtarget&gt;
+				&lt;script&gt;
+					function update()
+						window.windowlist.applySort();
+					end
+				&lt;/script&gt;
+			&lt;/number_ct_crosslink&gt;
+
+			&lt;!-- 4. Initresult (Leftmost custom field) --&gt;
+			&lt;number_ct_crosslink name="initresult" merge="replace"&gt;
+				&lt;!-- Changed to 20x20. Top offset changed to 11 to vertically center it with the 30px tall boxes --&gt;
+				&lt;anchored width="20" height="20" merge="replace"&gt;
+					&lt;top parent="rightanchor" offset="2" /&gt;
+					&lt;right parent="rightanchor" anchor="left" relation="relative" offset="-4" /&gt;
+				&lt;/anchored&gt;
+				&lt;frame name="fielddark" /&gt;
+				&lt;tabtarget&gt;
+					&lt;prev&gt;nonid_name&lt;/prev&gt;
+				&lt;/tabtarget&gt;
+				&lt;hideonvalue&gt;0&lt;/hideonvalue&gt;
+				&lt;script&gt;
+					function update()
+						window.windowlist.applySort();
+					end
+				&lt;/script&gt;
+			&lt;/number_ct_crosslink&gt;
+		&lt;/sheetdata&gt;
+	&lt;/windowclass&gt;
+&lt;/root&gt;</XML>
+  </XMLFiles>
+</DocumentElement>
