@@ -6,6 +6,9 @@
 &lt;root&gt;
 	&lt;windowclass name="client_ct_entry" merge="join"&gt;
 		&lt;sheetdata&gt;
+			&lt;button_ctentry_friendfoe name="friendfoe" merge="join"&gt;
+				&lt;invisible /&gt;
+			&lt;/button_ctentry_friendfoe&gt;
 			&lt;!-- 1. Mapcurrent (Furthest Right) --&gt;
 			&lt;button_stringcycler name="mapcurrent" insertbefore="initresult"&gt;
 				&lt;anchored width="35" height="28"&gt;
