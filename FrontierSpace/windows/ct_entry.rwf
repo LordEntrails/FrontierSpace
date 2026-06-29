@@ -122,8 +122,8 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"419"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"6"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"420"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"7"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -247,215 +247,50 @@ end</LUACode>
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
     <LUACode>function onInit()
-	-- Set the displays to what should be shown
-	--setTargetingVisible();
-	--setSpacingVisible();
-	--setEffectsVisible();
-	--setAttacksVisible();
-	--setDefenseVisible();
-	
-	-- Acquire token reference, if any
-	self.linkToken();
-	
-	-- Set up the PC links
-	self.onLinkChanged();
-	self.onFactionChanged();
-	
-	-- Register the deletion menu item for the host
-	registerMenuItem(Interface.getString("list_menu_deleteitem"), "delete", 6);
-	registerMenuItem(Interface.getString("list_menu_deleteconfirm"), "delete", 6, 7);
-end
-
-function onMenuSelection(selection, subselection)
-	if selection == 6 and subselection == 7 then
-		self.delete();
-	end
-end
-function onLinkChanged()
-	-- If a PC, then set up the links to the char sheet
-	if self.isPC() then
-		self.linkPCFields();
-		name.setLine(false);
-	end
-	self.onIDChanged();
-end
-function onIDChanged()
-	local nodeRecord = getDatabaseNode();
-	local sClass = link.getValue();
-	local sRecordType = LibraryData.getRecordTypeFromDisplayClass(sClass);
-	local bID = LibraryData.getIDState(sRecordType, nodeRecord, true);
-	
-	name.setVisible(bID);
-	nonid_name.setVisible(not bID);
-
-	isidentified.setVisible(LibraryData.getIDMode(sRecordType));
-end
-function onFactionChanged()
-	-- Update the entry frame
-	self.updateDisplay();
-
-	-- If not a friend, then show visibility toggle
-	if friendfoe.getStringValue() == "friend" then
-		tokenvis.setVisible(false);
-	else
-		tokenvis.setVisible(true);
-	end
-end
-function onVisibilityChanged()
-	TokenManager.updateVisibility(getDatabaseNode());
-	windowlist.onVisibilityToggle();
-end
-
-function updateDisplay()
-	local sFaction = friendfoe.getStringValue();
-
-	if DB.getValue(getDatabaseNode(), "active", 0) == 1 then
-		name.setFont("sheetlabel");
-		nonid_name.setFont("sheetlabel");
-		
-		if sFaction == "friend" then
-			setFrame("ctentrybox_friend_active");
-		elseif sFaction == "neutral" then
-			setFrame("ctentrybox_neutral_active");
-		elseif sFaction == "foe" then
-			setFrame("ctentrybox_foe_active");
-		else
-			setFrame("ctentrybox_active");
-		end
-	else
-		name.setFont("sheettext");
-		nonid_name.setFont("sheettext");
-		
-		if sFaction == "friend" then
-			setFrame("ctentrybox_friend");
-		elseif sFaction == "neutral" then
-			setFrame("ctentrybox_neutral");
-		elseif sFaction == "foe" then
-			setFrame("ctentrybox_foe");
-		else
-			setFrame("ctentrybox");
-		end
-	end
-end
-
-function linkToken()
-	local imageinstance = token.populateFromImageNode(tokenrefnode.getValue(), tokenrefid.getValue());
-	if imageinstance then
-		TokenManager.linkToken(getDatabaseNode(), imageinstance);
-	end
-end
-
-function delete()
-	local node = getDatabaseNode();
-	if not node then
-		close();
-		return;
-	end
-	
-	-- Clear any effects first, so that saves aren't triggered when initiative advanced
-	DB.deleteChildren(node, "effects");
-
-	-- Clear NPC wounds, so that ruleset turn end dying checks aren't triggered when initiative advanced
-	if wounds and not self.isPC() then
-		DB.setValue(node, "wounds", "number", 0);
-	end
-
-	-- Move to the next actor, if this CT entry is active
-	if self.isActive() then
-		CombatManager.nextActor();
-	end
-
-	-- Delete the database node and close the window
-	local cList = windowlist;
-	node.delete();
-
-	-- Update list information (global subsection toggles)
-	cList.onVisibilityToggle();
-end
-
-function linkPCFields()
-	local nodeChar = link.getTargetDatabaseNode();
-	if nodeChar then
-		name.setLink(nodeChar.createChild("name", "string"), true);
-		senses.setLink(nodeChar.createChild("senses", "string"), true);
-		wounds.setLink(nodeChar.createChild("WoundsCurrent", "number"), true);
-		bptotal.setLink(nodeChar.createChild("BodyPointsMax", "number"), true);
-	end
-end
-
---function linkNPCFields
---
---	HELPERS
---
-
-function isRecordType(s)
-	local sClass = link.getValue();
-	local sRecordType = LibraryData.getRecordTypeFromDisplayClass(sClass);
-	return (sRecordType == s);
-end
-function isPC()
-	return self.isRecordType("charsheet");
-end
-function isActive()
-	return (active.getValue() == 1);
-end
-
-
---
--- SECTION VISIBILITY FUNCTIONS
---
-
-function setTargetingVisible()
-	local v = false;
-	if activatetargeting.getValue() == 1 then
-		v = true;
-	end
-	targetingicon.setVisible(v);
-	sub_targeting.setVisible(v);
-	target_summary.onTargetsChanged();
-end
-
-function setSpacingVisible()
-	local v = false;
-	if activatespacing.getValue() == 1 then
-		v = true;
-	end
-	spacingicon.setVisible(v);
-	sub_spacing.setVisible(v);
-end
-
-function setEffectsVisible()
-	local v = false;
-	if activateeffects.getValue() == 1 then
-		v = true;
-	end
-	
-	effecticon.setVisible(v);
-	sub_effects.setVisible(v);
-	if sub_effects.subwindow then
-        sub_effects.subwindow.setEffectsVisible(v);
-	end
-	effect_summary.onEffectsChanged();
-end
+        -- 1. Standard Init Logic
+        self.linkToken();
+        self.onLinkChanged();
+        self.onFactionChanged();
+        
+        -- 2. Register Menus
+        registerMenuItem(Interface.getString("list_menu_deleteitem"), "delete", 6);
+        registerMenuItem(Interface.getString("list_menu_deleteconfirm"), "delete", 6, 7);
+        
+        -- 3. Trigger UI visibility only after a tiny deferral
+        -- Use onIdle to defer UI-dependent logic
+--        Interface.onIdle(function() 
+--            if setAttacksVisible then setAttacksVisible(); end
+--            if setDefenseVisible then setDefenseVisible(); end
+--        end);
+		setAttacksVisible();
+		setDefenseVisible();
+    end
 
 function setAttacksVisible()
-	local v = false;
-	if activateattacks.getValue() == 1 then
-		v = true;
-	end
-	attacksicon.setVisible(v);
-	sub_attacks.setVisible(v);
+    -- Look for the button by the name defined in your XML: button_section_active
+    local v = (button_section_active and button_section_active.getValue() == 1);
+    
+    -- Note: Ensure 'attacksicon' also matches the name in your XML 
+    -- If your icon is named something else, use that name here.
+    if attacksicon then attacksicon.setVisible(v); end
+    if sub_active then sub_active.setVisible(v); end
+    
+    if v and sub_active and sub_active.subwindow then
+        sub_active.subwindow.initializeContent();
+    end
 end
 
 function setDefenseVisible()
-	local v = false;
-	if activatedefense.getValue() == 1 then
-		v = true;
-	end
-	defenseicon.setVisible(v);
-	sub_defense.setVisible(v);
-end
-</LUACode>
+    -- Look for the button by the name defined in your XML: button_section_defense
+    local v = (button_section_defense and button_section_defense.getValue() == 1);
+    
+    if defenseicon then defenseicon.setVisible(v); end
+    if sub_defense then sub_defense.setVisible(v); end
+    
+    if v and sub_defense and sub_defense.subwindow then
+        sub_defense.subwindow.initializeContent();
+    end
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -720,7 +555,7 @@ end
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate"},
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"sub_ct_section"}},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"subwindow"}},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_active"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition","AnchorDefinition":[{"EdgeAnchor":"top","Parent":"active_spacer_top","AnchorTo":"bottom","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"},"Relation":"relative"},{"EdgeAnchor":"left","Offset":"50","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"}},{"EdgeAnchor":"right","Offset":"-5","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"}}]}},
@@ -776,7 +611,7 @@ end
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate"},
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"sub_ct_section"}},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"subwindow"}},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_defense"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition","AnchorDefinition":[{"EdgeAnchor":"top","Parent":"active_spacer_top","AnchorTo":"bottom","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"},"Relation":"relative"},{"EdgeAnchor":"left","Offset":"50","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"}},{"EdgeAnchor":"right","Offset":"-5","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"}}]}},

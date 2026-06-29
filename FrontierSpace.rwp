@@ -62,60 +62,66 @@ Ruleset version 1.7</Announcement>
   </Folders>
   <Folders>
     <ID>5</ID>
-    <ParentFolderID>0</ParentFolderID>
-    <Folder>desktop</Folder>
+    <ParentFolderID>4</ParentFolderID>
+    <Folder>scripts</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>6</ID>
     <ParentFolderID>0</ParentFolderID>
-    <Folder>graphics</Folder>
+    <Folder>desktop</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>7</ID>
-    <ParentFolderID>6</ParentFolderID>
-    <Folder>fonts</Folder>
+    <ParentFolderID>0</ParentFolderID>
+    <Folder>graphics</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>8</ID>
-    <ParentFolderID>6</ParentFolderID>
-    <Folder>frames</Folder>
+    <ParentFolderID>7</ParentFolderID>
+    <Folder>fonts</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>9</ID>
-    <ParentFolderID>6</ParentFolderID>
-    <Folder>icons</Folder>
+    <ParentFolderID>7</ParentFolderID>
+    <Folder>frames</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>10</ID>
-    <ParentFolderID>6</ParentFolderID>
-    <Folder>sidebar</Folder>
+    <ParentFolderID>7</ParentFolderID>
+    <Folder>icons</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>11</ID>
-    <ParentFolderID>0</ParentFolderID>
-    <Folder>ps</Folder>
+    <ParentFolderID>7</ParentFolderID>
+    <Folder>sidebar</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>12</ID>
     <ParentFolderID>0</ParentFolderID>
-    <Folder>scripts</Folder>
+    <Folder>ps</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>13</ID>
     <ParentFolderID>0</ParentFolderID>
-    <Folder>strings</Folder>
+    <Folder>scripts</Folder>
     <Exclude>false</Exclude>
   </Folders>
   <Folders>
     <ID>14</ID>
+    <ParentFolderID>0</ParentFolderID>
+    <Folder>strings</Folder>
+    <Exclude>false</Exclude>
+  </Folders>
+  <Folders>
+    <ID>15</ID>
     <ParentFolderID>0</ParentFolderID>
     <Folder>templates</Folder>
     <Exclude>false</Exclude>
@@ -133,7 +139,7 @@ Ruleset version 1.7</Announcement>
   </Windows>
   <Windows>
     <Name>benefits_row</Name>
-    <FolderID>11</FolderID>
+    <FolderID>12</FolderID>
   </Windows>
   <Windows>
     <Name>charsheet</Name>
@@ -193,7 +199,7 @@ Ruleset version 1.7</Announcement>
   </Windows>
   <Windows>
     <Name>faction_row</Name>
-    <FolderID>11</FolderID>
+    <FolderID>12</FolderID>
   </Windows>
   <Windows>
     <Name>item_main</Name>
@@ -201,7 +207,7 @@ Ruleset version 1.7</Announcement>
   </Windows>
   <Windows>
     <Name>modifierstack</Name>
-    <FolderID>5</FolderID>
+    <FolderID>6</FolderID>
   </Windows>
   <Windows>
     <Name>npc_attack_row</Name>
@@ -217,7 +223,7 @@ Ruleset version 1.7</Announcement>
   </Windows>
   <Windows>
     <Name>ps_log</Name>
-    <FolderID>11</FolderID>
+    <FolderID>12</FolderID>
   </Windows>
   <Windows>
     <Name>skills</Name>
@@ -15326,8 +15332,8 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"419"}},
-      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"6"}}
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"420"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"7"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -15451,215 +15457,50 @@ end</LUACode>
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"0"}}
 ]}}</Definition>
     <LUACode>function onInit()
-	-- Set the displays to what should be shown
-	--setTargetingVisible();
-	--setSpacingVisible();
-	--setEffectsVisible();
-	--setAttacksVisible();
-	--setDefenseVisible();
-	
-	-- Acquire token reference, if any
-	self.linkToken();
-	
-	-- Set up the PC links
-	self.onLinkChanged();
-	self.onFactionChanged();
-	
-	-- Register the deletion menu item for the host
-	registerMenuItem(Interface.getString("list_menu_deleteitem"), "delete", 6);
-	registerMenuItem(Interface.getString("list_menu_deleteconfirm"), "delete", 6, 7);
-end
-
-function onMenuSelection(selection, subselection)
-	if selection == 6 and subselection == 7 then
-		self.delete();
-	end
-end
-function onLinkChanged()
-	-- If a PC, then set up the links to the char sheet
-	if self.isPC() then
-		self.linkPCFields();
-		name.setLine(false);
-	end
-	self.onIDChanged();
-end
-function onIDChanged()
-	local nodeRecord = getDatabaseNode();
-	local sClass = link.getValue();
-	local sRecordType = LibraryData.getRecordTypeFromDisplayClass(sClass);
-	local bID = LibraryData.getIDState(sRecordType, nodeRecord, true);
-	
-	name.setVisible(bID);
-	nonid_name.setVisible(not bID);
-
-	isidentified.setVisible(LibraryData.getIDMode(sRecordType));
-end
-function onFactionChanged()
-	-- Update the entry frame
-	self.updateDisplay();
-
-	-- If not a friend, then show visibility toggle
-	if friendfoe.getStringValue() == "friend" then
-		tokenvis.setVisible(false);
-	else
-		tokenvis.setVisible(true);
-	end
-end
-function onVisibilityChanged()
-	TokenManager.updateVisibility(getDatabaseNode());
-	windowlist.onVisibilityToggle();
-end
-
-function updateDisplay()
-	local sFaction = friendfoe.getStringValue();
-
-	if DB.getValue(getDatabaseNode(), "active", 0) == 1 then
-		name.setFont("sheetlabel");
-		nonid_name.setFont("sheetlabel");
-		
-		if sFaction == "friend" then
-			setFrame("ctentrybox_friend_active");
-		elseif sFaction == "neutral" then
-			setFrame("ctentrybox_neutral_active");
-		elseif sFaction == "foe" then
-			setFrame("ctentrybox_foe_active");
-		else
-			setFrame("ctentrybox_active");
-		end
-	else
-		name.setFont("sheettext");
-		nonid_name.setFont("sheettext");
-		
-		if sFaction == "friend" then
-			setFrame("ctentrybox_friend");
-		elseif sFaction == "neutral" then
-			setFrame("ctentrybox_neutral");
-		elseif sFaction == "foe" then
-			setFrame("ctentrybox_foe");
-		else
-			setFrame("ctentrybox");
-		end
-	end
-end
-
-function linkToken()
-	local imageinstance = token.populateFromImageNode(tokenrefnode.getValue(), tokenrefid.getValue());
-	if imageinstance then
-		TokenManager.linkToken(getDatabaseNode(), imageinstance);
-	end
-end
-
-function delete()
-	local node = getDatabaseNode();
-	if not node then
-		close();
-		return;
-	end
-	
-	-- Clear any effects first, so that saves aren't triggered when initiative advanced
-	DB.deleteChildren(node, "effects");
-
-	-- Clear NPC wounds, so that ruleset turn end dying checks aren't triggered when initiative advanced
-	if wounds and not self.isPC() then
-		DB.setValue(node, "wounds", "number", 0);
-	end
-
-	-- Move to the next actor, if this CT entry is active
-	if self.isActive() then
-		CombatManager.nextActor();
-	end
-
-	-- Delete the database node and close the window
-	local cList = windowlist;
-	node.delete();
-
-	-- Update list information (global subsection toggles)
-	cList.onVisibilityToggle();
-end
-
-function linkPCFields()
-	local nodeChar = link.getTargetDatabaseNode();
-	if nodeChar then
-		name.setLink(nodeChar.createChild("name", "string"), true);
-		senses.setLink(nodeChar.createChild("senses", "string"), true);
-		wounds.setLink(nodeChar.createChild("WoundsCurrent", "number"), true);
-		bptotal.setLink(nodeChar.createChild("BodyPointsMax", "number"), true);
-	end
-end
-
---function linkNPCFields
---
---	HELPERS
---
-
-function isRecordType(s)
-	local sClass = link.getValue();
-	local sRecordType = LibraryData.getRecordTypeFromDisplayClass(sClass);
-	return (sRecordType == s);
-end
-function isPC()
-	return self.isRecordType("charsheet");
-end
-function isActive()
-	return (active.getValue() == 1);
-end
-
-
---
--- SECTION VISIBILITY FUNCTIONS
---
-
-function setTargetingVisible()
-	local v = false;
-	if activatetargeting.getValue() == 1 then
-		v = true;
-	end
-	targetingicon.setVisible(v);
-	sub_targeting.setVisible(v);
-	target_summary.onTargetsChanged();
-end
-
-function setSpacingVisible()
-	local v = false;
-	if activatespacing.getValue() == 1 then
-		v = true;
-	end
-	spacingicon.setVisible(v);
-	sub_spacing.setVisible(v);
-end
-
-function setEffectsVisible()
-	local v = false;
-	if activateeffects.getValue() == 1 then
-		v = true;
-	end
-	
-	effecticon.setVisible(v);
-	sub_effects.setVisible(v);
-	if sub_effects.subwindow then
-        sub_effects.subwindow.setEffectsVisible(v);
-	end
-	effect_summary.onEffectsChanged();
-end
+        -- 1. Standard Init Logic
+        self.linkToken();
+        self.onLinkChanged();
+        self.onFactionChanged();
+        
+        -- 2. Register Menus
+        registerMenuItem(Interface.getString("list_menu_deleteitem"), "delete", 6);
+        registerMenuItem(Interface.getString("list_menu_deleteconfirm"), "delete", 6, 7);
+        
+        -- 3. Trigger UI visibility only after a tiny deferral
+        -- Use onIdle to defer UI-dependent logic
+--        Interface.onIdle(function() 
+--            if setAttacksVisible then setAttacksVisible(); end
+--            if setDefenseVisible then setDefenseVisible(); end
+--        end);
+		setAttacksVisible();
+		setDefenseVisible();
+    end
 
 function setAttacksVisible()
-	local v = false;
-	if activateattacks.getValue() == 1 then
-		v = true;
-	end
-	attacksicon.setVisible(v);
-	sub_attacks.setVisible(v);
+    -- Look for the button by the name defined in your XML: button_section_active
+    local v = (button_section_active and button_section_active.getValue() == 1);
+    
+    -- Note: Ensure 'attacksicon' also matches the name in your XML 
+    -- If your icon is named something else, use that name here.
+    if attacksicon then attacksicon.setVisible(v); end
+    if sub_active then sub_active.setVisible(v); end
+    
+    if v and sub_active and sub_active.subwindow then
+        sub_active.subwindow.initializeContent();
+    end
 end
 
 function setDefenseVisible()
-	local v = false;
-	if activatedefense.getValue() == 1 then
-		v = true;
-	end
-	defenseicon.setVisible(v);
-	sub_defense.setVisible(v);
-end
-</LUACode>
+    -- Look for the button by the name defined in your XML: button_section_defense
+    local v = (button_section_defense and button_section_defense.getValue() == 1);
+    
+    if defenseicon then defenseicon.setVisible(v); end
+    if sub_defense then sub_defense.setVisible(v); end
+    
+    if v and sub_defense and sub_defense.subwindow then
+        sub_defense.subwindow.initializeContent();
+    end
+end</LUACode>
     <GroupIndex>0</GroupIndex>
     <Template />
   </WindowControls>
@@ -15924,7 +15765,7 @@ end
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate"},
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"sub_ct_section"}},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"subwindow"}},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_active"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition","AnchorDefinition":[{"EdgeAnchor":"top","Parent":"active_spacer_top","AnchorTo":"bottom","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"},"Relation":"relative"},{"EdgeAnchor":"left","Offset":"50","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"}},{"EdgeAnchor":"right","Offset":"-5","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"}}]}},
@@ -15980,7 +15821,7 @@ end
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"Activate"},
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
-      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"sub_ct_section"}},
+      {"Name":"AdvancedTemplate","Value":{"@xsi:type":"xsd:string","#text":"subwindow"}},
       {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
       {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_defense"}},
       {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition","AnchorDefinition":[{"EdgeAnchor":"top","Parent":"active_spacer_top","AnchorTo":"bottom","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"},"Relation":"relative"},{"EdgeAnchor":"left","Offset":"50","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"}},{"EdgeAnchor":"right","Offset":"-5","Height":{"@xsi:nil":"true"},"Width":{"@xsi:nil":"true"}}]}},
@@ -18401,7 +18242,7 @@ end</LUACode>
       {"Name":"PlayerControl"},
       {"Name":"Resize","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"RightMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"ScriptFile"},
+      {"Name":"ScriptFile","Value":{"@xsi:type":"xsd:string","#text":"ct/scripts/section_loader.lua"}},
       {"Name":"Sharable"},
       {"Name":"ShareAs"},
       {"Name":"SoftClose"},
@@ -18421,7 +18262,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ct_section_active</WindowName>
     <ControlName>icon_section</ControlName>
-    <ZIndex>2</ZIndex>
+    <ZIndex>1</ZIndex>
     <ControlClass>FGIconControl</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -18472,6 +18313,62 @@ end</LUACode>
     <Template />
   </WindowControls>
   <WindowControls>
+    <WindowName>ct_section_active</WindowName>
+    <ControlName>sub_active</ControlName>
+    <ZIndex>2</ZIndex>
+    <ControlClass>FGSubWindow</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"Activate"},
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"AdvancedTemplate"},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_active"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"29"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"225"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FastInit","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"NoScroll"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"SubWindowClassName"},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"46"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"3"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
     <WindowName>ct_section_defense</WindowName>
     <ControlName>ct_section_defense</ControlName>
     <ZIndex>0</ZIndex>
@@ -18512,7 +18409,7 @@ end</LUACode>
       {"Name":"PlayerControl"},
       {"Name":"Resize","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"RightMargin","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"ScriptFile"},
+      {"Name":"ScriptFile","Value":{"@xsi:type":"xsd:string","#text":"ct/scripts/section_loader.lua"}},
       {"Name":"Sharable"},
       {"Name":"ShareAs"},
       {"Name":"SoftClose"},
@@ -18532,7 +18429,7 @@ end</LUACode>
   <WindowControls>
     <WindowName>ct_section_defense</WindowName>
     <ControlName>icon_section</ControlName>
-    <ZIndex>2</ZIndex>
+    <ZIndex>1</ZIndex>
     <ControlClass>FGIconControl</ControlClass>
     <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
       {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
@@ -18577,6 +18474,62 @@ end</LUACode>
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
       {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"2"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"3"}}
+]}}</Definition>
+    <LUACode />
+    <GroupIndex>0</GroupIndex>
+    <Template />
+  </WindowControls>
+  <WindowControls>
+    <WindowName>ct_section_defense</WindowName>
+    <ControlName>sub_defense</ControlName>
+    <ZIndex>2</ZIndex>
+    <ControlClass>FGSubWindow</ControlClass>
+    <Definition>{"ArrayOfFGControlPropertyInfo":{"@xmlns:xsd":"http://www.w3.org/2001/XMLSchema","@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","FGControlPropertyInfo":[
+      {"Name":"Activate"},
+      {"Name":"AdvancedAnchoring","Value":{"@xsi:type":"ArrayOfAdvancedAnchor"}},
+      {"Name":"AdvancedTemplate"},
+      {"Name":"BackgroundColor","Value":{"@xsi:type":"xsd:string","#text":"0;0;0;0"}},
+      {"Name":"ControlName","Value":{"@xsi:type":"xsd:string","#text":"sub_defense"}},
+      {"Name":"CustomAnchoring","Value":{"@xsi:type":"ArrayOfAnchorDefinition"}},
+      {"Name":"CustomProperties","Value":{"@xsi:type":"ArrayOfCustomProperty"}},
+      {"Name":"DesignerHeight","Value":{"@xsi:type":"xsd:int","#text":"27"}},
+      {"Name":"DesignerLocked","Value":{"@xsi:type":"xsd:boolean","#text":"false"}},
+      {"Name":"DesignerWidth","Value":{"@xsi:type":"xsd:int","#text":"229"}},
+      {"Name":"DevelopmentComments"},
+      {"Name":"Disabled"},
+      {"Name":"DynamicSize"},
+      {"Name":"FastInit","Value":{"@xsi:type":"xsd:boolean","#text":"true"}},
+      {"Name":"FrameHideReadonly"},
+      {"Name":"FrameName"},
+      {"Name":"FrameOffset","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"GMEditOnly"},
+      {"Name":"GMVisibleOnly"},
+      {"Name":"HorizontalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"HoverCursor"},
+      {"Name":"InheritSizePosition"},
+      {"Name":"InsertBefore"},
+      {"Name":"Invisible"},
+      {"Name":"MaximumHeight"},
+      {"Name":"MaximumWidth"},
+      {"Name":"Merge"},
+      {"Name":"MinimumHeight"},
+      {"Name":"MinimumWidth"},
+      {"Name":"NextTabTarget"},
+      {"Name":"NoScroll"},
+      {"Name":"PrevTabTarget"},
+      {"Name":"ReadOnly"},
+      {"Name":"RelativeMargin"},
+      {"Name":"RelativeStacking"},
+      {"Name":"ScriptFile"},
+      {"Name":"Source"},
+      {"Name":"StackVertWith"},
+      {"Name":"StateFrames","Value":{"@xsi:type":"ArrayOfStateFrame"}},
+      {"Name":"SubWindowClassName"},
+      {"Name":"Tooltip"},
+      {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
+      {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"42"}},
+      {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"4"}}
 ]}}</Definition>
     <LUACode />
     <GroupIndex>0</GroupIndex>
@@ -20852,7 +20805,7 @@ end</LUACode>
       {"Name":"Tooltip"},
       {"Name":"UseAsTemplate","Value":{"@xsi:type":"xsd:string"}},
       {"Name":"VerticalAnchor","Value":{"@xsi:type":"xsd:int","#text":"0"}},
-      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"196"}},
+      {"Name":"XPos","Value":{"@xsi:type":"xsd:int","#text":"197"}},
       {"Name":"YPos","Value":{"@xsi:type":"xsd:int","#text":"4"}}
 ]}}</Definition>
     <LUACode />
@@ -49350,7 +49303,7 @@ end
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Scripts>
     <ScriptName>CombatOptions_Custom</ScriptName>
-    <FolderID>12</FolderID>
+    <FolderID>13</FolderID>
     <Script>-- Variable to hold the native CoreRPG nextActor function
 local fOldNextActor;
 -- A flag to tell our script when to block the automatic turn advance
@@ -49563,7 +49516,7 @@ end</Script>
   </Scripts>
   <Scripts>
     <ScriptName>dataLibrary</ScriptName>
-    <FolderID>12</FolderID>
+    <FolderID>13</FolderID>
     <Script>
 function onInit()
 
@@ -49659,7 +49612,7 @@ end
   </Scripts>
   <Scripts>
     <ScriptName>GameSystem</ScriptName>
-    <FolderID>12</FolderID>
+    <FolderID>13</FolderID>
     <Script>-- Ruleset action types
 actions = {
 	["dice"] = { bUseModStack = "true" },
@@ -49728,7 +49681,7 @@ end</Script>
   </Scripts>
   <Scripts>
     <ScriptName>managerRolls</ScriptName>
-    <FolderID>12</FolderID>
+    <FolderID>13</FolderID>
     <Script>function StatRoll(rSource, rTarget, rRoll)
 --  Name the function and accept 3 parameters
 
@@ -50345,8 +50298,45 @@ end</Script>
     <Encoding />
   </Scripts>
   <Scripts>
+    <ScriptName>section_loader</ScriptName>
+    <FolderID>5</FolderID>
+    <Script>-- ct/scripts/section_loader.lua
+function onInit()
+    initializeContent(); 
+end
+
+function initializeContent()
+    if not window then return; end
+    local node = window.getDatabaseNode();
+    if not node then return; end
+    
+    local isPC = (node.getPath():find("charsheet") ~= nil);
+    local sName = window.getName();
+    
+    -- The "guard" check: ensures we don't try to access sub_defense if it doesn't exist
+	if sName == "ct_section_defense" then
+		if window.sub_defense then
+			if isPC then
+				-- Create the static PC windowclass (define this one too!)
+				window.sub_defense.createWindow("ct_defenselist_pc", node);
+			else
+				-- This loads the list holder defined in Step 1
+				window.sub_defense.createWindow("ct_defenselist_npc", node);
+			end
+		end
+	elseif sName == "ct_section_active" then
+		if window.sub_active and not isPC then
+			-- This loads the list holder defined in Step 1
+			window.sub_active.createWindow("ct_attacklist_npc", node);
+		end
+	end
+end</Script>
+    <RegisterScript>true</RegisterScript>
+    <Encoding />
+  </Scripts>
+  <Scripts>
     <ScriptName>TabsScript</ScriptName>
-    <FolderID>12</FolderID>
+    <FolderID>13</FolderID>
     <Script>function onInit()
 	WindowTabManager.registerTab("vehicle", { sName = "main", sTabRes = "tab_main", sClass = "vehicle_main", bEmbed = true  });
 	WindowTabManager.registerTab("vehicle", { sName = "Notes", sText = "Notes", sClass = "vehicle_notes", bEmbed = true  });
@@ -50463,6 +50453,85 @@ end
 &lt;/root&gt;</XML>
   </XMLFiles>
   <XMLFiles>
+    <XmlName>ct_attacklist</XmlName>
+    <FolderID>4</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;!-- NPC Attack List --&gt;
+    &lt;windowclass name="ct_attacklist_npc"&gt;
+        &lt;sheetdata&gt;
+            &lt;list_ct_section_active_npc name="attacklist"&gt;
+                &lt;anchored position="insidetopleft" offset="0,0" /&gt;
+                &lt;datasource&gt;.attacklist&lt;/datasource&gt;
+                &lt;class&gt;npc_attack_row&lt;/class&gt;
+            &lt;/list_ct_section_active_npc&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+
+    &lt;!-- PC Active Section (Empty/Placeholder) --&gt;
+    &lt;windowclass name="ct_attacklist_pc"&gt;
+        &lt;sheetdata&gt;
+            &lt;!-- Leave empty to show nothing for PCs --&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+&lt;/root&gt;</XML>
+  </XMLFiles>
+  <XMLFiles>
+    <XmlName>ct_defenselist</XmlName>
+    <FolderID>4</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;!-- NPC Defense List --&gt;
+    &lt;windowclass name="ct_defenselist_npc"&gt;
+        &lt;sheetdata&gt;
+            &lt;list_ct_section_defense_npc name="defenselist"&gt;
+                &lt;anchored position="insidetopleft" offset="0,0" /&gt;
+                &lt;datasource&gt;.defenselist&lt;/datasource&gt;
+                &lt;class&gt;npc_defense_row&lt;/class&gt;
+            &lt;/list_ct_section_defense_npc&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+
+    &lt;!-- PC Defense Static Window --&gt;
+    &lt;windowclass name="ct_defenselist_pc"&gt;
+        &lt;sheetdata&gt;
+            &lt;label name="suit_label"&gt;&lt;static&gt;Suit:&lt;/static&gt;&lt;anchored position="insidetopleft" offset="5,5" width="40" /&gt;&lt;/label&gt;
+            &lt;button_checkbox name="SuitActive"&gt;&lt;anchored to="suit_label" position="righthigh" offset="5,0" width="20" /&gt;&lt;/button_checkbox&gt;
+            &lt;number_field name="SuitProtectionCurrent"&gt;&lt;anchored to="SuitActive" position="righthigh" offset="5,0" width="30" /&gt;&lt;/number_field&gt;
+            &lt;string_field name="SuitProtectionType"&gt;&lt;anchored to="SuitProtectionCurrent" position="righthigh" offset="5,0" width="80" /&gt;&lt;/string_field&gt;
+            
+            &lt;label name="screen_label"&gt;&lt;static&gt;Screen:&lt;/static&gt;&lt;anchored to="suit_label" position="belowleft" offset="0,10" width="40" /&gt;&lt;/label&gt;
+            &lt;button_checkbox name="ScreenActive"&gt;&lt;anchored to="screen_label" position="righthigh" offset="5,0" width="20" /&gt;&lt;/button_checkbox&gt;
+            &lt;number_field name="ScreenProtection"&gt;&lt;anchored to="ScreenActive" position="righthigh" offset="5,0" width="30" /&gt;&lt;/number_field&gt;
+            &lt;string_field name="ScreenProtectionType"&gt;&lt;anchored to="ScreenProtectionCurrent" position="righthigh" offset="5,0" width="80" /&gt;&lt;/string_field&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+&lt;/root&gt;</XML>
+  </XMLFiles>
+  <XMLFiles>
+    <XmlName>ct_sections_list</XmlName>
+    <FolderID>4</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;windowclass name="ct_defenselist_npc"&gt;
+        &lt;sheetdata&gt;
+            &lt;list_ct_section_defense name="defenselist"&gt;
+                &lt;anchored position="insidetopleft" offset="0,0" /&gt;
+                &lt;datasource&gt;.defenselist&lt;/datasource&gt; &lt;class&gt;npc_defense_row&lt;/class&gt;        &lt;/list_ct_section_defense&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+
+    &lt;windowclass name="ct_attacklist_npc"&gt;
+        &lt;sheetdata&gt;
+            &lt;list_ct_section_active name="attacklist"&gt;
+                &lt;anchored position="insidetopleft" offset="0,0" /&gt;
+                &lt;datasource&gt;.attacklist&lt;/datasource&gt; &lt;class&gt;npc_attack_row&lt;/class&gt;        &lt;/list_ct_section_active&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+&lt;/root&gt;    
+	</XML>
+  </XMLFiles>
+  <XMLFiles>
     <XmlName>gameelements</XmlName>
     <FolderID>0</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
@@ -50492,7 +50561,7 @@ end
   </XMLFiles>
   <XMLFiles>
     <XmlName>graphics_sidebar</XmlName>
-    <FolderID>6</FolderID>
+    <FolderID>7</FolderID>
     <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;root&gt;
 		&lt;icon name="sidebar_icon_recordtype_battle" file="graphics/sidebar/sidebar_icon_battle_2.png" /&gt;
@@ -50508,7 +50577,7 @@ end
   </XMLFiles>
   <XMLFiles>
     <XmlName>strings</XmlName>
-    <FolderID>13</FolderID>
+    <FolderID>14</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 
 &lt;root&gt;
@@ -50540,7 +50609,7 @@ end
   </XMLFiles>
   <XMLFiles>
     <XmlName>strings_charsheet</XmlName>
-    <FolderID>13</FolderID>
+    <FolderID>14</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 
 &lt;!-- 
@@ -50557,7 +50626,7 @@ end
   </XMLFiles>
   <XMLFiles>
     <XmlName>strings_combat_options</XmlName>
-    <FolderID>13</FolderID>
+    <FolderID>14</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 &lt;root&gt;
     &lt;!-- Headers and Labels --&gt;
@@ -50623,7 +50692,7 @@ end
   </XMLFiles>
   <XMLFiles>
     <XmlName>template</XmlName>
-    <FolderID>14</FolderID>
+    <FolderID>15</FolderID>
     <XML>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 &lt;root&gt;
 
@@ -50650,7 +50719,7 @@ end
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Frames>
     <FrameName>blank_label</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>blank_label.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -50667,7 +50736,7 @@ end
   </Frames>
   <Frames>
     <FrameName>buttonup</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>buttonup.png</ImageFile>
     <Definition>12,12,12,12</Definition>
     <TopLeft />
@@ -50684,7 +50753,7 @@ end
   </Frames>
   <Frames>
     <FrameName>charselect</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>charselect.png</ImageFile>
     <Definition>25,25,25,25</Definition>
     <TopLeft />
@@ -50701,7 +50770,7 @@ end
   </Frames>
   <Frames>
     <FrameName>charsheet</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>charsheet.png</ImageFile>
     <Definition>40,102,50,32</Definition>
     <TopLeft />
@@ -50718,7 +50787,7 @@ end
   </Frames>
   <Frames>
     <FrameName>chatbox</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>chatbox.png</ImageFile>
     <Definition>15,20,20,15</Definition>
     <TopLeft />
@@ -50735,7 +50804,7 @@ end
   </Frames>
   <Frames>
     <FrameName>ctbox</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>ctbox.png</ImageFile>
     <Definition>32,32,19,50</Definition>
     <TopLeft />
@@ -50752,7 +50821,7 @@ end
   </Frames>
   <Frames>
     <FrameName>desktop</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>desktop.jpg</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -50769,7 +50838,7 @@ end
   </Frames>
   <Frames>
     <FrameName>fielddark</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>fielddark.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -50786,7 +50855,7 @@ end
   </Frames>
   <Frames>
     <FrameName>fieldlight</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>fieldlight.png</ImageFile>
     <Definition>14,14,14,14</Definition>
     <TopLeft />
@@ -50803,7 +50872,7 @@ end
   </Frames>
   <Frames>
     <FrameName>frame_windowlist</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>frame_windowlist.png</ImageFile>
     <Definition>4,4,4,4</Definition>
     <TopLeft />
@@ -50820,7 +50889,7 @@ end
   </Frames>
   <Frames>
     <FrameName>groupbox</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>groupbox.png</ImageFile>
     <Definition>14,14,14,14</Definition>
     <TopLeft />
@@ -50837,7 +50906,7 @@ end
   </Frames>
   <Frames>
     <FrameName>number_hex</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>number_hex.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -50854,7 +50923,7 @@ end
   </Frames>
   <Frames>
     <FrameName>number_trans</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>number_trans.png</ImageFile>
     <Definition>5,5,5,5</Definition>
     <TopLeft />
@@ -50871,7 +50940,7 @@ end
   </Frames>
   <Frames>
     <FrameName>recordsheet</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>recordsheet.png</ImageFile>
     <Definition>40,40,90,40</Definition>
     <TopLeft />
@@ -50888,7 +50957,7 @@ end
   </Frames>
   <Frames>
     <FrameName>referencelist</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>referencepage.png</ImageFile>
     <Definition>40,40,140,110</Definition>
     <TopLeft />
@@ -50905,7 +50974,7 @@ end
   </Frames>
   <Frames>
     <FrameName>scrollbar_base</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>scrollbar.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -50922,7 +50991,7 @@ end
   </Frames>
   <Frames>
     <FrameName>scrollbutton_normal</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>scrollbutton_normal.png</ImageFile>
     <Definition>0,10,0,10</Definition>
     <TopLeft />
@@ -50939,7 +51008,7 @@ end
   </Frames>
   <Frames>
     <FrameName>shortcuts</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>shortcuts.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -50956,7 +51025,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>sidebar.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft />
@@ -50973,7 +51042,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_category</FrameName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <ImageFile>sidebar_dock_category.png</ImageFile>
     <Definition>8,8,8,8</Definition>
     <TopLeft />
@@ -50990,7 +51059,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_category_down</FrameName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <ImageFile>sidebar_dock_category_down.png</ImageFile>
     <Definition>8,8,8,8</Definition>
     <TopLeft />
@@ -51007,7 +51076,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_entry</FrameName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <ImageFile>sidebar_dock_entry.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -51024,7 +51093,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_entry_down</FrameName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <ImageFile>sidebar_dock_icon_down.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -51041,7 +51110,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_entry_down1</FrameName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <ImageFile>sidebar_dock_entry_down.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -51058,7 +51127,7 @@ end
   </Frames>
   <Frames>
     <FrameName>sidebar_dock_entry_icon</FrameName>
-    <FolderID>10</FolderID>
+    <FolderID>11</FolderID>
     <ImageFile>sidebar_dock_icon.png</ImageFile>
     <Definition>10,10,10,10</Definition>
     <TopLeft />
@@ -51075,7 +51144,7 @@ end
   </Frames>
   <Frames>
     <FrameName>storybox</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>storybox.png</ImageFile>
     <Definition>40,40,140,80</Definition>
     <TopLeft />
@@ -51092,7 +51161,7 @@ end
   </Frames>
   <Frames>
     <FrameName>tabs</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>tabs.png</ImageFile>
     <Definition>0,0,0,0</Definition>
     <TopLeft>0,0,18,73</TopLeft>
@@ -51109,7 +51178,7 @@ end
   </Frames>
   <Frames>
     <FrameName>utilitybox</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>utilitybox.png</ImageFile>
     <Definition>20,10,120,30</Definition>
     <TopLeft />
@@ -51126,7 +51195,7 @@ end
   </Frames>
   <Frames>
     <FrameName>utilitybox2</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>utilitybox2.png</ImageFile>
     <Definition>40,40,110,30</Definition>
     <TopLeft />
@@ -51143,7 +51212,7 @@ end
   </Frames>
   <Frames>
     <FrameName>windowtitlebar</FrameName>
-    <FolderID>8</FolderID>
+    <FolderID>9</FolderID>
     <ImageFile>windowtitle.png</ImageFile>
     <Definition>30,0,30,0</Definition>
     <TopLeft />
@@ -51163,87 +51232,87 @@ end
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Icons>
     <IconName>button_link</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>button_link.png</IconFile>
   </Icons>
   <Icons>
     <IconName>charlist_base</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>charlist_base.png</IconFile>
   </Icons>
   <Icons>
     <IconName>dicetower_drop</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>dicetower_drop.png</IconFile>
   </Icons>
   <Icons>
     <IconName>dicetower_icon</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>dicetower_icon.png</IconFile>
   </Icons>
   <Icons>
     <IconName>dicetower_normal</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>dicetower_normal.png</IconFile>
   </Icons>
   <Icons>
     <IconName>portrait_mask</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>portrait_mask.png</IconFile>
   </Icons>
   <Icons>
     <IconName>portrait_token_mask</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>portrait_token_mask.png</IconFile>
   </Icons>
   <Icons>
     <IconName>roundpoint</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>roundpoint14-80.png</IconFile>
   </Icons>
   <Icons>
     <IconName>roundsquare</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>roundsquare14-80.png</IconFile>
   </Icons>
   <Icons>
     <IconName>skills_label</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>skills_label.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>stats.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_advantage</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>stats_advantage.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_disadvantage</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>stats_disadvantage.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_none</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>stats_none.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_off</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>stats_off.png</IconFile>
   </Icons>
   <Icons>
     <IconName>stats_on</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>stats_on.png</IconFile>
   </Icons>
   <Icons>
     <IconName>tabtop</IconName>
-    <FolderID>9</FolderID>
+    <FolderID>10</FolderID>
     <IconFile>tabtop.png</IconFile>
   </Icons>
 </DocumentElement>
@@ -51251,7 +51320,7 @@ end
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Fonts>
     <FontName>Aqua</FontName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <FontFile>DsAqua1-MVwP.ttf</FontFile>
     <FontFamilyName>DS_Aqua-1</FontFamilyName>
     <FontSize>12</FontSize>
@@ -51261,7 +51330,7 @@ end
   </Fonts>
   <Fonts>
     <FontName>Galactic Common</FontName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <FontFile>GalacticoBasic-r1ny.ttf</FontFile>
     <FontFamilyName>Galactico Basic</FontFamilyName>
     <FontSize>12</FontSize>
@@ -51271,7 +51340,7 @@ end
   </Fonts>
   <Fonts>
     <FontName>Sequoyah</FontName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <FontFile>Sequoyah-pDpa.ttf</FontFile>
     <FontFamilyName>Sequoyah</FontFamilyName>
     <FontSize>12</FontSize>
@@ -51281,7 +51350,7 @@ end
   </Fonts>
   <Fonts>
     <FontName>TengwarAnnatar</FontName>
-    <FolderID>7</FolderID>
+    <FolderID>8</FolderID>
     <FontFile>TengwarAnnatar-RpaW.ttf</FontFile>
     <FontFamilyName>Tengwar Annatar</FontFamilyName>
     <FontSize>12</FontSize>

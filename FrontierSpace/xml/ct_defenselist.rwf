@@ -1,0 +1,34 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>ct_defenselist</XmlName>
+    <FolderID>4</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;!-- NPC Defense List --&gt;
+    &lt;windowclass name="ct_defenselist_npc"&gt;
+        &lt;sheetdata&gt;
+            &lt;list_ct_section_defense_npc name="defenselist"&gt;
+                &lt;anchored position="insidetopleft" offset="0,0" /&gt;
+                &lt;datasource&gt;.defenselist&lt;/datasource&gt;
+                &lt;class&gt;npc_defense_row&lt;/class&gt;
+            &lt;/list_ct_section_defense_npc&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+
+    &lt;!-- PC Defense Static Window --&gt;
+    &lt;windowclass name="ct_defenselist_pc"&gt;
+        &lt;sheetdata&gt;
+            &lt;label name="suit_label"&gt;&lt;static&gt;Suit:&lt;/static&gt;&lt;anchored position="insidetopleft" offset="5,5" width="40" /&gt;&lt;/label&gt;
+            &lt;button_checkbox name="SuitActive"&gt;&lt;anchored to="suit_label" position="righthigh" offset="5,0" width="20" /&gt;&lt;/button_checkbox&gt;
+            &lt;number_field name="SuitProtectionCurrent"&gt;&lt;anchored to="SuitActive" position="righthigh" offset="5,0" width="30" /&gt;&lt;/number_field&gt;
+            &lt;string_field name="SuitProtectionType"&gt;&lt;anchored to="SuitProtectionCurrent" position="righthigh" offset="5,0" width="80" /&gt;&lt;/string_field&gt;
+            
+            &lt;label name="screen_label"&gt;&lt;static&gt;Screen:&lt;/static&gt;&lt;anchored to="suit_label" position="belowleft" offset="0,10" width="40" /&gt;&lt;/label&gt;
+            &lt;button_checkbox name="ScreenActive"&gt;&lt;anchored to="screen_label" position="righthigh" offset="5,0" width="20" /&gt;&lt;/button_checkbox&gt;
+            &lt;number_field name="ScreenProtection"&gt;&lt;anchored to="ScreenActive" position="righthigh" offset="5,0" width="30" /&gt;&lt;/number_field&gt;
+            &lt;string_field name="ScreenProtectionType"&gt;&lt;anchored to="ScreenProtectionCurrent" position="righthigh" offset="5,0" width="80" /&gt;&lt;/string_field&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+&lt;/root&gt;</XML>
+  </XMLFiles>
+</DocumentElement>

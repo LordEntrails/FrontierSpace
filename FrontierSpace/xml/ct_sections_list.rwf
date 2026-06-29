@@ -1,0 +1,25 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>ct_sections_list</XmlName>
+    <FolderID>4</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;windowclass name="ct_defenselist_npc"&gt;
+        &lt;sheetdata&gt;
+            &lt;list_ct_section_defense name="defenselist"&gt;
+                &lt;anchored position="insidetopleft" offset="0,0" /&gt;
+                &lt;datasource&gt;.defenselist&lt;/datasource&gt; &lt;class&gt;npc_defense_row&lt;/class&gt;        &lt;/list_ct_section_defense&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+
+    &lt;windowclass name="ct_attacklist_npc"&gt;
+        &lt;sheetdata&gt;
+            &lt;list_ct_section_active name="attacklist"&gt;
+                &lt;anchored position="insidetopleft" offset="0,0" /&gt;
+                &lt;datasource&gt;.attacklist&lt;/datasource&gt; &lt;class&gt;npc_attack_row&lt;/class&gt;        &lt;/list_ct_section_active&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+&lt;/root&gt;    
+	</XML>
+  </XMLFiles>
+</DocumentElement>

@@ -1,0 +1,39 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <Scripts>
+    <ScriptName>section_loader</ScriptName>
+    <FolderID>5</FolderID>
+    <Script>-- ct/scripts/section_loader.lua
+function onInit()
+    initializeContent(); 
+end
+
+function initializeContent()
+    if not window then return; end
+    local node = window.getDatabaseNode();
+    if not node then return; end
+    
+    local isPC = (node.getPath():find("charsheet") ~= nil);
+    local sName = window.getName();
+    
+    -- The "guard" check: ensures we don't try to access sub_defense if it doesn't exist
+	if sName == "ct_section_defense" then
+		if window.sub_defense then
+			if isPC then
+				-- Create the static PC windowclass (define this one too!)
+				window.sub_defense.createWindow("ct_defenselist_pc", node);
+			else
+				-- This loads the list holder defined in Step 1
+				window.sub_defense.createWindow("ct_defenselist_npc", node);
+			end
+		end
+	elseif sName == "ct_section_active" then
+		if window.sub_active and not isPC then
+			-- This loads the list holder defined in Step 1
+			window.sub_active.createWindow("ct_attacklist_npc", node);
+		end
+	end
+end</Script>
+    <RegisterScript>true</RegisterScript>
+    <Encoding />
+  </Scripts>
+</DocumentElement>

@@ -1,0 +1,26 @@
+<DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
+  <XMLFiles>
+    <XmlName>ct_attacklist</XmlName>
+    <FolderID>4</FolderID>
+    <XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;!-- NPC Attack List --&gt;
+    &lt;windowclass name="ct_attacklist_npc"&gt;
+        &lt;sheetdata&gt;
+            &lt;list_ct_section_active_npc name="attacklist"&gt;
+                &lt;anchored position="insidetopleft" offset="0,0" /&gt;
+                &lt;datasource&gt;.attacklist&lt;/datasource&gt;
+                &lt;class&gt;npc_attack_row&lt;/class&gt;
+            &lt;/list_ct_section_active_npc&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+
+    &lt;!-- PC Active Section (Empty/Placeholder) --&gt;
+    &lt;windowclass name="ct_attacklist_pc"&gt;
+        &lt;sheetdata&gt;
+            &lt;!-- Leave empty to show nothing for PCs --&gt;
+        &lt;/sheetdata&gt;
+    &lt;/windowclass&gt;
+&lt;/root&gt;</XML>
+  </XMLFiles>
+</DocumentElement>

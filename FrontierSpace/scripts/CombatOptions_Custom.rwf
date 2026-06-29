@@ -1,7 +1,7 @@
 <DocumentElement xmlns="http://tempuri.org/Ruleset.xsd">
   <Scripts>
     <ScriptName>CombatOptions_Custom</ScriptName>
-    <FolderID>12</FolderID>
+    <FolderID>13</FolderID>
     <Script>-- Variable to hold the native CoreRPG nextActor function
 local fOldNextActor;
 -- A flag to tell our script when to block the automatic turn advance
